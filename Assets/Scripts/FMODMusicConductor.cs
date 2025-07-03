@@ -11,6 +11,8 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class FMODMusicConductor : MonoBehaviour
 {
     public static FMODMusicConductor Instance { get; private set; }
+    
+    public List<NoteSpawnData> upcomingNotes = new List<NoteSpawnData>();
 
     [Header("FMOD Music Event")]
     public EventReference musicEvent;
@@ -34,6 +36,7 @@ public class FMODMusicConductor : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("[FMODMusicConductor] Starting music: " + musicEvent.Path);
         // Crea y arranca la instancia de música
         musicInstance = RuntimeManager.CreateInstance(musicEvent.Path);
         musicInstance.start();
@@ -67,6 +70,24 @@ public class FMODMusicConductor : MonoBehaviour
         {
             musicInstance.getTimelinePosition(out int ms);
             return ms / 1000f;
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        // Obtén CurrentSongTime y dibuja una línea vertical en X = CurrentSongTime
+        float t = Application.isPlaying 
+            ? Instance.CurrentSongTime 
+            : 0f;
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(t, -5, 0), new Vector3(t, 5, 0));
+
+        // Dibuja puntos para cada upcomingNotes[i].arrivalTime
+        Gizmos.color = Color.yellow;
+        foreach (var note in upcomingNotes)
+        {
+            float x = note.arrivalTime;
+            Gizmos.DrawSphere(new Vector3(x, 0, 0), 0.1f);
         }
     }
 

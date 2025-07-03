@@ -66,6 +66,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
 
             pendingNotes.Add(spawnData);
         }
+        conductor.upcomingNotes = pendingNotes;
 
         // Comienza la rutina de spawn
         StartCoroutine(SpawnScheduler());
@@ -78,6 +79,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("[Spawner] CurrentSongTime = " + FMODMusicConductor.Instance.CurrentSongTime);
             float currentTime = FMODMusicConductor.Instance.CurrentSongTime;
 
             for (int i = pendingNotes.Count - 1; i >= 0; i--)
@@ -103,7 +105,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
         NoteInputType type = GetRandomNoteType();
 
         // 2. Obtener target libre (compatible con ese tipo)
-        Transform zone = targetManager.RequestTarget(type);
+        Transform zone = targetManager.RequestRandomTarget(type);
         if (zone == null)
         {
             Debug.LogWarning($"No available targets for {note.markerName}");
@@ -115,7 +117,9 @@ public class MarkerDrivenSpawner : MonoBehaviour
         NoteBehavior behavior = go.GetComponent<NoteBehavior>();
 
         PlayerButton btn = zone.GetComponent<PlayerButton>();
-        behavior.Initialize(btn, targetManager, note.arrivalTime, FMODMusicConductor.Instance.CurrentSongTime, type, GetSpawnSide(type));
+        
+        behavior.Initialize(btn, targetManager, note.arrivalTime, FMODMusicConductor.Instance.CurrentSongTime, type);
+
     }
 
     /// <summary>
