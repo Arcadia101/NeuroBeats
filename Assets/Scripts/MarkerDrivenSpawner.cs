@@ -41,7 +41,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
         MarkerData[] markers = null;
         foreach (var e in data.events)
         {
-            if (e.eventPath == conductor.musicEvent.Path)
+            if (e.eventPath == conductor.musicEventPath)
             {
                 markers = e.markers;
                 break;
@@ -76,25 +76,74 @@ public class MarkerDrivenSpawner : MonoBehaviour
     /// Revisa continuamente si alguna nota debe ser instanciada pronto.
     /// </summary>
     IEnumerator SpawnScheduler()
+{
+    while (true)
     {
-        while (true)
-        {
-            Debug.Log("[Spawner] CurrentSongTime = " + FMODMusicConductor.Instance.CurrentSongTime);
-            float currentTime = FMODMusicConductor.Instance.CurrentSongTime;
+        float currentTime = FMODMusicConductor.Instance.CurrentSongTime;
 
-            for (int i = pendingNotes.Count - 1; i >= 0; i--)
+        for (int i = pendingNotes.Count - 1; i >= 0; i--)
+        {
+            var note = pendingNotes[i];
+
+            // ¿Es momento de spawn según anticipationSeconds?
+            if (note.arrivalTime - currentTime <= anticipationSeconds)
             {
-                var note = pendingNotes[i];
-                if (note.arrivalTime - currentTime <= anticipationSeconds)
+                bool shouldSpawn = false;
+                string name = note.markerName;
+
+                // 1) Marcadores de Combo
+                if (name.StartsWith("Combo"))
+                {
+                    if (int.TryParse(name.Substring(5), out int x))
+                    {
+                        if (x == 1)
+                        {
+                            // Combo1 siempre spawnea, sin importar el modo ni combo
+                            shouldSpawn = true;
+                        }
+                        else
+                        {
+                            int requiredCombo = x - 1;
+                            // Sólo las ComboX>1 requieren modo Normal y combo ≥ required
+                            if (GameState.Instance.CurrentMode == GameMode.Normal &&
+                                ComboManager.Instance.CurrentCombo >= requiredCombo)
+                            {
+                                shouldSpawn = true;
+                            }
+                            else 
+                                Debug.LogWarning($"MarkerDrivenSpawner: nombre de marcador inválido '{name}'");
+                        }
+                    }
+                }
+                // 2) Marcador EndSong → fin de nivel
+                else if (name == "EndSong")
+                {
+                    // Exportar resultados y disparar fin de nivel
+                    LevelExportController.Instance.ExportNow();
+                    LevelEndController.Instance.TriggerEnd();
+                    // Ya procesado, lo quitamos de la lista
+                    pendingNotes.RemoveAt(i);
+                    continue;
+                }
+                // 3) Otros marcadores (por defecto)
+                else
+                {
+                    shouldSpawn = true;
+                }
+
+                if (shouldSpawn)
                 {
                     SpawnNote(note);
-                    pendingNotes.RemoveAt(i);
                 }
-            }
 
-            yield return null;
+                pendingNotes.RemoveAt(i);
+            }
         }
+
+        yield return null;
     }
+}
+
 
     /// <summary>
     /// Instancia y configura una nueva nota.

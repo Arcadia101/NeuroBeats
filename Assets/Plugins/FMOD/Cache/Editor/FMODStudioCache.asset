@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/FMOD Bank/Desktop/BGM.bank
   Name: BGM
   StudioPath: bank:/BGM
-  lastModified: 638869665751397720
+  lastModified: 638871536665135238
   FileSizes: []
   Exists: 1
 --- !u!114 &-2926482977561923200
@@ -114,7 +114,7 @@ MonoBehaviour:
   Path: Assets/FMOD Bank/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638869665751564135
+  lastModified: 638871536665272931
   FileSizes: []
   Exists: 1
 --- !u!114 &-1133699690306223970
@@ -132,7 +132,7 @@ MonoBehaviour:
   Name: ComboLevel
   StudioPath: parameter:/ComboLevel
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
     data1: 1547922758
@@ -172,7 +172,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1471443635773978902}
   cacheVersion: 131847
-  cacheTime: 638869665751579325
+  cacheTime: 638871536665282916
   SerializableEventsDict:
   - key: event:/Music/Level1
     index: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   Name: ComboLevel
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
     data1: 1547922758
@@ -243,7 +243,7 @@ MonoBehaviour:
   Path: Assets/FMOD Bank/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638869665751579325
+  lastModified: 638871536665282916
   FileSizes:
   - Name: 
     Value: 1124
@@ -275,7 +275,7 @@ MonoBehaviour:
   - {fileID: 879530455187635961}
   MinDistance: 1
   MaxDistance: 20
-  Length: 102008
+  Length: 105950
 --- !u!114 &3900311237265215264
 MonoBehaviour:
   m_ObjectHideFlags: 0

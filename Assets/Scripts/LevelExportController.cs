@@ -1,35 +1,44 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Controla la exportación del historial de notas (NoteHistoryRecorder) a un JSON
-/// al finalizar el nivel o al invocar manualmente.
+/// Singleton que controla la exportación del historial de notas a JSON
+/// y genera el nombre de archivo según nivel, fecha y hora.
 /// </summary>
 public class LevelExportController : MonoBehaviour
 {
-    [Tooltip("Nombre del archivo JSON donde se guardarán los resultados.")]
-    [SerializeField] private string fileName = "NoteResults.json";
+    public static LevelExportController Instance { get; private set; }
 
-    // Para garantizar que sólo se exporta una vez
+    [Tooltip("Ruta de carpeta donde se guardará el JSON. Si está vacío, usa persistentDataPath.")]
+    [SerializeField] private string outputDirectory = "";
+
+    // Para evitar múltiples exportaciones
     private bool hasExported = false;
 
-    /// <summary>
-    /// Llamado automáticamente cuando la escena se desactiva (cambio de nivel, cierre).
-    /// </summary>
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void OnDisable()
     {
         TryExport();
     }
 
-    /// <summary>
-    /// Llamado justo antes de que la aplicación se cierre.
-    /// </summary>
     private void OnApplicationQuit()
     {
         TryExport();
     }
 
     /// <summary>
-    /// Método público para invocar la exportación desde un botón UI, si lo deseas.
+    /// Invoca manualmente la exportación.
     /// </summary>
     public void ExportNow()
     {
@@ -37,19 +46,29 @@ public class LevelExportController : MonoBehaviour
     }
 
     /// <summary>
-    /// Realiza la exportación sólo si no se ha hecho ya y el recorder está presente.
+    /// Realiza la exportación si no se ha hecho antes y el recorder existe.
     /// </summary>
     private void TryExport()
     {
         if (hasExported) return;
         if (NoteHistoryRecorder.Instance == null)
         {
-            Debug.LogWarning("LevelExportController: NoteHistoryRecorder no encontrado. No se exportará JSON.");
+            Debug.LogWarning("LevelExportController: NoteHistoryRecorder no encontrado.");
             return;
         }
 
-        NoteHistoryRecorder.Instance.ExportToJson(fileName);
-        Debug.Log($"LevelExportController: Resultados exportados a {fileName}");
+        string levelName = SceneManager.GetActiveScene().name;
+        string timestamp = DateTime.Now.ToString("ddMMyy_HHmm");
+        string fileName = $"Evaluacion_{levelName}_{timestamp}.json";
+
+        string directory = string.IsNullOrEmpty(outputDirectory)
+            ? Application.persistentDataPath
+            : outputDirectory;
+
+        string fullPath = System.IO.Path.Combine(directory, fileName);
+
+        NoteHistoryRecorder.Instance.ExportToJson(fullPath);
+        Debug.Log($"LevelExportController: Resultados exportados a {fullPath}");
         hasExported = true;
     }
 }

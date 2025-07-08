@@ -15,7 +15,9 @@ public class FMODMusicConductor : MonoBehaviour
     public List<NoteSpawnData> upcomingNotes = new List<NoteSpawnData>();
 
     [Header("FMOD Music Event")]
-    public EventReference musicEvent;
+    //public FMODUnity.EventReference musicEvent;
+    
+    [EventRef] public string musicEventPath = "event:/Music/Level1";
 
     [Header("Combo thresholds")]
     [Tooltip("Valores de combo a partir de los cuales se activa cada nivel.")]
@@ -36,9 +38,9 @@ public class FMODMusicConductor : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("[FMODMusicConductor] Starting music: " + musicEvent.Path);
+        Debug.Log("[FMODMusicConductor] Starting music: " + musicEventPath);
         // Crea y arranca la instancia de música
-        musicInstance = RuntimeManager.CreateInstance(musicEvent.Path);
+        musicInstance = RuntimeManager.CreateInstance(musicEventPath);
         musicInstance.start();
     }
 
@@ -58,7 +60,7 @@ public class FMODMusicConductor : MonoBehaviour
         }
 
         // Envía el parámetro por nombre directamente
-        musicInstance.setParameterByName("ComboLevel", level);
+        RuntimeManager.StudioSystem.setParameterByName("ComboLevel", level);
     }
 
     /// <summary>
