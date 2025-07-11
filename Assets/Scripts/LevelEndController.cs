@@ -24,6 +24,12 @@ public class LevelEndController : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    
+    /// <summary>Resetea el controlador de fin de nivel.</summary>
+    public void Reset()
+    {
+        hasEnded = false;
+    }
 
     /// <summary>
     /// Llama a este método para indicar que el nivel ha terminado.

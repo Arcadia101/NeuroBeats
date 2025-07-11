@@ -1,192 +1,227 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Random = UnityEngine.Random;
 
 /// <summary>
-/// Instancia notas según marcadores leídos desde JSON y las configura con tipo e input aleatorios.
-/// La lógica de anticipación se usa para generar cada nota con el tiempo justo antes del target.
+/// Instancia notas basadas en marcadores de FMOD, adaptando spawn dinámico,
+/// filtrado por nivel y modo de juego, y evita duplicar corutinas.
 /// </summary>
 public class MarkerDrivenSpawner : MonoBehaviour
 {
-    
+    [Header("FMOD Music Event")]
+    [EventRef]
+    [Tooltip("Path FMOD del evento de música actual.")]
+    [SerializeField] private string musicEventPath;
+
     [Header("Spawn Config")]
+    [Tooltip("Prefab de nota a instanciar.")]
     [SerializeField] private GameObject notePrefab;
-    [SerializeField] private float anticipationSeconds = 4.0f; // Tiempo de antelación para spawn
+    [Tooltip("Segundos de anticipación antes del marker.")]
+    [SerializeField] private float anticipationSeconds = 4f;
+    [Tooltip("espacio entre el cual una nota se puede spawnear verticalmente.")]
+    [SerializeField] private float verticalOffset = 3f;
+    [Tooltip("distancia desde la cual una nota spawnea horizontalmente.")]
+    [SerializeField] private float horizontalOffset = 10f;
+
+    [Header("Markers JSON")]
+    [Tooltip("Nombre de archivo JSON (en StreamingAssets) con marcadores.")]
+    [SerializeField] private string markerJsonFileName;
 
     [Header("Managers")]
+    [Tooltip("Referencia al TargetZoneManager para asignar pulsadores.")]
     [SerializeField] private TargetZoneManager targetManager;
 
-    private EventInstance musicInstance;
-    private List<NoteSpawnData> pendingNotes = new();
-    private FMODMusicConductor conductor;
+    // Lista interna de notas pendientes de spawn
+    private List<NoteSpawnData> pendingNotes = new List<NoteSpawnData>();
+    private Coroutine schedulerCoroutine;
 
-	
-
-    void Start()
+    private void Awake()
     {
-		conductor = FMODMusicConductor.Instance;
-        // Cargar datos desde el archivo JSON
-        string markerPath = System.IO.Path.Combine(Application.streamingAssetsPath, "markers.json");
-        if (!System.IO.File.Exists(markerPath))
-        {
-            Debug.LogError("Archivo de marcadores no encontrado.");
-            return;
-        }
-
-        string json = System.IO.File.ReadAllText(markerPath);
-        MarkerExport data = JsonUtility.FromJson<MarkerExport>(json);
-
-        MarkerData[] markers = null;
-        foreach (var e in data.events)
-        {
-            if (e.eventPath == conductor.musicEventPath)
-            {
-                markers = e.markers;
-                break;
-            }
-        }
-
-        if (markers == null)
-        {
-            Debug.LogError("No se encontraron marcadores para el evento.");
-            return;
-        }
-
-        // Agrega todos los marcadores a la lista de espera
-        foreach (var marker in markers)
-        {
-            float markerTime = marker.time / 1000f;
-            NoteSpawnData spawnData = new(
-                Vector3.zero,
-                markerTime,
-                marker.name
-            );
-
-            pendingNotes.Add(spawnData);
-        }
-        conductor.upcomingNotes = pendingNotes;
-
-        // Comienza la rutina de spawn
-        StartCoroutine(SpawnScheduler());
+        // No hacemos nada en Start; esperamos a SetMarkerFile
     }
 
     /// <summary>
-    /// Revisa continuamente si alguna nota debe ser instanciada pronto.
+    /// Establece el evento FMOD para este spawner.
+    /// Debe llamarse antes de SetMarkerFile.
     /// </summary>
-    IEnumerator SpawnScheduler()
-{
-    while (true)
+    public void SetMusicEvent(string newEventPath)
     {
-        float currentTime = FMODMusicConductor.Instance.CurrentSongTime;
+        musicEventPath = newEventPath;
+    }
 
-        for (int i = pendingNotes.Count - 1; i >= 0; i--)
+    /// <summary>
+    /// Carga y procesa el JSON de marcadores.
+    /// Luego reinicia la corutina de spawn.
+    /// </summary>
+    public void SetMarkerFile(string fileName)
+    {
+        // Asegurar extensión .json
+        markerJsonFileName = fileName.EndsWith(".json") ? fileName : fileName + ".json";
+        pendingNotes.Clear();
+
+        // Ruta completa
+        string path = Path.Combine(Application.streamingAssetsPath, markerJsonFileName);
+        if (!File.Exists(path))
         {
-            var note = pendingNotes[i];
+            Debug.LogError("MarkerDrivenSpawner: archivo de marcadores no encontrado: " + path);
+            return;
+        }
 
-            // ¿Es momento de spawn según anticipationSeconds?
-            if (note.arrivalTime - currentTime <= anticipationSeconds)
+        // Leer texto
+        string json = File.ReadAllText(path);
+
+        // Deserializar en lista genérica
+        List<MarkerData> markersList = new List<MarkerData>();
+        if (json.Contains("\"events\""))
+        {
+            // Formato antiguo: wrapper.events
+            MarkerExport wrapper = JsonUtility.FromJson<MarkerExport>(json);
+            foreach (var ev in wrapper.events)
             {
-                bool shouldSpawn = false;
-                string name = note.markerName;
+                if (ev.eventPath == musicEventPath)
+                {
+                    markersList.AddRange(ev.markers);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            // Formato individual
+            SingleEventExport single = JsonUtility.FromJson<SingleEventExport>(json);
+            if (single != null && single.eventPath == musicEventPath)
+                markersList.AddRange(single.markers);
+        }
 
-                // 1) Marcadores de Combo
-                if (name.StartsWith("Combo"))
+        // Orden y llenar pendingNotes
+        markersList.Sort((a, b) => a.time.CompareTo(b.time));
+        foreach (var m in markersList)
+        {
+            float t = m.time / 1000f;
+            pendingNotes.Add(new NoteSpawnData(Vector3.zero, t, m.name));
+        }
+
+        // Iniciar/reiniciar la rutina de spawn
+        RestartScheduler();
+    }
+
+    /// <summary>
+    /// Detiene corutina previa (si existe) y arranca SpawnScheduler.
+    /// </summary>
+    private void RestartScheduler()
+    {
+        if (schedulerCoroutine != null)
+            StopCoroutine(schedulerCoroutine);
+        schedulerCoroutine = StartCoroutine(SpawnScheduler());
+    }
+
+    /// <summary>
+    /// Corutina que revisa cada frame si alguna nota debe spawnear.
+    /// </summary>
+    private IEnumerator SpawnScheduler()
+    {
+        const float scheduleInterval = 0.05f; // 50 ms
+        while (true)
+        {
+            yield return new WaitForSeconds(scheduleInterval);
+            // Tiempo actual de la canción
+            float currentTime = FMODMusicConductor.Instance.CurrentSongTime;
+
+            for (int i = pendingNotes.Count - 1; i >= 0; i--)
+            {
+                var note = pendingNotes[i];
+                if (note.arrivalTime - currentTime <= anticipationSeconds)
                 {
-                    if (int.TryParse(name.Substring(5), out int x))
-                    {
-                        if (x == 1)
-                        {
-                            // Combo1 siempre spawnea, sin importar el modo ni combo
-                            shouldSpawn = true;
-                        }
-                        else
-                        {
-                            int requiredCombo = x - 1;
-                            // Sólo las ComboX>1 requieren modo Normal y combo ≥ required
-                            if (GameState.Instance.CurrentMode == GameMode.Normal &&
-                                ComboManager.Instance.CurrentCombo >= requiredCombo)
-                            {
-                                shouldSpawn = true;
-                            }
-                            else 
-                                Debug.LogWarning($"MarkerDrivenSpawner: nombre de marcador inválido '{name}'");
-                        }
-                    }
-                }
-                // 2) Marcador EndSong → fin de nivel
-                else if (name == "EndSong")
-                {
-                    // Exportar resultados y disparar fin de nivel
-                    LevelExportController.Instance.ExportNow();
-                    LevelEndController.Instance.TriggerEnd();
-                    // Ya procesado, lo quitamos de la lista
+                    SpawnNoteIfAllowed(note);
                     pendingNotes.RemoveAt(i);
-                    continue;
                 }
-                // 3) Otros marcadores (por defecto)
-                else
+            }
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// Comprueba reglas de spawn (ComboX, EndSong, GameMode) y spawnea.
+    /// </summary>
+    private void SpawnNoteIfAllowed(NoteSpawnData note)
+    {
+        bool shouldSpawn = false;
+        string name = note.markerName;
+
+        // Combo markers
+        if (name.StartsWith("Combo"))
+        {
+            if (int.TryParse(name.Substring(5), out int x))
+            {
+                if (x == 1)
                 {
+                    // Combo1 siempre
                     shouldSpawn = true;
                 }
-
-                if (shouldSpawn)
+                else
                 {
-                    SpawnNote(note);
+                    int req = x - 1;
+                    if (GameState.Instance.CurrentMode == GameMode.Normal &&
+                        ComboManager.Instance.CurrentCombo >= req)
+                        shouldSpawn = true;
                 }
-
-                pendingNotes.RemoveAt(i);
             }
         }
+        // EndSong marker
+        else if (name == "EndSong")
+        {
+            LevelExportController.Instance.ExportNow();
+            LevelEndController.Instance.TriggerEnd();
+            return;
+        }
+        else
+        {
+            // Otros markers
+            shouldSpawn = true;
+        }
 
-        yield return null;
+        if (shouldSpawn)
+            SpawnNote(note);
     }
-}
-
 
     /// <summary>
-    /// Instancia y configura una nueva nota.
+    /// Instancia la nota y la inicializa con toda la información.
     /// </summary>
-    void SpawnNote(NoteSpawnData note)
+    private void SpawnNote(NoteSpawnData note)
     {
-        // 1. Seleccionar un tipo aleatorio
+        // Elegir tipo aleatorio
         NoteInputType type = GetRandomNoteType();
-
-        // 2. Obtener target libre (compatible con ese tipo)
+        // Pedir pulsador libre
         Transform zone = targetManager.RequestRandomTarget(type);
         if (zone == null)
         {
             Debug.LogWarning($"No available targets for {note.markerName}");
             return;
         }
+        // Determinar posición de aparición lateral
+        Vector3 spawnPos = GetSpawnPosition(type);
+        // Instanciar prefab
+        var go = Instantiate(notePrefab, spawnPos, Quaternion.identity);
+        var behavior = go.GetComponent<NoteBehavior>();
+        var btn = zone.GetComponent<PlayerButton>();
 
-        // 3. Instanciar la nota y configurar su trayectoria
-        GameObject go = Instantiate(notePrefab, GetSpawnPosition(type), Quaternion.identity);
-        NoteBehavior behavior = go.GetComponent<NoteBehavior>();
-
-        PlayerButton btn = zone.GetComponent<PlayerButton>();
-        
-        behavior.Initialize(btn, targetManager, note.arrivalTime, FMODMusicConductor.Instance.CurrentSongTime, type);
-
+        // Inicializar note (movimiento + evaluación)
+        behavior.Initialize(btn, targetManager, note.arrivalTime,
+                             FMODMusicConductor.Instance.CurrentSongTime, type);
     }
 
-    /// <summary>
-    /// Determina una posición de aparición basada en el tipo.
-    /// </summary>
-    private Vector3 GetSpawnPosition(NoteInputType type)
+    /// <summary>Tipos de export JSON individual.</summary>
+    [Serializable]
+    private class SingleEventExport
     {
-        float x = (type == NoteInputType.LB || type == NoteInputType.LT) ? -10f : 10f;
-        float y = Random.Range(-3f, 3f);
-        return new Vector3(x, y, 0f);
+        public string eventPath;
+        public MarkerData[] markers;
     }
-
-    private string GetSpawnSide(NoteInputType type)
-    {
-        return type == NoteInputType.LB || type == NoteInputType.LT ? "left" : "right";
-    }
-    
-    
     /// <summary>
     /// Selección aleatoria del tipo de input requerido por la nota.
     /// </summary>
@@ -195,7 +230,31 @@ public class MarkerDrivenSpawner : MonoBehaviour
         var values = System.Enum.GetValues(typeof(NoteInputType));
         return (NoteInputType)values.GetValue(Random.Range(0, values.Length));
     }
+    
+    
+    /// <summary>
+    /// Selección aleatoria de la ubiacion de inicio requerida por la nota.
+    /// </summary>
+    private Vector3 GetSpawnPosition(NoteInputType type)
+    {
+        float x = 0f;
+        float y = Random.Range(-verticalOffset, verticalOffset); // Altura aleatoria opcional
 
+        switch (type)
+        {
+            case NoteInputType.LB:
+            case NoteInputType.LT:
+                x = -horizontalOffset; // Lado izquierdo
+                break;
+            case NoteInputType.RB:
+            case NoteInputType.RT:
+                x = horizontalOffset; // Lado derecho
+                break;
+        }
+
+        return new Vector3(x, y, 0f);
+    }
 
     
 }
+

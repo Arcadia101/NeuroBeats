@@ -44,6 +44,12 @@ public class LevelExportController : MonoBehaviour
     {
         TryExport();
     }
+    
+    /// <summary>Resetea el estado para permitir nueva exportación.</summary>
+    public void Reset()
+    {
+        hasExported = false;
+    }
 
     /// <summary>
     /// Realiza la exportación si no se ha hecho antes y el recorder existe.
@@ -58,7 +64,7 @@ public class LevelExportController : MonoBehaviour
         }
 
         string levelName = SceneManager.GetActiveScene().name;
-        string timestamp = DateTime.Now.ToString("ddMMyy_HHmm");
+        string timestamp = DateTime.Now.ToString("yyMMdd_HHmm");
         string fileName = $"Evaluacion_{levelName}_{timestamp}.json";
 
         string directory = string.IsNullOrEmpty(outputDirectory)

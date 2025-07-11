@@ -56,4 +56,12 @@ public class ComboManager : MonoBehaviour
             OnComboReset.Invoke();
         }
     }
+    
+    /// <summary>Resetea el combo a cero.</summary>
+    public void Reset()
+    {
+        CurrentCombo = 0;
+        // Opcional: notificar UI
+        OnComboReset.Invoke();
+    }
 }

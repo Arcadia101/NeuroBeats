@@ -31,6 +31,12 @@ public class NoteHistoryRecorder : MonoBehaviour
     {
         results.Add(result);
     }
+    
+    /// <summary>Resetea el historial de notas.</summary>
+    public void Reset()
+    {
+        results.Clear(); // asumiendo List<NoteResult> results
+    }
 
     /// <summary>
     /// Exporta todos los resultados a un JSON en persistentDataPath.

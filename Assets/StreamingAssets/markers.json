@@ -1,323 +1,6 @@
 {
   "events": [
     {
-      "eventPath": "event:/SFX/Bad",
-      "markers": []
-    },
-    {
-      "eventPath": "event:/Music/LevelTest",
-      "markers": [
-        {
-          "name": "Combo1",
-          "time": 5540
-        },
-        {
-          "name": "Combo1",
-          "time": 8600
-        },
-        {
-          "name": "Combo1",
-          "time": 11700
-        },
-        {
-          "name": "Combo2",
-          "time": 14600
-        },
-        {
-          "name": "Combo1",
-          "time": 18000
-        },
-        {
-          "name": "Combo2",
-          "time": 20629
-        },
-        {
-          "name": "Combo1",
-          "time": 23900
-        },
-        {
-          "name": "Combo3",
-          "time": 26600
-        },
-        {
-          "name": "Combo1",
-          "time": 29600
-        },
-        {
-          "name": "Combo1",
-          "time": 32500
-        },
-        {
-          "name": "Combo1",
-          "time": 36000
-        },
-        {
-          "name": "Combo1",
-          "time": 41575
-        },
-        {
-          "name": "Combo1",
-          "time": 41964
-        },
-        {
-          "name": "Combo1",
-          "time": 42357
-        },
-        {
-          "name": "Combo1",
-          "time": 42718
-        },
-        {
-          "name": "Combo1",
-          "time": 43099
-        },
-        {
-          "name": "Combo1",
-          "time": 43469
-        },
-        {
-          "name": "Combo1",
-          "time": 43855
-        },
-        {
-          "name": "Combo1",
-          "time": 44048
-        },
-        {
-          "name": "Combo1",
-          "time": 44221
-        },
-        {
-          "name": "Combo1",
-          "time": 44407
-        },
-        {
-          "name": "Combo1",
-          "time": 44963
-        },
-        {
-          "name": "Combo1",
-          "time": 45353
-        },
-        {
-          "name": "Combo1",
-          "time": 45719
-        },
-        {
-          "name": "Combo1",
-          "time": 45916
-        },
-        {
-          "name": "Combo1",
-          "time": 46279
-        },
-        {
-          "name": "Combo1",
-          "time": 46467
-        },
-        {
-          "name": "Combo1",
-          "time": 46850
-        },
-        {
-          "name": "Combo1",
-          "time": 47039
-        },
-        {
-          "name": "Combo1",
-          "time": 47220
-        },
-        {
-          "name": "Combo1",
-          "time": 47408
-        },
-        {
-          "name": "Combo1",
-          "time": 47607
-        },
-        {
-          "name": "Combo1",
-          "time": 47796
-        },
-        {
-          "name": "Combo1",
-          "time": 47972
-        },
-        {
-          "name": "Combo1",
-          "time": 48161
-        },
-        {
-          "name": "Combo1",
-          "time": 48339
-        },
-        {
-          "name": "Combo1",
-          "time": 48528
-        },
-        {
-          "name": "Combo1",
-          "time": 49104
-        },
-        {
-          "name": "Combo1",
-          "time": 49303
-        },
-        {
-          "name": "Combo1",
-          "time": 49492
-        },
-        {
-          "name": "Combo1",
-          "time": 49667
-        },
-        {
-          "name": "Combo1",
-          "time": 49856
-        },
-        {
-          "name": "Combo1",
-          "time": 50034
-        },
-        {
-          "name": "Combo1",
-          "time": 50223
-        },
-        {
-          "name": "Combo1",
-          "time": 50597
-        },
-        {
-          "name": "Combo1",
-          "time": 50797
-        },
-        {
-          "name": "Combo1",
-          "time": 50985
-        },
-        {
-          "name": "Combo1",
-          "time": 51161
-        },
-        {
-          "name": "Combo1",
-          "time": 51350
-        },
-        {
-          "name": "Combo1",
-          "time": 51528
-        },
-        {
-          "name": "Combo1",
-          "time": 51717
-        },
-        {
-          "name": "Combo1",
-          "time": 51917
-        },
-        {
-          "name": "Combo1",
-          "time": 52116
-        },
-        {
-          "name": "Combo1",
-          "time": 52304
-        },
-        {
-          "name": "Combo1",
-          "time": 52480
-        },
-        {
-          "name": "Combo1",
-          "time": 52669
-        },
-        {
-          "name": "Combo1",
-          "time": 52847
-        },
-        {
-          "name": "Combo1",
-          "time": 53036
-        },
-        {
-          "name": "Combo1",
-          "time": 53218
-        },
-        {
-          "name": "Combo1",
-          "time": 53417
-        },
-        {
-          "name": "Combo1",
-          "time": 53606
-        },
-        {
-          "name": "Combo1",
-          "time": 53781
-        },
-        {
-          "name": "Combo1",
-          "time": 53970
-        },
-        {
-          "name": "Combo1",
-          "time": 54148
-        },
-        {
-          "name": "Combo1",
-          "time": 54337
-        },
-        {
-          "name": "Combo1",
-          "time": 54450
-        },
-        {
-          "name": "Combo1",
-          "time": 54532
-        },
-        {
-          "name": "Combo1",
-          "time": 54629
-        },
-        {
-          "name": "Combo1",
-          "time": 54717
-        },
-        {
-          "name": "Combo1",
-          "time": 54815
-        },
-        {
-          "name": "Combo1",
-          "time": 54900
-        },
-        {
-          "name": "Combo1",
-          "time": 54995
-        },
-        {
-          "name": "Combo1",
-          "time": 55094
-        },
-        {
-          "name": "Combo 1",
-          "time": 57335
-        },
-        {
-          "name": "Combo1",
-          "time": 58078
-        }
-      ]
-    },
-    {
-      "eventPath": "event:/SFX/Good",
-      "markers": []
-    },
-    {
-      "eventPath": "event:/SFX/Perfect",
-      "markers": []
-    },
-    {
       "eventPath": "event:/SFX/Error",
       "markers": []
     },
@@ -737,6 +420,343 @@
           "time": 105950
         }
       ]
+    },
+    {
+      "eventPath": "event:/SFX/Bad",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/MenuMovement",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/Good",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/MenuCancel",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/Music/MainMenu",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/Music/LevelTest",
+      "markers": [
+        {
+          "name": "Combo1",
+          "time": 5540
+        },
+        {
+          "name": "Combo1",
+          "time": 8600
+        },
+        {
+          "name": "Combo1",
+          "time": 11700
+        },
+        {
+          "name": "Combo2",
+          "time": 14600
+        },
+        {
+          "name": "Combo1",
+          "time": 18000
+        },
+        {
+          "name": "Combo2",
+          "time": 20629
+        },
+        {
+          "name": "Combo1",
+          "time": 23900
+        },
+        {
+          "name": "Combo3",
+          "time": 26600
+        },
+        {
+          "name": "Combo1",
+          "time": 29600
+        },
+        {
+          "name": "Combo1",
+          "time": 32500
+        },
+        {
+          "name": "Combo1",
+          "time": 36000
+        },
+        {
+          "name": "Combo1",
+          "time": 41575
+        },
+        {
+          "name": "Combo1",
+          "time": 41964
+        },
+        {
+          "name": "Combo1",
+          "time": 42357
+        },
+        {
+          "name": "Combo1",
+          "time": 42718
+        },
+        {
+          "name": "Combo1",
+          "time": 43099
+        },
+        {
+          "name": "Combo1",
+          "time": 43469
+        },
+        {
+          "name": "Combo1",
+          "time": 43855
+        },
+        {
+          "name": "Combo1",
+          "time": 44048
+        },
+        {
+          "name": "Combo1",
+          "time": 44221
+        },
+        {
+          "name": "Combo1",
+          "time": 44407
+        },
+        {
+          "name": "Combo1",
+          "time": 44963
+        },
+        {
+          "name": "Combo1",
+          "time": 45353
+        },
+        {
+          "name": "Combo1",
+          "time": 45719
+        },
+        {
+          "name": "Combo1",
+          "time": 45916
+        },
+        {
+          "name": "Combo1",
+          "time": 46279
+        },
+        {
+          "name": "Combo1",
+          "time": 46467
+        },
+        {
+          "name": "Combo1",
+          "time": 46850
+        },
+        {
+          "name": "Combo1",
+          "time": 47039
+        },
+        {
+          "name": "Combo1",
+          "time": 47220
+        },
+        {
+          "name": "Combo1",
+          "time": 47408
+        },
+        {
+          "name": "Combo1",
+          "time": 47607
+        },
+        {
+          "name": "Combo1",
+          "time": 47796
+        },
+        {
+          "name": "Combo1",
+          "time": 47972
+        },
+        {
+          "name": "Combo1",
+          "time": 48161
+        },
+        {
+          "name": "Combo1",
+          "time": 48339
+        },
+        {
+          "name": "Combo1",
+          "time": 48528
+        },
+        {
+          "name": "Combo1",
+          "time": 49104
+        },
+        {
+          "name": "Combo1",
+          "time": 49303
+        },
+        {
+          "name": "Combo1",
+          "time": 49492
+        },
+        {
+          "name": "Combo1",
+          "time": 49667
+        },
+        {
+          "name": "Combo1",
+          "time": 49856
+        },
+        {
+          "name": "Combo1",
+          "time": 50034
+        },
+        {
+          "name": "Combo1",
+          "time": 50223
+        },
+        {
+          "name": "Combo1",
+          "time": 50597
+        },
+        {
+          "name": "Combo1",
+          "time": 50797
+        },
+        {
+          "name": "Combo1",
+          "time": 50985
+        },
+        {
+          "name": "Combo1",
+          "time": 51161
+        },
+        {
+          "name": "Combo1",
+          "time": 51350
+        },
+        {
+          "name": "Combo1",
+          "time": 51528
+        },
+        {
+          "name": "Combo1",
+          "time": 51717
+        },
+        {
+          "name": "Combo1",
+          "time": 51917
+        },
+        {
+          "name": "Combo1",
+          "time": 52116
+        },
+        {
+          "name": "Combo1",
+          "time": 52304
+        },
+        {
+          "name": "Combo1",
+          "time": 52480
+        },
+        {
+          "name": "Combo1",
+          "time": 52669
+        },
+        {
+          "name": "Combo1",
+          "time": 52847
+        },
+        {
+          "name": "Combo1",
+          "time": 53036
+        },
+        {
+          "name": "Combo1",
+          "time": 53218
+        },
+        {
+          "name": "Combo1",
+          "time": 53417
+        },
+        {
+          "name": "Combo1",
+          "time": 53606
+        },
+        {
+          "name": "Combo1",
+          "time": 53781
+        },
+        {
+          "name": "Combo1",
+          "time": 53970
+        },
+        {
+          "name": "Combo1",
+          "time": 54148
+        },
+        {
+          "name": "Combo1",
+          "time": 54337
+        },
+        {
+          "name": "Combo1",
+          "time": 54450
+        },
+        {
+          "name": "Combo1",
+          "time": 54532
+        },
+        {
+          "name": "Combo1",
+          "time": 54629
+        },
+        {
+          "name": "Combo1",
+          "time": 54717
+        },
+        {
+          "name": "Combo1",
+          "time": 54815
+        },
+        {
+          "name": "Combo1",
+          "time": 54900
+        },
+        {
+          "name": "Combo1",
+          "time": 54995
+        },
+        {
+          "name": "Combo1",
+          "time": 55094
+        },
+        {
+          "name": "Combo 1",
+          "time": 57335
+        },
+        {
+          "name": "Combo1",
+          "time": 58078
+        },
+        {
+          "name": "EndSong",
+          "time": 60000
+        }
+      ]
+    },
+    {
+      "eventPath": "event:/SFX/MenuConfirm",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/Perfect",
+      "markers": []
     }
   ]
 }

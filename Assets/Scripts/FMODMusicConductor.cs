@@ -1,32 +1,31 @@
+using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
-using System.Collections.Generic;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 /// <summary>
-/// Controla la reproducción de la música principal y ajusta el parámetro
-/// "ComboLevel" en FMOD según thresholds configurables desde el Inspector.
+/// Gestiona la pista de música principal. Se controla explícitamente con RestartWith().
+/// Evita arranques automáticos y duplicaciones.
 /// </summary>
 public class FMODMusicConductor : MonoBehaviour
 {
     public static FMODMusicConductor Instance { get; private set; }
-    
-    public List<NoteSpawnData> upcomingNotes = new List<NoteSpawnData>();
 
-    [Header("FMOD Music Event")]
-    //public FMODUnity.EventReference musicEvent;
-    
-    [EventRef] public string musicEventPath = "event:/Music/Level1";
+    [Header("Music Event")]
+    [EventRef]
+    [Tooltip("Path FMOD del evento musical actual.")]
+    [SerializeField] private string musicEventPath;
 
+    private EventInstance musicInstance;
+    
     [Header("Combo thresholds")]
     [Tooltip("Valores de combo a partir de los cuales se activa cada nivel.")]
     [SerializeField] private List<int> comboThresholds = new List<int> { 0, 4, 7, 10 };
 
-    private EventInstance musicInstance;
-
     private void Awake()
     {
+        // Singleton persistente
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -36,15 +35,76 @@ public class FMODMusicConductor : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    /// <summary>
+    /// Detiene y libera la pista actual (si existe) y arranca nueva música.
+    /// </summary>
+    public void RestartWith(string newEventPath)
     {
-        Debug.Log("[FMODMusicConductor] Starting music: " + musicEventPath);
-        // Crea y arranca la instancia de música
+        if (string.IsNullOrEmpty(newEventPath))
+        {
+            Debug.LogWarning("FMODMusicConductor.RestartWith: newEventPath está vacío.");
+            return;
+        }
+
+        Debug.Log($"FMODMusicConductor: Restarting with event '{newEventPath}'");
+
+        // Detener instancia previa
+        try
+        {
+            if (musicInstance.isValid())
+            {
+                musicInstance.stop(STOP_MODE.IMMEDIATE);
+                musicInstance.release();
+            }
+        }
+        catch { }
+
+        musicEventPath = newEventPath;
+
+        // Crear y arrancar nueva instancia
         musicInstance = RuntimeManager.CreateInstance(musicEventPath);
-        musicInstance.start();
+        FMOD.RESULT result = musicInstance.start();
+        if (result != FMOD.RESULT.OK)
+            Debug.LogWarning($"FMODMusicConductor: fallo al iniciar evento {musicEventPath}: {result}");
+
+        // Forzar actualización del sistema para prevenir buffer starvation
+        RuntimeManager.StudioSystem.update();
+    }
+
+    private void OnDestroy()
+    {
+        // Asegurar detención al destruir
+        try
+        {
+            if (musicInstance.isValid())
+                musicInstance.stop(STOP_MODE.IMMEDIATE);
+        }
+        catch { }
     }
 
     /// <summary>
+    /// Posición actual de la canción en segundos.
+    /// </summary>
+    public float CurrentSongTime
+    {
+        get
+        {
+            try
+            {
+                if (musicInstance.isValid())
+                {
+                    musicInstance.getTimelinePosition(out int ms);
+                    return ms / 1000f;
+                }
+            }
+            catch { }
+            return 0f;
+        }
+    }
+
+	
+
+	/// <summary>
     /// Ajusta el parámetro "ComboLevel" en FMOD según thresholds.
     /// </summary>
     public void SetComboLevel(int combo)
@@ -63,39 +123,7 @@ public class FMODMusicConductor : MonoBehaviour
         RuntimeManager.StudioSystem.setParameterByName("ComboLevel", level);
     }
 
-    /// <summary>
-    /// Expone el tiempo actual de la canción (en segundos).
-    /// </summary>
-    public float CurrentSongTime
-    {
-        get
-        {
-            musicInstance.getTimelinePosition(out int ms);
-            return ms / 1000f;
-        }
-    }
     
-    private void OnDrawGizmos()
-    {
-        // Obtén CurrentSongTime y dibuja una línea vertical en X = CurrentSongTime
-        float t = Application.isPlaying 
-            ? Instance.CurrentSongTime 
-            : 0f;
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector3(t, -5, 0), new Vector3(t, 5, 0));
-
-        // Dibuja puntos para cada upcomingNotes[i].arrivalTime
-        Gizmos.color = Color.yellow;
-        foreach (var note in upcomingNotes)
-        {
-            float x = note.arrivalTime;
-            Gizmos.DrawSphere(new Vector3(x, 0, 0), 0.1f);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        musicInstance.stop(STOP_MODE.IMMEDIATE);
-        musicInstance.release();
-    }
 }
+
+	

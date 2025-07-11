@@ -40,6 +40,20 @@ public class FeedbackManager : MonoBehaviour
     /// </summary>
     public void ShowFeedback(Transform targetTransform, FeedbackType type)
     {
+        EventReference sfxToPlay = type == FeedbackType.Perfect
+            ? perfectSfx
+            : type == FeedbackType.Good
+                ? goodSfx
+                : missSfx;
+
+        if (string.IsNullOrEmpty(sfxToPlay.Path))
+        {
+            Debug.LogWarning($"FeedbackManager: SFX not assigned for {type}");
+        }
+        else
+        {
+            RuntimeManager.PlayOneShot(sfxToPlay, targetTransform.position);
+        }
         // 1) Instantiate popup
         var go = Instantiate(feedbackPopupPrefab, targetTransform.position, Quaternion.identity);
         var sr = go.GetComponent<SpriteRenderer>();
@@ -50,15 +64,12 @@ public class FeedbackManager : MonoBehaviour
         {
             case FeedbackType.Perfect:
                 sr.sprite = perfectSprite;
-                RuntimeManager.PlayOneShot(perfectSfx, targetTransform.position);
                 break;
             case FeedbackType.Good:
                 sr.sprite = goodSprite;
-                RuntimeManager.PlayOneShot(goodSfx, targetTransform.position);
                 break;
             case FeedbackType.Miss:
                 sr.sprite = missSprite;
-                RuntimeManager.PlayOneShot(missSfx, targetTransform.position);
                 break;
         }
 
