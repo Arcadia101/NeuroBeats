@@ -1,129 +1,64 @@
-using System.Collections.Generic;
-using UnityEngine;
-using FMODUnity;
 using FMOD.Studio;
+using FMODUnity;
+using UnityEngine;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
-/// <summary>
-/// Gestiona la pista de música principal. Se controla explícitamente con RestartWith().
-/// Evita arranques automáticos y duplicaciones.
-/// </summary>
 public class FMODMusicConductor : MonoBehaviour
 {
     public static FMODMusicConductor Instance { get; private set; }
 
-    [Header("Music Event")]
-    [EventRef]
-    [Tooltip("Path FMOD del evento musical actual.")]
-    [SerializeField] private string musicEventPath;
-
+    [EventRef] [SerializeField] private string musicEventPath;
     private EventInstance musicInstance;
-    
-    [Header("Combo thresholds")]
-    [Tooltip("Valores de combo a partir de los cuales se activa cada nivel.")]
-    [SerializeField] private List<int> comboThresholds = new List<int> { 0, 4, 7, 10 };
 
     private void Awake()
     {
-        // Singleton persistente
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     /// <summary>
-    /// Detiene y libera la pista actual (si existe) y arranca nueva música.
+    /// Para la música anterior (si la hay) y arranca el nuevo evento.
     /// </summary>
     public void RestartWith(string newEventPath)
     {
         if (string.IsNullOrEmpty(newEventPath))
         {
-            Debug.LogWarning("FMODMusicConductor.RestartWith: newEventPath está vacío.");
+            Debug.LogWarning("FMODMusicConductor.RestartWith: newEventPath vacío.");
             return;
         }
+        // Detener / liberar anterior
+        if (musicInstance.isValid())
+            musicInstance.stop(STOP_MODE.IMMEDIATE);
+        musicInstance.release();
 
-        Debug.Log($"FMODMusicConductor: Restarting with event '{newEventPath}'");
-
-        // Detener instancia previa
-        try
-        {
-            if (musicInstance.isValid())
-            {
-                musicInstance.stop(STOP_MODE.IMMEDIATE);
-                musicInstance.release();
-            }
-        }
-        catch { }
-
+        // Nuevo
         musicEventPath = newEventPath;
-
-        // Crear y arrancar nueva instancia
         musicInstance = RuntimeManager.CreateInstance(musicEventPath);
-        FMOD.RESULT result = musicInstance.start();
-        if (result != FMOD.RESULT.OK)
-            Debug.LogWarning($"FMODMusicConductor: fallo al iniciar evento {musicEventPath}: {result}");
+        var res = musicInstance.start();
+        if (res != FMOD.RESULT.OK)
+            Debug.LogWarning($"FMODMusicConductor: fallo al iniciar {musicEventPath}: {res}");
 
-        // Forzar actualización del sistema para prevenir buffer starvation
+        // Forzar update apenas arranca para evitar starvation
         RuntimeManager.StudioSystem.update();
     }
 
-    private void OnDestroy()
-    {
-        // Asegurar detención al destruir
-        try
-        {
-            if (musicInstance.isValid())
-                musicInstance.stop(STOP_MODE.IMMEDIATE);
-        }
-        catch { }
-    }
-
-    /// <summary>
-    /// Posición actual de la canción en segundos.
-    /// </summary>
     public float CurrentSongTime
     {
         get
         {
-            try
-            {
-                if (musicInstance.isValid())
-                {
-                    musicInstance.getTimelinePosition(out int ms);
-                    return ms / 1000f;
-                }
-            }
-            catch { }
-            return 0f;
+            if (!musicInstance.isValid()) return 0;
+            musicInstance.getTimelinePosition(out int ms);
+            return ms / 1000f;
         }
     }
 
-	
-
-	/// <summary>
-    /// Ajusta el parámetro "ComboLevel" en FMOD según thresholds.
-    /// </summary>
-    public void SetComboLevel(int combo)
+    private void OnDestroy()
     {
-        // Determina el nivel de combo basado en los thresholds
-        int level = 0;
-        for (int i = 0; i < comboThresholds.Count; i++)
-        {
-            if (combo >= comboThresholds[i])
-                level = i;
-            else
-                break;
-        }
-
-        // Envía el parámetro por nombre directamente
-        RuntimeManager.StudioSystem.setParameterByName("ComboLevel", level);
+        if (musicInstance.isValid())
+            musicInstance.stop(STOP_MODE.IMMEDIATE);
     }
-
-    
 }
+
 
 	

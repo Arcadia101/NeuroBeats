@@ -1246,6 +1246,10 @@ MonoBehaviour:
   OnComboReset:
     m_PersistentCalls:
       m_Calls: []
+  comboThresholds: 0000000002000000050000000a000000
+  OnComboLevelChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1922975786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,7 +1263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicEventPath: event:/Music/MainMenu
-  comboThresholds: 0000000004000000070000000a000000
 --- !u!114 &1922975787
 MonoBehaviour:
   m_ObjectHideFlags: 0

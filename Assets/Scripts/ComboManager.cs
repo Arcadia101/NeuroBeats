@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -17,21 +18,18 @@ public class ComboManager : MonoBehaviour
     /// <summary>Racha actual de aciertos.</summary>
     public int CurrentCombo { get; private set; } = 0;
 
+    [Header("Combo thresholds")]
+    [Tooltip("Puntajes necesarios para cada combo extra (Combo2→Combo9).")]
+    [SerializeField] private int[] comboThresholds = new int[9];
+    
+
+    public UnityEvent<int> OnComboLevelChanged;
+
     private void Awake()
     {
-        // Singleton simple
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        OnComboIncreased.AddListener(value => {
-            FMODMusicConductor.Instance.SetComboLevel(value);
-        });
-        OnComboReset.AddListener(() => {
-            FMODMusicConductor.Instance.SetComboLevel(0);
-        });
+        DontDestroyOnLoad(gameObject);
     }
 
     /// <summary>
@@ -41,7 +39,20 @@ public class ComboManager : MonoBehaviour
     public void RegisterHit()
     {
         CurrentCombo++;
-        OnComboIncreased.Invoke(CurrentCombo);
+        SetComboLevel(CurrentCombo);
+    }
+    
+    /// <summary>
+    /// Ajusta CurrentCombo según thresholds y notifica a FMODMusicConductor.
+    /// </summary>
+    public void SetComboLevel(int combo)
+    {
+        int level = Mathf.Clamp(combo, 0, comboThresholds.Length - 1);
+        
+        // Cambia el nivel de Combo en Fmod para que suenen nuevas pistas agregadas.
+        RuntimeManager.StudioSystem.setParameterByName("ComboLevel", level);
+
+        OnComboLevelChanged?.Invoke(level);
     }
 
     /// <summary>
