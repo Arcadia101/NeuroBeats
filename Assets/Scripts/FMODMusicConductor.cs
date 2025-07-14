@@ -1,3 +1,4 @@
+using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
@@ -14,7 +15,37 @@ public class FMODMusicConductor : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        Debug.Log("[FMODMusicConductor] Awake called on " + gameObject.name);
         DontDestroyOnLoad(gameObject);
+    }
+    
+    /// <summary>
+    /// Interpola suavemente el parámetro dado al valor target en duration segundos.
+    /// </summary>
+    public void RampParameter(string paramName, float targetValue, float duration)
+    {
+        // Si ya hay una rampa en curso, la detenemos
+        StopCoroutine(ParameterLerp(paramName, 0, duration));
+        StartCoroutine(ParameterLerp(paramName, targetValue, duration));
+    }
+
+    private IEnumerator ParameterLerp(string paramName, float target, float duration)
+    {
+        // 1) Obtenemos el valor de inicio
+        musicInstance.getParameterByName(paramName, out float startValue);
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            float current = Mathf.Lerp(startValue, target, t);
+            musicInstance.setParameterByName(paramName, current);
+            yield return null;
+        }
+
+        // Aseguramos valor final exacto
+        musicInstance.setParameterByName(paramName, target);
     }
 
     /// <summary>

@@ -22,6 +22,10 @@ public class ComboManager : MonoBehaviour
     [Tooltip("Puntajes necesarios para cada combo extra (Combo2→Combo9).")]
     [SerializeField] private int[] comboThresholds = new int[9];
     
+    [Header("Fader")]
+    [Tooltip("Tiempo en el que se rampea el valor de ComboLevel.")]
+    [SerializeField] private float fader = 0.5f;
+    
 
     public UnityEvent<int> OnComboLevelChanged;
 
@@ -50,7 +54,7 @@ public class ComboManager : MonoBehaviour
         int level = Mathf.Clamp(combo, 0, comboThresholds.Length - 1);
         
         // Cambia el nivel de Combo en Fmod para que suenen nuevas pistas agregadas.
-        RuntimeManager.StudioSystem.setParameterByName("ComboLevel", level);
+        FMODMusicConductor.Instance.RampParameter("ComboLevel", level, fader);
 
         OnComboLevelChanged?.Invoke(level);
     }
@@ -63,8 +67,7 @@ public class ComboManager : MonoBehaviour
     {
         if (CurrentCombo > 0)
         {
-            CurrentCombo = 0;
-            OnComboReset.Invoke();
+            Reset();
         }
     }
     

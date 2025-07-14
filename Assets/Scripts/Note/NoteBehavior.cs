@@ -10,6 +10,12 @@ public class NoteBehavior : MonoBehaviour
 {
     private ZigZagMover mover;
     private NoteEvaluator evaluator;
+    
+    [Header("Evaluation Zones")]
+    [Tooltip("Radio de zona Perfect.")]
+    [SerializeField] private float perfectZoneRadius = 0.5f;
+    [Tooltip("Radio de zona Good.")]
+    [SerializeField] private float goodZoneRadius = 1.0f;
     public float SpawnTime { get; private set; }
     public float TargetTime { get; private set; }
     
@@ -17,7 +23,11 @@ public class NoteBehavior : MonoBehaviour
     [SerializeField] private SpriteRenderer noteSprite;
     [SerializeField] private Sprite leftSprite;
     [SerializeField] private Sprite rightSprite;
-
+    
+    [Header("Evaluation timings")]
+    [SerializeField] private float fixedEvalTime   = 0.5f; // segundos de evaluación (Good/Perfect)
+    [SerializeField] private float fixedExitTime   = 0.3f; // segundos de salida tras evaluación
+    
 
     private void Awake()
     {
@@ -37,7 +47,7 @@ public class NoteBehavior : MonoBehaviour
         
         
         // 1) Iniciar movimiento
-        mover.Initialize(transform.position, button.transform.position, markerTime - spawnTime);
+        mover.Initialize(transform.position, button.transform.position, markerTime - spawnTime, fixedEvalTime, fixedExitTime);
         
         // Selección del sprite visual según lado
         if (type == NoteInputType.LB || type == NoteInputType.LT)
@@ -73,6 +83,27 @@ public class NoteBehavior : MonoBehaviour
     {
         evaluator.BeginEvaluation();
     }
+    
+    /// <summary>
+    /// Dibuja en el editor las zonas de evaluación Good y Perfect alrededor del pulsador.
+    /// </summary>
+    private void OnDrawGizmos()
+    {
+        // Nos aseguramos de que evaluator y su transform del pulsador existen
+        if (evaluator == null || evaluator.assignedButton.transform == null) 
+            return;
+
+        Vector3 pos = evaluator.assignedButton.transform.position;
+
+        // Zona Perfect (verde)
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(pos, perfectZoneRadius);
+
+        // Zona Good (amarillo)
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(pos, goodZoneRadius);
+    }
+
 }
 
 

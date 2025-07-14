@@ -16,7 +16,7 @@ public class NoteEvaluator : MonoBehaviour
     private float evaluationStartTime;
 
     // Referencias externas
-    private PlayerButton assignedButton;
+    public PlayerButton assignedButton;
     private TargetZoneManager zoneManager;
 
     /// <summary>
