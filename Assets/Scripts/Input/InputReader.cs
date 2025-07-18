@@ -17,26 +17,76 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
 
     public Vector2 LookDirection => inputActions.Player.Direction.ReadValue<Vector2>();
 
+    #region Action Maps Definition
+    public enum ActionMapType //An enum with the action maps we have and how we work with them
+    {
+        UI,
+        Player
+    }
+
+    private ActionMapType _currentMap;
+
+    //----------------------------------------//
+    //----------------------------------------//
+    //----------------------------------------//-------------------------------------------------------------------------------------- //
+    //          Initialization                  // -------------------------------------------------------------------------------------- //
+    //----------------------------------------//-------------------------------------------------------------------------------------- //
+    //----------------------------------------//
+    //----------------------------------------//
+    
     private void OnEnable()
     {
         if (inputActions == null)
         {
             inputActions = new InputSystem_Actions();
-            inputActions.Player.SetCallbacks(this);
+        }
+
+        // Optionally activate a default map here
+        //ChangeActionMap(ActionMapType.UI);
+    }
+
+    private void OnDisable()
+    {
+        DisableAllActionMaps();
+    }
+
+    //----------------------------------------//
+    // Public Action Map Control                //
+    //----------------------------------------// Here we set the action map
+    public void ChangeActionMap(ActionMapType inputActionMap)
+    {
+        DisableAllActionMaps();
+
+        _currentMap = inputActionMap;
+
+        switch (inputActionMap)
+        {
+            case ActionMapType.UI:
+                inputActions.UI.SetCallbacks(this);
+                inputActions.UI.Enable();
+                break;
+
+            case ActionMapType.Player:
+                // You'd enable _Actions.Gameplay here and set callbacks when needed
+                inputActions.Player.SetCallbacks(this);
+                inputActions.Player.Enable();
+                break;
+            default:
+                break;
         }
     }
 
-    public void EnableGameplayInput()
+    private void DisableAllActionMaps()
     {
-        inputActions.Player.Enable();
         inputActions.UI.Disable();
-    }
-
-    public void DisableGameplayInput()
-    {
         inputActions.Player.Disable();
-        inputActions.UI.Enable();
+        // _Actions.Gameplay.Disable(); // Add when implemented
     }
+    
+    
+    #endregion
+    
+    //----------- End of Action Maps definition -----------//
 
     // === Callbacks from Input System ===
     
@@ -79,58 +129,111 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     
     #endregion
 
-    #region UI Callbacks
+       //----------------------------------------//
+    //----------------------------------------//
+    //----------------------------------------//-------------------------------------------------------------------------------------- //
+    //                  UI action map         // -------------------------------------------------------------------------------------- //
+    //----------------------------------------//-------------------------------------------------------------------------------------- //
+    //----------------------------------------//
+    //----------------------------------------//
+    #region UI Action Map
     
+    
+    //----------------------------------------//
+    //    UI action map delegates         // ------------------------------ //
+    //----------------------------------------// Here we define the delegates
+
+    public event UnityAction<Vector2> UI_Point = delegate { };
+    public event UnityAction<Vector2> UI_Navigate = delegate { };
+    public event UnityAction UI_Submit = delegate { };
+    public event UnityAction UI_Click = delegate { };
+    public event UnityAction UI_RightClick = delegate { };
+    public event UnityAction UI_ScrollWheel = delegate { };
+    public event UnityAction UI_Continue = delegate { };
+    public event UnityAction UI_Back = delegate { };
+
+
+    
+    //----------------------------------------//
+    //    UI Action Map Input Callbacks       // ------------------------------ //
+    //----------------------------------------// Here we define the methods that will invoke our delegates
+    //----------------------------------------// These are determined by the interface. Some of them will be empty methods for now.
+
+    #region UIActionMap Events
+    public void OnPoint(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            UI_Point.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnPointerPosition(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            UI_Point.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnPointerDelta(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            UI_Point.Invoke(context.ReadValue<Vector2>());
+    }
+
     public void OnNavigate(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Navigate.Invoke(context.ReadValue<Vector2>());
     }
 
     public void OnSubmit(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Submit.Invoke();
     }
 
     public void OnCancel(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
-    }
-
-    public void OnPoint(InputAction.CallbackContext context)
-    {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Back.Invoke();
     }
 
     public void OnClick(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Click.Invoke();
     }
 
     public void OnRightClick(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_RightClick.Invoke();
     }
 
     public void OnMiddleClick(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        // Left unimplemented for now
     }
 
     public void OnScrollWheel(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_ScrollWheel.Invoke();
     }
 
-    public void OnTrackedDevicePosition(InputAction.CallbackContext context)
+    public void OnContinue(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Continue.Invoke();
     }
 
-    public void OnTrackedDeviceOrientation(InputAction.CallbackContext context)
+    public void OnBack(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.phase == InputActionPhase.Performed)
+            UI_Back.Invoke();
     }
     
     #endregion
+    //------------ End of UI action map events ------------// 
+    #endregion
+    //------------ End of UI action map ------------// 
     
 }

@@ -80,7 +80,10 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(LevelConfig config)
     {
         currentConfig = config;
+        
         SceneManager.LoadScene(config.sceneName);
+        
+        
     }
     
     public void QuitGame()
