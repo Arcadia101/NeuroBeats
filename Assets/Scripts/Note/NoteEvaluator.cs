@@ -18,6 +18,7 @@ public class NoteEvaluator : MonoBehaviour
     // Referencias externas
     public PlayerButton assignedButton;
     private TargetZoneManager zoneManager;
+    public string markerCombo;
 
     /// <summary>
     /// Inicializa el evaluator con todos los datos necesarios.
@@ -27,7 +28,7 @@ public class NoteEvaluator : MonoBehaviour
         TargetZoneManager zoneManager,
         float markerTime,
         float spawnTime,
-        NoteInputType type)
+        NoteInputType type, string markerName)
     {
         this.assignedButton = button;
         this.zoneManager = zoneManager;
@@ -35,6 +36,7 @@ public class NoteEvaluator : MonoBehaviour
         this.TargetType = type;
         // Asignar al botón (pasa NoteBehavior, no NoteEvaluator)
         var behavior = GetComponent<NoteBehavior>();
+        markerCombo = markerName;
         assignedButton.AssignNote(behavior, type , spawnTime);
 
         // Encolar la NoteBehavior para evaluación (no 'this')
@@ -93,12 +95,13 @@ public class NoteEvaluator : MonoBehaviour
         // Registrar historial
         NoteHistoryRecorder.Instance.Record(new NoteResult
         {
-            markerName = gameObject.name,
+            markerName = markerCombo,
             targetTime = TargetTime,
             hitTime = now,
             inputReceived = input.ToString(),
             result = result,
-            evaluationDuration = now - evaluationStartTime
+            evaluationDuration = now - evaluationStartTime,
+            inputSpected = TargetType.ToString()
         });
 
         FinishEvaluation();

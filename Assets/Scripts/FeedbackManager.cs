@@ -45,15 +45,9 @@ public class FeedbackManager : MonoBehaviour
             : type == FeedbackType.Good
                 ? goodSfx
                 : missSfx;
-
-        if (string.IsNullOrEmpty(sfxToPlay.Path))
-        {
-            Debug.LogWarning($"FeedbackManager: SFX not assigned for {type}");
-        }
-        else
-        {
-            RuntimeManager.PlayOneShot(sfxToPlay, targetTransform.position);
-        }
+        
+        RuntimeManager.PlayOneShot(sfxToPlay, targetTransform.position);
+        
         // 1) Instantiate popup
         var go = Instantiate(feedbackPopupPrefab, targetTransform.position, Quaternion.identity);
         var sr = go.GetComponent<SpriteRenderer>();

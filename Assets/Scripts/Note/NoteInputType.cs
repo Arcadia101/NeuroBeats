@@ -8,5 +8,6 @@ public enum NoteInputType
     LB, // Left Button (color azul)
     LT, // Left Trigger (color azul)
     RB, // Right Button (color rojo)
-    RT  // Right Trigger (color rojo)
+    RT,  // Right Trigger (color rojo)
+    //Skip // No Input
 }

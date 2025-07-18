@@ -11,5 +11,5 @@ public class NoteResult
     public string inputReceived;     // Tipo de input que el jugador pulsó
     public string result;            // "Perfect", "Good" o "Miss"
     public float evaluationDuration; // Duración desde que comenzó la evaluación hasta el resultado (s)
-    public string side;             // "Left" o "Right"
+    public string inputSpected;      // Tipo de input con el que spawneo la nota
 }

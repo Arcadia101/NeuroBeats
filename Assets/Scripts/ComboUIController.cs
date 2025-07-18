@@ -23,7 +23,7 @@ public class ComboUIController : MonoBehaviour
     private void Awake()
     {
         // Suscribirse a eventos de ComboManager
-        ComboManager.Instance.OnComboIncreased.AddListener(HandleComboIncrease);
+        ComboManager.Instance.OnComboLevelChanged.AddListener(HandleComboIncrease);
         ComboManager.Instance.OnComboReset.AddListener(HandleComboReset);
 
         comboText.gameObject.SetActive(false);

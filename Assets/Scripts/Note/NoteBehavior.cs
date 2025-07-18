@@ -18,6 +18,7 @@ public class NoteBehavior : MonoBehaviour
     [SerializeField] private float goodZoneRadius = 1.0f;
     public float SpawnTime { get; private set; }
     public float TargetTime { get; private set; }
+    public string MarkerName { get; private set; }
     
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer noteSprite;
@@ -27,6 +28,7 @@ public class NoteBehavior : MonoBehaviour
     [Header("Evaluation timings")]
     [SerializeField] private float fixedEvalTime   = 0.5f; // segundos de evaluación (Good/Perfect)
     [SerializeField] private float fixedExitTime   = 0.3f; // segundos de salida tras evaluación
+    
     
 
     private void Awake()
@@ -40,14 +42,14 @@ public class NoteBehavior : MonoBehaviour
     /// Inicializa ambos componentes con los parámetros necesarios.
     /// </summary>
     public void Initialize(PlayerButton button, TargetZoneManager zoneManager,
-        float markerTime, float spawnTime, NoteInputType type)
+        float markerTime, float spawnTime, NoteInputType type, string markerName)
     {
         this.SpawnTime = spawnTime;
         this.TargetTime = markerTime;
-        
+        this.MarkerName = markerName;
         
         // 1) Iniciar movimiento
-        mover.Initialize(transform.position, button.transform.position, markerTime - spawnTime, fixedEvalTime, fixedExitTime);
+        mover.Initialize(transform.position, button.transform.position, markerTime - spawnTime);
         
         // Selección del sprite visual según lado
         if (type == NoteInputType.LB || type == NoteInputType.LT)
@@ -60,7 +62,7 @@ public class NoteBehavior : MonoBehaviour
         }
 
         // 2) Iniciar evaluación
-        evaluator.Initialize(button, zoneManager, markerTime, spawnTime, type);
+        evaluator.Initialize(button, zoneManager, markerTime, spawnTime, type, markerName);
     }
     //--- FACHADA hacia NoteEvaluator ---//
     public NoteInputType InputType 

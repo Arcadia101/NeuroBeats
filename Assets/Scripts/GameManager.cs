@@ -82,4 +82,9 @@ public class GameManager : MonoBehaviour
         currentConfig = config;
         SceneManager.LoadScene(config.sceneName);
     }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

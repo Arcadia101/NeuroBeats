@@ -32,7 +32,7 @@ public class FMODMusicConductor : MonoBehaviour
     private IEnumerator ParameterLerp(string paramName, float target, float duration)
     {
         // 1) Obtenemos el valor de inicio
-        musicInstance.getParameterByName(paramName, out float startValue);
+        FMODUnity.RuntimeManager.StudioSystem.getParameterByName(paramName, out float startValue);
 
         float elapsed = 0f;
         while (elapsed < duration)
@@ -40,12 +40,12 @@ public class FMODMusicConductor : MonoBehaviour
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
             float current = Mathf.Lerp(startValue, target, t);
-            musicInstance.setParameterByName(paramName, current);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName(paramName, current);
             yield return null;
         }
 
         // Aseguramos valor final exacto
-        musicInstance.setParameterByName(paramName, target);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName(paramName, target);
     }
 
     /// <summary>

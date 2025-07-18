@@ -212,7 +212,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
 
         // Inicializar note (movimiento + evaluación)
         behavior.Initialize(btn, targetManager, note.arrivalTime,
-                             FMODMusicConductor.Instance.CurrentSongTime, type);
+                             FMODMusicConductor.Instance.CurrentSongTime, type, note.markerName);
     }
 
     /// <summary>Tipos de export JSON individual.</summary>
