@@ -105,7 +105,7 @@ public class ZigZagMover : MonoBehaviour
 
         // Marca con un color distinto el punto de salida
         Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(path[path.Count - 1], 0.08f);
+        Gizmos.DrawSphere(path[path.Count - 1], 0.18f);
     }
 }
 
