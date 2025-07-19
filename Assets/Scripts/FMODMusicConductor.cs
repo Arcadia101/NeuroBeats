@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
@@ -18,7 +19,12 @@ public class FMODMusicConductor : MonoBehaviour
         Debug.Log("[FMODMusicConductor] Awake called on " + gameObject.name);
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    private void Start()
+    {
+        RestartWith(musicEventPath);
+    }
+
     /// <summary>
     /// Interpola suavemente el parámetro dado al valor target en duration segundos.
     /// </summary>

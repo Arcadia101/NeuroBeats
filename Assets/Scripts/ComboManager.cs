@@ -24,7 +24,7 @@ public class ComboManager : MonoBehaviour
     
     [Header("Fader")]
     [Tooltip("Tiempo en el que se rampea el valor de ComboLevel.")]
-    [SerializeField] private float fader = 0.5f;
+    [SerializeField] private float fader = 1.5f;
     
 
     public UnityEvent<int> OnComboLevelChanged;

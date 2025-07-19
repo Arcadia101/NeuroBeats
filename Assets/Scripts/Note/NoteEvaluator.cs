@@ -69,8 +69,8 @@ public class NoteEvaluator : MonoBehaviour
         else if (absDelta <= 0.25f) result = "Good";
         else result = "Miss";
 
-        bool correctInput = input == TargetType;
-        if (!correctInput && result != "Miss") result = "Good";
+        //bool correctInput = input == TargetType;
+        //if (!correctInput && result != "Miss") result = "Good";
 
         // Feedback visual/sonoro
         if (result == "Perfect") assignedButton.ShowPerfectState();

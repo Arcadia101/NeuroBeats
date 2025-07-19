@@ -37,9 +37,11 @@ public class ComboUIController : MonoBehaviour
         // Si era una rutina de ocultar en curso, la detenemos
         if (hideRoutine != null) StopCoroutine(hideRoutine);
 
-        comboText.text = $"COMBO x{newCombo}";
+        comboText.text = $"Score: {newCombo}";
         comboText.color = Color.white;
         comboText.gameObject.SetActive(true);
+        if (hideRoutine != null) StopCoroutine(hideRoutine);
+        hideRoutine = StartCoroutine(FadeAndHide());
     }
 
     /// <summary>
