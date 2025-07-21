@@ -11,6 +11,7 @@ public class FMODMusicConductor : MonoBehaviour
 
     [EventRef] [SerializeField] private string musicEventPath;
     private EventInstance musicInstance;
+    //public NoteInputType laPerraNota;
 
     private void Awake()
     {
@@ -70,7 +71,17 @@ public class FMODMusicConductor : MonoBehaviour
         musicInstance.release();
 
         // Nuevo
-        musicEventPath = newEventPath;
+        if (musicEventPath == newEventPath && musicEventPath != "event:/Music/MainMenu")
+        {
+            return;
+            
+        }
+        else
+        {
+            musicEventPath = newEventPath;
+        }
+        
+        Debug.Log("[FMODMusicConductor] RestartWith: " + musicEventPath);
         musicInstance = RuntimeManager.CreateInstance(musicEventPath);
         var res = musicInstance.start();
         if (res != FMOD.RESULT.OK)

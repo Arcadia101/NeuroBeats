@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -111,8 +112,39 @@ public class PlayerButton : MonoBehaviour
     /// <summary>
     /// Asignado por la nota al instanciarse: muestra Left/Right variante normal.
     /// </summary>
+    ///
+    Level1Behavior level1Behavior;
+
+    private void Awake()
+    {
+        //level1Behavior = transform.parent.GetComponent<Level1Behavior>();
+    }
+
+    
+    private void OnEnable()
+    {
+        //level1Behavior.controlsChanged += UpdateIcon;
+    }
+
+    /*
+     * 
+    void UpdateIcon()
+    {
+        NoteInputType type = FMODMusicConductor.Instance.laPerraNota;
+        switch (type)
+        {
+            case NoteInputType.LB: letterRenderer.sprite = level1Behavior.currentScheme.Left1; break;
+            case NoteInputType.LT: letterRenderer.sprite = level1Behavior.currentScheme.Left2; break;
+            case NoteInputType.RB: letterRenderer.sprite = level1Behavior.currentScheme.Right1; break;
+            case NoteInputType.RT:
+                letterRenderer.sprite = level1Behavior.currentScheme.Right2; break; 
+        }
+    }
+     */
+
     public void AssignNote(NoteBehavior note, NoteInputType type, float spawnTime)
     {
+        
         currentNote = note;
         currentType = type;
 
@@ -128,7 +160,8 @@ public class PlayerButton : MonoBehaviour
             case NoteInputType.LB: letterRenderer.sprite = spriteBLeft; break;
             case NoteInputType.LT: letterRenderer.sprite = spriteTLeft; break;
             case NoteInputType.RB: letterRenderer.sprite = spriteBRight; break;
-            case NoteInputType.RT: letterRenderer.sprite = spriteTRight; break;
+            case NoteInputType.RT:
+                letterRenderer.sprite = spriteTRight; break;
         }
         letterRenderer.enabled = true;
     }

@@ -113,7 +113,7 @@ public class TutorialLevel : MonoBehaviour
         }
         else
         {
-            GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu);
+            GameScenesManager.Instance.ChangeScene(SceneName.Level1);
         }
     }
 
@@ -144,6 +144,8 @@ public class TutorialLevel : MonoBehaviour
 
     public void SetProfile(int profile)
     {
+        currentTutorialIcon1.gameObject.SetActive(true);
+        currentTutorialIcon2.gameObject.SetActive(true);
         //Debug.Log("We will try to set a profile on TutorialLevel");
         switch (profile)
         {

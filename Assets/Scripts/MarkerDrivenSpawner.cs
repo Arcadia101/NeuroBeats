@@ -196,6 +196,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
     {
         // Elegir tipo aleatorio
         NoteInputType type = GetRandomNoteType();
+        //FMODMusicConductor.Instance.laPerraNota = type;
         // Pedir pulsador libre
         Transform zone = targetManager.RequestRandomTarget(type);
         if (zone == null)

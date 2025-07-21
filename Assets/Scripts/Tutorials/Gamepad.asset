@@ -19,8 +19,8 @@ MonoBehaviour:
   StartButton: {fileID: 21300000, guid: da75a4bf709142f48a86fa7eff2cc9f0, type: 3}
   BackButton: {fileID: 21300000, guid: 33b5f3188d110d2499363564fa418dcf, type: 3}
   SubmitButton: {fileID: 21300000, guid: ecc2686e451fb134baa5da1e422493ad, type: 3}
-  PreviousButton: {fileID: 21300000, guid: 6f419c1bcf72d944d92cfa952619ad85, type: 3}
-  NextButton: {fileID: 21300000, guid: 73841ff8a88b3f74c9013e378aa55db2, type: 3}
+  PreviousButton: {fileID: 21300000, guid: 53962337feb5c974c92923ade206d68d, type: 3}
+  NextButton: {fileID: 21300000, guid: d34333aed3ffc0e4cb34c6fdc9660288, type: 3}
   videoClips:
   - {fileID: 32900000, guid: 1d64b61313a864b4aaf2f3ffb44bd9fc, type: 3}
   - {fileID: 32900000, guid: e36d305ab07d93647b0b46bd452e879b, type: 3}
