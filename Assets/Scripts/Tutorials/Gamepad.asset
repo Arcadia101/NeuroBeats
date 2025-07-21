@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d94e12f3ea735a4fb5727e36a4f31ba, type: 3}
+  m_Name: Gamepad
+  m_EditorClassIdentifier: 
+  Right1: {fileID: 21300000, guid: 1043e98910aea3649b77d3404809734c, type: 3}
+  Right2: {fileID: 21300000, guid: 1464697f4fadf2042b9e2b94b1fe7648, type: 3}
+  Left1: {fileID: 21300000, guid: 38bb559d69591be448052a58b74d0859, type: 3}
+  Left2: {fileID: 21300000, guid: 2bcca78acbcb58a43a0904e2b9e937fd, type: 3}
+  StartButton: {fileID: 21300000, guid: da75a4bf709142f48a86fa7eff2cc9f0, type: 3}
+  BackButton: {fileID: 21300000, guid: 33b5f3188d110d2499363564fa418dcf, type: 3}
+  SubmitButton: {fileID: 21300000, guid: ecc2686e451fb134baa5da1e422493ad, type: 3}
+  PreviousButton: {fileID: 21300000, guid: 6f419c1bcf72d944d92cfa952619ad85, type: 3}
+  NextButton: {fileID: 21300000, guid: 73841ff8a88b3f74c9013e378aa55db2, type: 3}
+  videoClips:
+  - {fileID: 32900000, guid: 1d64b61313a864b4aaf2f3ffb44bd9fc, type: 3}
+  - {fileID: 32900000, guid: e36d305ab07d93647b0b46bd452e879b, type: 3}
+  - {fileID: 32900000, guid: ad6b9dbe58f42a74b9fac9c52816a598, type: 3}
+  textInfo:
+  - Cuando el circulo sea rosado, utiliza los botones superior izquierdo e inferior
+    izquierdo (LB y LT) segun corresponda
+  - Cuando el circulo sea azul, utiliza los botones superior detecho e inferior detecho
+    (RB y RT) segun corresponda
+  - "Intenta presionar los botones justo en el centro para una mejor puntuaci\xF3n"

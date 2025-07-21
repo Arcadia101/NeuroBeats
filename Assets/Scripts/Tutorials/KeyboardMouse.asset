@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d94e12f3ea735a4fb5727e36a4f31ba, type: 3}
+  m_Name: KeyboardMouse
+  m_EditorClassIdentifier: 
+  Right1: {fileID: 21300000, guid: e52370151b310ea4aa066a7d9bc5fc33, type: 3}
+  Right2: {fileID: 21300000, guid: 4c3b81906d26b514f94ca2b91828d51c, type: 3}
+  Left1: {fileID: 21300000, guid: 43296ecc8631c2a41a7cf9839856f212, type: 3}
+  Left2: {fileID: 21300000, guid: c73af39456df89547aaeef4421d41a8c, type: 3}
+  StartButton: {fileID: 21300000, guid: 8f7c75a81b5e2a04b82249320274100a, type: 3}
+  BackButton: {fileID: 21300000, guid: 923f2b14d48bd474e829ef73d063e91f, type: 3}
+  SubmitButton: {fileID: 21300000, guid: 8f7c75a81b5e2a04b82249320274100a, type: 3}
+  PreviousButton: {fileID: 21300000, guid: 572338ce71979254b923cc1b940efbe2, type: 3}
+  NextButton: {fileID: 21300000, guid: 2ed1ceac921cd064a862f8850b127335, type: 3}
+  videoClips:
+  - {fileID: 32900000, guid: 0ab56411f8221a74cb2c08836ba72c39, type: 3}
+  - {fileID: 32900000, guid: 4ef04ebcbd647b442a0065e561bdf319, type: 3}
+  - {fileID: 32900000, guid: 07ca91b9e84628c43aadaa326a0c5e6b, type: 3}
+  textInfo:
+  - Cuando el circulo sea rosado, utiliza las teclas W y S segun corresponda
+  - Cuando el circulo sea rosado, utiliza las teclas O y K segun corresponda
+  - "Intenta presionar la tecla justo en el centro para una mejor puntuaci\xF3n"

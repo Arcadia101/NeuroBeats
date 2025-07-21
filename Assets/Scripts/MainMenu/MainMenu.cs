@@ -57,15 +57,32 @@ public class MainMenu : MonoBehaviour
     {
         //Debug.Log("Start New Game");
        // GameScenesManager.Instance.ChangeScene(SceneName.GameEnvironment);
-       GameManager.Instance.LoadLevel(config);
+       
+       if (GameManager.Instance == null)
+       {
+           GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu);
+
+       }
+       else
+       {
+           GameManager.Instance.LoadLevel(config);
+       }
     }
 
     //----------------------------------------//
     //   To start the tutorial- PART OF NewGame Interface    // ------------------------------ //
     //----------------------------------------//
-    public void StartTutorial()
+    public void StartTutorial(LevelConfig config)
     {
-       //Debug.Log("Start Tutorial");
+        if (GameManager.Instance == null)
+        {
+            GameScenesManager.Instance.ChangeScene(SceneName.Tutorial);
+
+        }
+        else
+        {
+            GameManager.Instance.LoadLevel(config);
+        }
     }
 
     //----------------------------------------//

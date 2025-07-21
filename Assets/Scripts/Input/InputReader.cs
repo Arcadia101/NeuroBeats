@@ -13,6 +13,7 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     public event UnityAction RightButton = delegate { };
     public event UnityAction MenuButton = delegate { };
 
+
     private InputSystem_Actions inputActions;
 
     public Vector2 LookDirection => inputActions.Player.Direction.ReadValue<Vector2>();
@@ -151,6 +152,9 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     public event UnityAction UI_ScrollWheel = delegate { };
     public event UnityAction UI_Continue = delegate { };
     public event UnityAction UI_Back = delegate { };
+    public event UnityAction UI_Next = delegate { };
+    public event UnityAction UI_Previous = delegate { };
+
 
 
     
@@ -229,6 +233,18 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     {
         if (context.phase == InputActionPhase.Performed)
             UI_Back.Invoke();
+    }
+
+    public void OnNext(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            UI_Next.Invoke();
+    }
+
+    public void OnPrevious(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+            UI_Previous.Invoke();
     }
     
     #endregion

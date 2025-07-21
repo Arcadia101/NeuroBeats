@@ -11,6 +11,7 @@ public class SceneMapping
         { SceneName.Level1, "Level 1" },
         { SceneName.TestLevel, "TestLevel" },
         { SceneName.Credits, "Credits" },
+        { SceneName.Tutorial, "Tutorial" },
         // Add more scenes here
     };
 

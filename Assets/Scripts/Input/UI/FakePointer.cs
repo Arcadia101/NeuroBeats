@@ -27,20 +27,24 @@ public class FakePointer : MonoBehaviour
 
     IEnumerator InitializeCanvas()
     {
+        /*
+         * 
         while (uiCanvas == null)
         {
             yield return null;
         }
+         */
+        uiCanvas = transform.parent.GetComponent<Canvas>();
         raycaster = uiCanvas.GetComponent<GraphicRaycaster>();
         
         if (raycaster != null)
         {
-            Debug.Log("We were able to initialize the raycaster");
+            //Debug.Log("We were able to initialize the raycaster");
         }
 
         if (pointerRectTransform != null)
         {
-            Debug.Log("We were able to initialize the pointer rect transform");
+            //Debug.Log("We were able to initialize the pointer rect transform");
         }
         
         yield return null;

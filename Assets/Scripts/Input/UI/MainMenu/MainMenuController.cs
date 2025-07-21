@@ -20,7 +20,7 @@ using UnityEngine.InputSystem;
     /// 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private InputReader inputReader; // Reference to the input reader instance (we should assign this through the 
+    [SerializeField] private InputReader inputReader; // Reference to the input reader instance (we should assign this through the inspector)
 
     //----------------------------------------//
     //    Delegates definition         // ------------------------------ //

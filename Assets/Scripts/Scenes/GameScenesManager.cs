@@ -24,18 +24,22 @@ public class GameScenesManager : MonoBehaviour
 
     public void ChangeScene(SceneName sceneEnum)
     {
-        string sceneName = SceneMapping.GetSceneName(sceneEnum);
+        if (GameManager.Instance == null)
+        {  
+            string sceneName = SceneMapping.GetSceneName(sceneEnum);
 
-        if (string.IsNullOrEmpty(sceneName))
-        {
-            Debug.LogError($"Scene name for {sceneEnum} is not defined!");
-            return;
-        }
+            if (string.IsNullOrEmpty(sceneName))
+            {
+                Debug.LogError($"Scene name for {sceneEnum} is not defined!");
+                return;
+            }
 
-        if (SceneManager.GetActiveScene().name != sceneName)
-        {
-            Debug.Log($"Changing scene to: {sceneName}");
-            SceneManager.LoadScene(sceneName);
+            if (SceneManager.GetActiveScene().name != sceneName)
+            {
+                Debug.Log($"Changing scene to: {sceneName}");
+                SceneManager.LoadScene(sceneName);
+            }
+            
         }
     }
 }
