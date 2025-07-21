@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
     
         // 2) Reconfigurar spawner de marcadores
-        var spawner = FindObjectOfType<MarkerDrivenSpawner>();
+        var spawner = FindAnyObjectByType<MarkerDrivenSpawner>();
         if (spawner != null)
         {
             string markerFile = currentConfig.markerJsonFileName;
