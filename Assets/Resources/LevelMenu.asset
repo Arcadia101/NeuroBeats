@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24cb0cd88becb6f4b9d9d87500a2c7bb, type: 3}
-  m_Name: Menu Config
+  m_Name: LevelMenu
   m_EditorClassIdentifier: 
   sceneName: LevelMenu
   musicEvent: event:/Music/MainMenu

@@ -58,14 +58,14 @@ public class MainMenu : MonoBehaviour
         //Debug.Log("Start New Game");
        // GameScenesManager.Instance.ChangeScene(SceneName.GameEnvironment);
        
-       if (GameManager.Instance == null)
+       if (GameManager.Instance != null)
        {
-           GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu);
+           GameManager.Instance.LoadLevel(config); //este es el de camilo
 
        }
        else
        {
-           GameManager.Instance.LoadLevel(config);
+           GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu); //Este es el mio
        }
     }
 
@@ -74,14 +74,13 @@ public class MainMenu : MonoBehaviour
     //----------------------------------------//
     public void StartTutorial(LevelConfig config)
     {
-        if (GameManager.Instance == null)
+        if (GameManager.Instance != null) //este es el de camilo
         {
-            GameScenesManager.Instance.ChangeScene(SceneName.Tutorial);
-
+            GameManager.Instance.LoadLevel(config);
         }
         else
         {
-            GameManager.Instance.LoadLevel(config);
+            GameScenesManager.Instance.ChangeScene(SceneName.Tutorial); //Este es el mio
         }
     }
 

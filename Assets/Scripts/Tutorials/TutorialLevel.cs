@@ -102,9 +102,16 @@ public class TutorialLevel : MonoBehaviour
         }
     }
 
+
+    [SerializeField] private LevelConfig levelMenu;
+    [SerializeField] private LevelConfig MainMenu;
     public void StartGame()
     {
-        if (GameScenesManager.Instance != null)
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadLevel(levelMenu);
+        }
+        else
         {
             GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu);
         }
@@ -113,6 +120,9 @@ public class TutorialLevel : MonoBehaviour
     public void BackToMainMenu()
     {
         if (GameScenesManager.Instance != null)
+        {
+            GameManager.Instance.LoadLevel(MainMenu);
+        }else
         {
             GameScenesManager.Instance.ChangeScene(SceneName.MainMenu);
         }
@@ -134,7 +144,7 @@ public class TutorialLevel : MonoBehaviour
 
     public void SetProfile(int profile)
     {
-        Debug.Log("We will try to set a profile on TutorialLevel");
+        //Debug.Log("We will try to set a profile on TutorialLevel");
         switch (profile)
         {
             case 0:
@@ -163,7 +173,7 @@ public class TutorialLevel : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("We were able to Set a profile from TutorialLevel");
+        //Debug.Log("We were able to Set a profile from TutorialLevel");
         DisplayVideo();
     }
     

@@ -893,6 +893,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""4b1b5ac3-2114-403e-ad27-4064f35b54d0"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""bc999bda-b64e-4e43-9404-b98b2f4cc8e9"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",

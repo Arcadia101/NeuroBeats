@@ -579,6 +579,8 @@ MonoBehaviour:
   currentProfile: 0
   defaultImage: {fileID: 0}
   iconSwitcher: {fileID: 962548879}
+  levelMenu: {fileID: 11400000, guid: 6a654cc17a56deb4d9814fc27695a1a1, type: 2}
+  MainMenu: {fileID: 11400000, guid: 74fe5afae02681048a5224da70f62638, type: 2}
   videoPlayer: {fileID: 1742277313}
 --- !u!1 &481744322
 GameObject:
@@ -2385,7 +2387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 785.1697, y: -360}
+  m_AnchoredPosition: {x: 785.1697, y: -367.3}
   m_SizeDelta: {x: 141, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1582837538

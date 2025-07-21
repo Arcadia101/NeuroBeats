@@ -81,8 +81,16 @@ public class GameManager : MonoBehaviour
     {
         currentConfig = config;
         
-        SceneManager.LoadScene(config.sceneName);
-        
+        Debug.Log("Vamo a cargar "+ config.sceneName);
+        try
+        {
+            SceneManager.LoadScene(config.sceneName);
+            Debug.Log("Si se pudo perros");
+        }
+        catch
+        {
+            Debug.Log("No se pudo perros");
+        }
         
     }
     
