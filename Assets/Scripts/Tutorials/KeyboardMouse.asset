@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d94e12f3ea735a4fb5727e36a4f31ba, type: 3}
   m_Name: KeyboardMouse
   m_EditorClassIdentifier: 
-  Right1: {fileID: 21300000, guid: e52370151b310ea4aa066a7d9bc5fc33, type: 3}
-  Right2: {fileID: 21300000, guid: 4c3b81906d26b514f94ca2b91828d51c, type: 3}
-  Left1: {fileID: 21300000, guid: 43296ecc8631c2a41a7cf9839856f212, type: 3}
-  Left2: {fileID: 21300000, guid: c73af39456df89547aaeef4421d41a8c, type: 3}
+  Right1: {fileID: 21300000, guid: becb0d113f0a8394086c53edf06ab13d, type: 3}
+  Right2: {fileID: 21300000, guid: 250097d90b44c2c4285bf33234f9b3fe, type: 3}
+  Left1: {fileID: 21300000, guid: b5a6fe2f3ad7f3945be70f3b5a002e78, type: 3}
+  Left2: {fileID: 21300000, guid: e1fd7549a62d6144fbf61cd513513c5d, type: 3}
   StartButton: {fileID: 21300000, guid: 8f7c75a81b5e2a04b82249320274100a, type: 3}
   BackButton: {fileID: 21300000, guid: 923f2b14d48bd474e829ef73d063e91f, type: 3}
   SubmitButton: {fileID: 21300000, guid: 8f7c75a81b5e2a04b82249320274100a, type: 3}

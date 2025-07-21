@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial Config
   m_EditorClassIdentifier: 
   sceneName: Tutorial
-  musicEvent: 
+  musicEvent: event:/Music/MainMenu
   markerJsonFileName: 
   background: {fileID: 0}
