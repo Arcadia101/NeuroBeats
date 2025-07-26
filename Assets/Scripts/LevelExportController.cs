@@ -64,6 +64,7 @@ public class LevelExportController : MonoBehaviour
         }
 
         string levelName = SceneManager.GetActiveScene().name;
+        if (levelName == "Menu" || levelName == "LevelMenu") return;
         string timestamp = DateTime.Now.ToString("yyMMdd_HHmm");
         string fileName = $"Evaluacion_{levelName}_{timestamp}.json";
 
