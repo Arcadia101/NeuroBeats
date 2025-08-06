@@ -17,7 +17,7 @@ public class ZigZagMover : MonoBehaviour
 
     [Header("Exit Zone")]
     [Tooltip("Distancia extra más allá del target, en la dirección de llegada.")]
-    [SerializeField] private float exitDistance = 1f;
+    [SerializeField] private float exitDistance = 2f;
 
     private List<Vector3> path;
     private float speed;

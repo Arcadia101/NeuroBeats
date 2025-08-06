@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2881949486fd534cb57691dbe0cd692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perfectZoneRadius: 0.5
+  goodZoneRadius: 1
   noteSprite: {fileID: 5753132274020010619}
   leftSprite: {fileID: 21300000, guid: 1c73a17588793864aabc35b29dd0c4df, type: 3}
   rightSprite: {fileID: 21300000, guid: 8ceb85a508d683445a6a4cc6fecf5f1b, type: 3}
@@ -123,6 +125,7 @@ MonoBehaviour:
   maxDeviation: 2
   minSegments: 3
   maxSegments: 5
+  exitDistance: 2
 --- !u!114 &275714695640247831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +138,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e15219f93691c44193cc07e5badebc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assignedButton: {fileID: 0}
+  markerCombo: 

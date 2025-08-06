@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7819e8fb-d8c0-4305-befb-90fdfea6ecc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Background.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Background.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BG_Color.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BG_Color.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BackgroundShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BackgroundShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Nebulosa.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Nebulosa.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level 0 Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Level 0 Config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level 1 Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Level 1 Config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu Config.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Background.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Background.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +43,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Graohics/MainMenu.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Graohics/MainMenu.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -26,16 +58,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging UnityCloud__Version(Arcadia__WorkSpace)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;UnityCloud__Version(Arcadia__WorkSpace)&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.1.13f1\Editor\Unity.exe" />
@@ -97,6 +134,18 @@
       <updated>1753552894850</updated>
       <workItem from="1753552897399" duration="3000" />
       <workItem from="1753553335918" duration="43000" />
+      <workItem from="1753662550952" duration="9255000" />
+      <workItem from="1753722919114" duration="1103000" />
+      <workItem from="1753724056018" duration="1862000" />
+      <workItem from="1753744150247" duration="157000" />
+      <workItem from="1753834252312" duration="2152000" />
+      <workItem from="1753843945947" duration="4336000" />
+      <workItem from="1753851436982" duration="434000" />
+      <workItem from="1753993344061" duration="657000" />
+      <workItem from="1753994964826" duration="183000" />
+      <workItem from="1754011785931" duration="4924000" />
+      <workItem from="1754330264890" duration="2873000" />
+      <workItem from="1754438444493" duration="444000" />
     </task>
     <servers />
   </component>
@@ -130,5 +179,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cb0cd88becb6f4b9d9d87500a2c7bb, type: 3}
   m_Name: Level 0 Config
   m_EditorClassIdentifier: 
-  sceneName: TestLevel
+  sceneName: PlayLevel
   musicEvent: event:/Music/LevelTest
   markerJsonFileName: Markers/event__Music_LevelTest.json
-  background: {fileID: 21300000, guid: 221d8556feb183a489f35434a5098400, type: 3}
+  background: {fileID: 0}

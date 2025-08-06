@@ -24,7 +24,7 @@ public class FMODMusicConductor : MonoBehaviour
     /// </summary>
     public void RampParameter(string paramName, float targetValue, float duration)
     {
-        // Si ya hay una rampa en curso, la detenemos
+        // Si ya hay un ramp en curso, lo detenemos
         StopCoroutine(ParameterLerp(paramName, 0, duration));
         StartCoroutine(ParameterLerp(paramName, targetValue, duration));
     }
