@@ -1,95 +1,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Gestiona las zonas de pulsación (PlayerButtons). Asigna zonas disponibles por tipo
-/// y permite liberar zonas usadas para futuras notas.
-/// </summary>
 public class TargetZoneManager : MonoBehaviour
 {
-    [System.Serializable]
-    public struct TypedTarget
+    [Tooltip("Todos los posibles pulsadores (PlayerButtons) en escena.")]
+    [SerializeField] private List<Transform> targetPoints;
+
+    // Mapa de disponibilidad
+    private Dictionary<Transform, bool> targetAvailability = new Dictionary<Transform, bool>();
+
+    void Awake()
     {
-        public NoteInputType type;
-        public Transform targetTransform;
-    }
-
-    [Header("Configuración de zonas (PlayerButtons)")]
-    [Tooltip("Zonas de destino clasificadas por tipo (ej. LB, RB, etc.)")]
-    [SerializeField] private List<TypedTarget> typedTargets;
-
-    // Control de disponibilidad individual
-    private Dictionary<Transform, bool> targetAvailability = new();
-
-    // Mapa de tipos a lista de targets disponibles
-    private Dictionary<NoteInputType, List<Transform>> targetTypeMap = new();
-
-    private void Awake()
-    {
-        // Inicializa el sistema de zonas disponibles
-        foreach (var entry in typedTargets)
+        targetAvailability.Clear();
+        foreach (var point in targetPoints)
         {
-            var transform = entry.targetTransform;
-            var type = entry.type;
-
-            if (!targetAvailability.ContainsKey(transform))
-            {
-                targetAvailability.Add(transform, true); // Disponible al inicio
-            }
-
-            if (!targetTypeMap.ContainsKey(type))
-            {
-                targetTypeMap[type] = new List<Transform>();
-            }
-
-            targetTypeMap[type].Add(transform);
+            if (point != null && !targetAvailability.ContainsKey(point))
+                targetAvailability[point] = true;
         }
     }
 
     /// <summary>
-    /// Solicita una zona de un tipo específico (ej. LB, RB, etc.). Devuelve null si ninguna está libre.
+    /// Devuelve un pulsador aleatorio que esté libre y acepte el tipo dado.
     /// </summary>
-    public Transform RequestTarget(NoteInputType type)
+    public Transform RequestRandomTarget(NoteInputType type)
     {
-        if (!targetTypeMap.ContainsKey(type)) return null;
+        var candidates = new List<Transform>();
 
-        foreach (var target in targetTypeMap[type])
+        // 1) Recolecta todos los libres y compatibles
+        foreach (var kvp in targetAvailability)
         {
-            if (targetAvailability.ContainsKey(target) && targetAvailability[target])
-            {
-                targetAvailability[target] = false;
-                return target;
-            }
+            if (!kvp.Value) continue; // ya ocupado
+            var t = kvp.Key;
+            var pb = t.GetComponent<PlayerButton>();
+            if (pb != null && pb.CanAcceptInput(type))
+                candidates.Add(t);
         }
 
-        return null; // Todas ocupadas
+        // 2) Si no hay ninguno, warning y null
+        if (candidates.Count == 0)
+        {
+            Debug.LogWarning($"RequestRandomTarget: no hay pulsadores libres que acepten {type}");
+            return null;
+        }
+
+        // 3) Escoge uno al azar
+        int idx = Random.Range(0, candidates.Count);
+        var chosen = candidates[idx];
+
+        // 4) Márcalo como ocupado y devuélvelo
+        targetAvailability[chosen] = false;
+        return chosen;
     }
 
     /// <summary>
-    /// Libera un target para que pueda ser reutilizado.
+    /// Libera el pulsador para que vuelva a estar disponible.
     /// </summary>
     public void ReleaseTarget(Transform target)
     {
-        if (target != null && targetAvailability.ContainsKey(target))
-        {
+        if (targetAvailability.ContainsKey(target))
             targetAvailability[target] = true;
-        }
         else
-        {
-            Debug.LogWarning("Tried to release a target that wasn't registered or is null.");
-        }
-    }
-
-    /// <summary>
-    /// Devuelve cuántos targets están disponibles en total (útil para debug).
-    /// </summary>
-    public int CountAvailableTargets()
-    {
-        int count = 0;
-        foreach (var available in targetAvailability.Values)
-        {
-            if (available) count++;
-        }
-        return count;
+            Debug.LogWarning("ReleaseTarget: este Transform no estaba registrado.");
     }
 }

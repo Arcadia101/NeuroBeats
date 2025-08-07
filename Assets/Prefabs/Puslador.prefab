@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1928628736566866746}
   - component: {fileID: 3681646394804853457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,13 +75,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.85, y: 2.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4541759454913011120}
   - component: {fileID: 4444857018476526591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Puslador
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
@@ -153,6 +153,12 @@ MonoBehaviour:
   spriteBMiss: {fileID: 21300000, guid: 53337a374d6eb094c9f4feebf74abdb7, type: 3}
   spriteTMiss: {fileID: 21300000, guid: 983c65cbaa232f346aaad3eb479e2116, type: 3}
   rotationSpeed: 180
+  minRotationSpeed: 180
+  maxRotationSpeed: 1800
+  accelDuration: 1
+  decelDuration: 1
+  goodRadius: 1.03
+  perfectRadius: 0.62
 --- !u!1 &5394117995085205438
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3471691626517335973}
   - component: {fileID: 7818643886449746017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

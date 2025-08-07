@@ -1,4 +1,0 @@
-repository "NeuroBeats_alpha/NeuroBeats@4673052728602@cloud"
-  path "/"
-    br "/main"
-    co "/main"

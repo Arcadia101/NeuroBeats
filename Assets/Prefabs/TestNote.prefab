@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 607750205690040580}
   - component: {fileID: 5716155801475696041}
   - component: {fileID: 5753132274020010619}
-  m_Layer: 0
+  - component: {fileID: 7603700032060813778}
+  - component: {fileID: 275714695640247831}
+  m_Layer: 6
   m_Name: TestNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2881949486fd534cb57691dbe0cd692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perfectZoneRadius: 0.5
+  goodZoneRadius: 1
+  noteSprite: {fileID: 5753132274020010619}
+  leftSprite: {fileID: 21300000, guid: 1c73a17588793864aabc35b29dd0c4df, type: 3}
+  rightSprite: {fileID: 21300000, guid: 8ceb85a508d683445a6a4cc6fecf5f1b, type: 3}
+  fixedEvalTime: 0.5
+  fixedExitTime: 0.5
 --- !u!212 &5753132274020010619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88,7 +97,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 8ceb85a508d683445a6a4cc6fecf5f1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,3 +109,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7603700032060813778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497271603152513905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f171a49223c1814b8e8dd1af7f57bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDeviation: 1
+  maxDeviation: 2
+  minSegments: 3
+  maxSegments: 5
+  exitDistance: 2
+--- !u!114 &275714695640247831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497271603152513905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e15219f93691c44193cc07e5badebc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignedButton: {fileID: 0}
+  markerCombo: 
