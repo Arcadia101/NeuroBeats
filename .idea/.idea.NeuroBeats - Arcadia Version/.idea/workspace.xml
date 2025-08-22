@@ -6,33 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7819e8fb-d8c0-4305-befb-90fdfea6ecc4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BG_Color.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BG_Color.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BackgroundShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/BackgroundShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Nebulosa.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Nebulosa.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level 0 Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Level 0 Config.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Level 1 Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Level 1 Config.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Menu Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Menu Config.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Background.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Background.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelMenu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelMenu.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestLevel.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
@@ -146,6 +125,8 @@
       <workItem from="1754011785931" duration="4924000" />
       <workItem from="1754330264890" duration="2873000" />
       <workItem from="1754438444493" duration="444000" />
+      <workItem from="1755720214589" duration="701000" />
+      <workItem from="1755822347235" duration="723000" />
     </task>
     <servers />
   </component>
