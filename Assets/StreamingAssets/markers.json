@@ -1,11 +1,444 @@
 {
   "events": [
     {
-      "eventPath": "event:/Music/Level1",
+      "eventPath": "event:/SFX/Error",
       "markers": []
     },
     {
+      "eventPath": "event:/Music/Level1",
+      "markers": [
+        {
+          "name": "Combo1",
+          "time": 3009
+        },
+        {
+          "name": "Combo2",
+          "time": 4015
+        },
+        {
+          "name": "Combo2",
+          "time": 4999
+        },
+        {
+          "name": "Combo1",
+          "time": 6495
+        },
+        {
+          "name": "Combo2",
+          "time": 7749
+        },
+        {
+          "name": "Combo2",
+          "time": 8502
+        },
+        {
+          "name": "Combo2",
+          "time": 9514
+        },
+        {
+          "name": "Combo1",
+          "time": 10262
+        },
+        {
+          "name": "Combo2",
+          "time": 11015
+        },
+        {
+          "name": "Combo2",
+          "time": 12263
+        },
+        {
+          "name": "Combo2",
+          "time": 13011
+        },
+        {
+          "name": "Combo1",
+          "time": 14006
+        },
+        {
+          "name": "Combo2",
+          "time": 15002
+        },
+        {
+          "name": "Combo2",
+          "time": 16009
+        },
+        {
+          "name": "Combo1",
+          "time": 16993
+        },
+        {
+          "name": "Combo2",
+          "time": 18488
+        },
+        {
+          "name": "Combo2",
+          "time": 19742
+        },
+        {
+          "name": "Combo1",
+          "time": 20496
+        },
+        {
+          "name": "Combo2",
+          "time": 21508
+        },
+        {
+          "name": "Combo2",
+          "time": 22256
+        },
+        {
+          "name": "Combo2",
+          "time": 23009
+        },
+        {
+          "name": "Combo1",
+          "time": 24257
+        },
+        {
+          "name": "Combo2",
+          "time": 25005
+        },
+        {
+          "name": "Combo2",
+          "time": 26000
+        },
+        {
+          "name": "Combo2",
+          "time": 27003
+        },
+        {
+          "name": "Combo1",
+          "time": 28009
+        },
+        {
+          "name": "Combo2",
+          "time": 28993
+        },
+        {
+          "name": "Combo1",
+          "time": 30489
+        },
+        {
+          "name": "Combo2",
+          "time": 31742
+        },
+        {
+          "name": "Combo2",
+          "time": 32496
+        },
+        {
+          "name": "Combo1",
+          "time": 33508
+        },
+        {
+          "name": "Combo2",
+          "time": 34256
+        },
+        {
+          "name": "Combo2",
+          "time": 35009
+        },
+        {
+          "name": "Combo2",
+          "time": 36257
+        },
+        {
+          "name": "Combo1",
+          "time": 37005
+        },
+        {
+          "name": "Combo2",
+          "time": 38000
+        },
+        {
+          "name": "Combo2",
+          "time": 39005
+        },
+        {
+          "name": "Combo2",
+          "time": 40011
+        },
+        {
+          "name": "Combo1",
+          "time": 40995
+        },
+        {
+          "name": "Combo2",
+          "time": 42491
+        },
+        {
+          "name": "Combo2",
+          "time": 43744
+        },
+        {
+          "name": "Combo1",
+          "time": 44498
+        },
+        {
+          "name": "Combo2",
+          "time": 45510
+        },
+        {
+          "name": "Combo2",
+          "time": 46258
+        },
+        {
+          "name": "Combo2",
+          "time": 47011
+        },
+        {
+          "name": "Combo1",
+          "time": 48259
+        },
+        {
+          "name": "Combo2",
+          "time": 49007
+        },
+        {
+          "name": "Combo2",
+          "time": 50002
+        },
+        {
+          "name": "Combo1",
+          "time": 50999
+        },
+        {
+          "name": "Combo2",
+          "time": 52005
+        },
+        {
+          "name": "Combo2",
+          "time": 52989
+        },
+        {
+          "name": "Combo1",
+          "time": 54485
+        },
+        {
+          "name": "Combo2",
+          "time": 55739
+        },
+        {
+          "name": "Combo2",
+          "time": 56492
+        },
+        {
+          "name": "Combo1",
+          "time": 57504
+        },
+        {
+          "name": "Combo2",
+          "time": 58252
+        },
+        {
+          "name": "Combo2",
+          "time": 59005
+        },
+        {
+          "name": "Combo2",
+          "time": 60254
+        },
+        {
+          "name": "Combo1",
+          "time": 61001
+        },
+        {
+          "name": "Combo2",
+          "time": 61997
+        },
+        {
+          "name": "Combo2",
+          "time": 63001
+        },
+        {
+          "name": "Combo1",
+          "time": 64007
+        },
+        {
+          "name": "Combo2",
+          "time": 64991
+        },
+        {
+          "name": "Combo1",
+          "time": 66487
+        },
+        {
+          "name": "Combo2",
+          "time": 67741
+        },
+        {
+          "name": "Combo2",
+          "time": 68494
+        },
+        {
+          "name": "Combo1",
+          "time": 69506
+        },
+        {
+          "name": "Combo2",
+          "time": 70254
+        },
+        {
+          "name": "Combo2",
+          "time": 71007
+        },
+        {
+          "name": "Combo2",
+          "time": 72256
+        },
+        {
+          "name": "Combo1",
+          "time": 73003
+        },
+        {
+          "name": "Combo2",
+          "time": 73999
+        },
+        {
+          "name": "Combo2",
+          "time": 74998
+        },
+        {
+          "name": "Combo2",
+          "time": 76004
+        },
+        {
+          "name": "Combo1",
+          "time": 76988
+        },
+        {
+          "name": "Combo2",
+          "time": 78484
+        },
+        {
+          "name": "Combo2",
+          "time": 79737
+        },
+        {
+          "name": "Combo1",
+          "time": 80491
+        },
+        {
+          "name": "Combo2",
+          "time": 81503
+        },
+        {
+          "name": "Combo2",
+          "time": 82251
+        },
+        {
+          "name": "Combo1",
+          "time": 83004
+        },
+        {
+          "name": "Combo2",
+          "time": 84252
+        },
+        {
+          "name": "Combo2",
+          "time": 85000
+        },
+        {
+          "name": "Combo1",
+          "time": 85995
+        },
+        {
+          "name": "Combo2",
+          "time": 87005
+        },
+        {
+          "name": "Combo2",
+          "time": 88011
+        },
+        {
+          "name": "Combo1",
+          "time": 88995
+        },
+        {
+          "name": "Combo2",
+          "time": 90491
+        },
+        {
+          "name": "Combo2",
+          "time": 91745
+        },
+        {
+          "name": "Combo1",
+          "time": 92498
+        },
+        {
+          "name": "Combo2",
+          "time": 93510
+        },
+        {
+          "name": "Combo2",
+          "time": 94258
+        },
+        {
+          "name": "Combo2",
+          "time": 95011
+        },
+        {
+          "name": "Combo1",
+          "time": 96260
+        },
+        {
+          "name": "Combo2",
+          "time": 97007
+        },
+        {
+          "name": "Combo2",
+          "time": 98003
+        },
+        {
+          "name": "Combo2",
+          "time": 98996
+        },
+        {
+          "name": "Combo1",
+          "time": 100003
+        },
+        {
+          "name": "Combo2",
+          "time": 100987
+        },
+        {
+          "name": "Combo2",
+          "time": 102482
+        },
+        {
+          "name": "Combo1",
+          "time": 103736
+        },
+        {
+          "name": "Combo2",
+          "time": 104490
+        },
+        {
+          "name": "EndSong",
+          "time": 105950
+        }
+      ]
+    },
+    {
       "eventPath": "event:/SFX/Bad",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/MenuMovement",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/Good",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/SFX/MenuCancel",
+      "markers": []
+    },
+    {
+      "eventPath": "event:/Music/MainMenu",
       "markers": []
     },
     {
@@ -310,19 +743,19 @@
         {
           "name": "Combo1",
           "time": 58078
+        },
+        {
+          "name": "EndSong",
+          "time": 60000
         }
       ]
     },
     {
-      "eventPath": "event:/SFX/Error",
+      "eventPath": "event:/SFX/MenuConfirm",
       "markers": []
     },
     {
       "eventPath": "event:/SFX/Perfect",
-      "markers": []
-    },
-    {
-      "eventPath": "event:/SFX/Good",
       "markers": []
     }
   ]

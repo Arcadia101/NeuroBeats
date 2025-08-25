@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerInputListener : MonoBehaviour
 {
     [SerializeField] private InputReader inputReader;
-
+/*
     private void Awake()
     {
         inputReader.EnableGameplayInput();
@@ -26,6 +26,7 @@ public class PlayerInputListener : MonoBehaviour
         inputReader.DisableGameplayInput();
     }
 
+ */
     private void OnMove(Vector2 dir)
     {
         Debug.Log("Moving: " + dir);
