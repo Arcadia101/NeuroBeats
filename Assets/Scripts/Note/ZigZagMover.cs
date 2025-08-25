@@ -107,45 +107,6 @@ public class ZigZagMover : MonoBehaviour
        transform.position = path[0]; //We start counting from the Start point (remember we revesersed the list)
    }
 
-
-   [Obsolete("Kept for reference. Use Initialize instead.")]
-   public void Initialize_backup(Vector3 start, Vector3 end, float travelTime)
-   {
-       path = new List<Vector3> { start };
-       Vector3 dirToTarget = (end - start).normalized;
-       int segments = UnityEngine.Random.Range(minSegments, maxSegments + 1);
-
-
-       for (int i = 1; i < segments; i++)
-       {
-           float t = (float)i / segments;
-           Vector3 pt = Vector3.Lerp(start, end, t);
-           Vector3 perp = Vector3.Cross(dirToTarget, Vector3.forward).normalized;
-           float dev = UnityEngine.Random.Range(1f, 2f) * (UnityEngine.Random.value > 0.5f ? 1 : -1);
-           pt += perp * dev;
-           path.Add(pt);
-       }
-       path.Add(end);
-
-
-       // Adjust speed based on actual distance
-       float distToTarget = 0f;
-       for (int i = 0; i < path.Count - 1; i++)
-           distToTarget += Vector3.Distance(path[i], path[i + 1]);
-       speed = distToTarget / Mathf.Max(travelTime, 0.01f);
-
-
-       // Add exit point
-       Vector3 approachDir = (end - path[path.Count - 2]).normalized;
-       Vector3 exitPoint = end + approachDir * exitDistance;
-       path.Add(exitPoint);
-
-
-       segmentIndex = 0;
-       transform.position = path[0];
-   }
-
-
    private void Update()
    {
        //ALl this section is basically, every frame we move from current position towards the next waypoint a step defined by the speed
