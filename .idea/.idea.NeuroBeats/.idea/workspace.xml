@@ -6,8 +6,226 @@
   <component name="ChangeListManager">
     <list default="true" id="54580ed0-7c70-4cc8-a8e6-f9d8e066e590" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonLeftPC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonLeftPC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonRightPC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/ButtonRightPC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerLeft.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerLeftPC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerLeftPC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerRight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerRightPC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/ButtonInfo/TriggerRightPC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Cursor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Cursor.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonLeftGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonLeftGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonLeftMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonLeftMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonRightGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonRightGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonRightMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/ButtonRightMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/GoodFeedback.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/MissFeedback.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/PerfectFeedback.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerLeftGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerLeftGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerLeftMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerLeftMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerRightGood.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerRightGood.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerRightMiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Feedback/TriggerRightMiss.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_bld SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_bld SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_bld.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_bld.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_blk.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_blk.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_light.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_reg SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_reg SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_reg.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Fonts/Brandon_reg.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/GameIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/GameIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Background.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Logo_.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Logo_.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Menu_Background_Loop.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Menu_Background_Loop.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Recurso_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Recurso_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Recurso_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Recurso_8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Referencia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/Referencia.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNote.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNoteTail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/LeftNoteTail.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNote.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNoteTail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Note/RightNoteTail.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/GrayRing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/GrayRing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/GreenRIng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/GreenRIng.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/LeftRIng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/LeftRIng.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/RightRIng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/RightRIng.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/YellowRing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Ring/YellowRing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/TestBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/TestBG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW2_BLUE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW2_BLUE.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW2_PINK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW2_PINK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW_BLUE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW_BLUE.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW_PINK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/LEFTARROW_PINK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW2_BLUE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW2_BLUE.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW2_PINK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW2_PINK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW_BLUE.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW_BLUE.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW_PINK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Arrows/RIGHTARROW_PINK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/DefaultImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/DefaultImage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/Arrow_-_Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/Arrow_-_Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/Arrow_-_Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/Arrow_-_Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/BACK.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/BACK.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/GamePadTutorial.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/GamePadTutorial.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LB.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LEFT TUTORIAL 1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LEFT TUTORIAL 1.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/LT.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RB.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RIGHT TUTOTORIAL 2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RIGHT TUTOTORIAL 2.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/RT.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/START.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/START.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/SUBMIT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/SUBMIT.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/TIMING TUTORIAL 3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/GamepadButtonsIcons/TIMING TUTORIAL 3.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Keyboard Scheme.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Keyboard Scheme.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_-_Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_-_Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_-_Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_-_Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_Simple_-_Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_Simple_-_Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_Simple_-_Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Arrow_Simple_-_Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/K.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/K.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/O.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/O.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/S.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/W.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Custom/W.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/ESC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/ESC.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Escape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Escape.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/K.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/K.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/LEFT TUTORIAL TECLADO.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/LEFT TUTORIAL TECLADO.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/O.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/O.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/RIGHT TUTORIAL TECLADO 2.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/RIGHT TUTORIAL TECLADO 2.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/S.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/SPACE 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/SPACE 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Space.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/Space.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/TUTORIAL TECLADO3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/TUTORIAL TECLADO3.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/W.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/KeyboardTutorials/W.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LB Unselected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LB Unselected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LT Selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LT Selected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LT Unselected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/LT Unselected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Lb Selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/Lb Selected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RB Selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RB Selected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RB Unselected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RB Unselected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RT Selected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RT Selected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RT Unselected.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/RT Unselected.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/TutorialVideo.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/Tutorial UI/TutorialVideo.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/UI/FakePointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/UI/FakePointer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/UI/MainMenu/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/UI/MainMenu/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem_Actions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +236,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/UI/ButtonGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/IconManagerTutorial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/IconSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@c854d1f7d97f/Editor/FindWorkspace.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@978211393e28/InputSystem/Plugins/PlayerInput/DefaultInputActions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@978211393e28/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@57cef44123c7/Runtime/TMP/TextMeshPro.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@57cef44123c7/Runtime/TMP/TextMeshProUGUI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -36,19 +257,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Lajote's__Kingdom",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Lajote's__Kingdom&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Aruma Studio/NeurobeatsAlpha0.01\NeuroBeats.exe" />
@@ -126,7 +347,8 @@
       <workItem from="1753042109031" duration="5508000" />
       <workItem from="1753080963568" duration="3996000" />
       <workItem from="1755699125355" duration="398000" />
-      <workItem from="1756094580459" duration="2366000" />
+      <workItem from="1756094580459" duration="7677000" />
+      <workItem from="1756148998188" duration="20434000" />
     </task>
     <servers />
   </component>

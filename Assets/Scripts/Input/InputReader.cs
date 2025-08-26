@@ -22,7 +22,9 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     public enum ActionMapType //An enum with the action maps we have and how we work with them
     {
         UI,
-        Player
+        Player,
+        UI_Keyboard,
+        UI_Gamepad
     }
 
     private ActionMapType _currentMap;
@@ -72,6 +74,14 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
                 inputActions.Player.SetCallbacks(this);
                 inputActions.Player.Enable();
                 break;
+            case ActionMapType.UI_Keyboard:
+                inputActions.UI.SetCallbacks(this);
+                inputActions.UI.Enable();
+                break;
+            case ActionMapType.UI_Gamepad:
+                inputActions.UI.SetCallbacks(this);
+                inputActions.UI.Enable();
+                break;
             default:
                 break;
         }
@@ -81,6 +91,8 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     {
         inputActions.UI.Disable();
         inputActions.Player.Disable();
+        inputActions.UI_Keyboard.Disable();
+        inputActions.UI_Gamepad.Disable();
         // _Actions.Gameplay.Disable(); // Add when implemented
     }
     
@@ -170,20 +182,18 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
             UI_Point.Invoke(context.ReadValue<Vector2>());
     }
 
-    public void OnPointerPosition(InputAction.CallbackContext context)
-    {
-        if (context.phase == InputActionPhase.Performed)
-            UI_Point.Invoke(context.ReadValue<Vector2>());
-    }
-
     public void OnPointerDelta(InputAction.CallbackContext context)
     {
+        /*
+         * 
         if (context.phase == InputActionPhase.Performed)
             UI_Point.Invoke(context.ReadValue<Vector2>());
+         */
     }
 
     public void OnNavigate(InputAction.CallbackContext context)
     {
+        Debug.Log("You may wanna have a look here");
         if (context.phase == InputActionPhase.Performed)
             UI_Navigate.Invoke(context.ReadValue<Vector2>());
     }

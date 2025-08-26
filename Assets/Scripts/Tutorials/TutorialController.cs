@@ -133,7 +133,7 @@ public class TutorialController : MonoBehaviour
     private void HandleClick()
     {
         //Debug.Log("Clicked!");
-        pointer.GetComponent<FakePointer>().SimulateUIClick();
+        //pointer.GetComponent<FakePointer>().SimulateUIClick();
         leftClick?.Invoke();
     }
 
