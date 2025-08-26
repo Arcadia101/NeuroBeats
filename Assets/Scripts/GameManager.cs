@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
     
         // 2) Reconfigurar spawner de marcadores
-        var spawner = FindObjectOfType<MarkerDrivenSpawner>();
+        var spawner = FindAnyObjectByType<MarkerDrivenSpawner>();
         if (spawner != null)
         {
             string markerFile = currentConfig.markerJsonFileName;
@@ -80,7 +80,18 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(LevelConfig config)
     {
         currentConfig = config;
-        SceneManager.LoadScene(config.sceneName);
+        
+        Debug.Log("Vamo a cargar "+ config.sceneName);
+        try
+        {
+            SceneManager.LoadScene(config.sceneName);
+            Debug.Log("Si se pudo perros");
+        }
+        catch
+        {
+            Debug.Log("No se pudo perros");
+        }
+        
     }
     
     public void QuitGame()

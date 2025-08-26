@@ -6,7 +6,7 @@ public class HitController : MonoBehaviour
 
     private void Awake()
     {
-        inputReader.EnableGameplayInput();
+        inputReader.ChangeActionMap(InputReader.ActionMapType.Player);
 
         inputReader.LeftButton  += () => OnHit(NoteInputType.LB);
         inputReader.LeftTrigger += () => OnHit(NoteInputType.LT);
