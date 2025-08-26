@@ -1157,6 +1157,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2780195600464421797, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3795460296155257246, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: fadeDuration
       value: 0.5
@@ -1171,7 +1175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3851270408229731103, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4289971281803477052, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_AnchorMax.x

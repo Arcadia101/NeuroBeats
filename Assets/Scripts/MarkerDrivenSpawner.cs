@@ -21,6 +21,8 @@ public class MarkerDrivenSpawner : MonoBehaviour
     [Header("Spawn Config")]
     [Tooltip("Prefab de nota a instanciar.")]
     [SerializeField] private GameObject notePrefab;
+    [Tooltip("Prefab de nota de tutorial.")]
+    [SerializeField] private GameObject tutorialNotePrefab;
     [Tooltip("Segundos de anticipación antes del marker.")]
     [SerializeField] private float anticipationSeconds = 4f;
     [Tooltip("espacio entre el cual una nota se puede spawnear verticalmente.")]

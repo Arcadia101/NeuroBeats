@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7819e8fb-d8c0-4305-befb-90fdfea6ecc4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
@@ -126,7 +125,8 @@
       <workItem from="1754330264890" duration="2873000" />
       <workItem from="1754438444493" duration="444000" />
       <workItem from="1755720214589" duration="701000" />
-      <workItem from="1755822347235" duration="723000" />
+      <workItem from="1755822347235" duration="1988000" />
+      <workItem from="1756153434432" duration="2395000" />
     </task>
     <servers />
   </component>
