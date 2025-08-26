@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7819e8fb-d8c0-4305-befb-90fdfea6ecc4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats - Arcadia Version/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graohics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Nebulosa.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Nebulosa.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteInputType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteInputType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +22,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Prefabs/TestNote.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Prefabs/TestNote.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scenes/MenuLevel.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scenes/MenuLevel.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scenes/PlayLevel.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scenes/PlayLevel.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scripts/ComboUIController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scripts/ComboUIController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scripts/Note/ZigZagMover.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/Assets/Scripts/Note/ZigZagMover.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Arcadia/Documents/Unity Projects/NeuroBeats - Arcadia Version/ProjectSettings/EditorBuildSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="SWEA" />
@@ -36,21 +52,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UnityCloud__Version(Arcadia__WorkSpace)&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "UnityCloud__Version(Arcadia__WorkSpace)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.1.13f1\Editor\Unity.exe" />
@@ -127,6 +143,11 @@
       <workItem from="1755720214589" duration="701000" />
       <workItem from="1755822347235" duration="1988000" />
       <workItem from="1756153434432" duration="2395000" />
+      <workItem from="1756236520718" duration="65000" />
+      <workItem from="1756236620210" duration="34000" />
+      <workItem from="1756236669915" duration="29000" />
+      <workItem from="1756236718896" duration="66000" />
+      <workItem from="1756236883450" duration="3671000" />
     </task>
     <servers />
   </component>

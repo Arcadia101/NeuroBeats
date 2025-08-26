@@ -11,3 +11,9 @@ public enum NoteInputType
     RT,  // Right Trigger (color rojo)
     //Skip // No Input
 }
+
+public enum NoteBehaviourType
+{
+    Normal,
+    Tutorial
+}
