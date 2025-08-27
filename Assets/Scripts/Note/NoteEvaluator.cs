@@ -65,8 +65,8 @@ public class NoteEvaluator : MonoBehaviour
         float absDelta = Mathf.Abs(delta);
 
         string result;
-        if (absDelta <= 0.1f) result = "Perfect";
-        else if (absDelta <= 0.25f) result = "Good";
+        if (absDelta <= 0.18f) result = "Perfect";
+        else if (absDelta <= 0.3f) result = "Good";
         else result = "Miss";
 
         //bool correctInput = input == TargetType;
