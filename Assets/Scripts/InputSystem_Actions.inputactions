@@ -50,6 +50,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DebugTrigger",
+                    "type": "Button",
+                    "id": "e2698b5b-5388-4251-a5fc-b2fcab2d4bca",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -259,6 +268,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "RightButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa847bfc-2fbd-4a44-bc43-7f8b6c8f74ca",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DebugTrigger",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

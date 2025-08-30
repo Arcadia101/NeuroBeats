@@ -10,7 +10,7 @@ public class FMODMusicConductor : MonoBehaviour
     public static FMODMusicConductor Instance { get; private set; }
 
     [EventRef] [SerializeField] private string musicEventPath;
-    private EventInstance musicInstance;
+    public EventInstance musicInstance;
     //public NoteInputType laPerraNota;
 
     private void Awake()

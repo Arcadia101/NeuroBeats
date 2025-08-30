@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 /// <summary>
 /// Singleton que gestiona el flujo multi-nivel y mantiene los managers persistentes.
 /// </summary>
@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
         // Solo procesar si configuraste currentConfig y la escena coincide
         if (currentConfig == null || scene.name != currentConfig.sceneName)
             return;
-    
         // 1) Reiniciar música
         if (FMODMusicConductor.Instance != null)
             FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
@@ -80,12 +79,13 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(LevelConfig config)
     {
         currentConfig = config;
-        
+        //FMODMusicConductor.Instance.musicInstance.stop(STOP_MODE.IMMEDIATE);
         Debug.Log("Vamo a cargar "+ config.sceneName);
         try
         {
             SceneManager.LoadScene(config.sceneName);
             Debug.Log("Si se pudo perros");
+            //FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
         }
         catch
         {

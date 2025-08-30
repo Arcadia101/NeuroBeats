@@ -25,7 +25,13 @@ public class ComboUIController : MonoBehaviour
         // Suscribirse a eventos de ComboManager
         ComboManager.Instance.OnComboLevelChanged.AddListener(HandleComboIncrease);
         ComboManager.Instance.OnComboReset.AddListener(HandleComboReset);
+        LevelEndController.Instance.OnLevelEnd.AddListener(EndLevel);
 
+        comboText.gameObject.SetActive(false);
+    }
+
+    void EndLevel()
+    {
         comboText.gameObject.SetActive(false);
     }
 
@@ -37,7 +43,7 @@ public class ComboUIController : MonoBehaviour
         // Si era una rutina de ocultar en curso, la detenemos
         if (hideRoutine != null) StopCoroutine(hideRoutine);
 
-        comboText.text = $"COMBO x{comboLevel + 1}/nScore:  {newScore}";
+        comboText.text = $"COMBO x{comboLevel + 1}\nScore:  {newScore}";
         comboText.color = Color.white;
         comboText.gameObject.SetActive(true);
     }

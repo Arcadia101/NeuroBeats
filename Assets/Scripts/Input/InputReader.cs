@@ -12,6 +12,10 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     public event UnityAction RightTrigger = delegate { };
     public event UnityAction RightButton = delegate { };
     public event UnityAction MenuButton = delegate { };
+    
+    public event UnityAction DebugButton = delegate { };
+    
+    
 
 
     private InputSystem_Actions inputActions;
@@ -128,6 +132,14 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
             RightTrigger.Invoke();
     }
 
+    public void OnDebugTrigger(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            DebugButton.Invoke();
+        }
+    }
+
     public void OnRightButton(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Started)
@@ -166,9 +178,6 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
     public event UnityAction UI_Back = delegate { };
     public event UnityAction UI_Next = delegate { };
     public event UnityAction UI_Previous = delegate { };
-
-
-
     
     //----------------------------------------//
     //    UI Action Map Input Callbacks       // ------------------------------ //

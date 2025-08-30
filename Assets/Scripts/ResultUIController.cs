@@ -5,12 +5,19 @@ using UnityEngine.UI;
 public class ResultUIController : MonoBehaviour
 {
     [SerializeField] private CanvasGroup resultMenu;
-
+    [SerializeField] private InputReader inputReader;
+    [SerializeField] bool debugging = false;
     private void Awake()
     {
         LevelEndController.Instance.OnLevelEnd.AddListener(ShowResults);
+        if (debugging)
+        {
+            inputReader.DebugButton  += ShowResults;    
+        }
+        
     }
 
+    
     private void Start()
     {
         HideResults();
@@ -21,6 +28,7 @@ public class ResultUIController : MonoBehaviour
         resultMenu.alpha = 1;
         resultMenu.interactable = true;
         resultMenu.blocksRaycasts = true;
+        
     }
     
     private void HideResults()
@@ -29,4 +37,19 @@ public class ResultUIController : MonoBehaviour
         resultMenu.interactable = false;
         resultMenu.blocksRaycasts = false;
     }
+
+    public void RetryLevel(LevelConfig levelConfig)
+    {
+        
+        GameManager.Instance.currentConfig = levelConfig;
+        GameManager.Instance.LoadLevel(levelConfig);
+    }
+
+    public void MainMenu()
+    {
+        
+    }
+    
+    
+    
 }

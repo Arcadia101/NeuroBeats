@@ -148,11 +148,11 @@ public class ZigZagMover : MonoBehaviour
 
 
        int safetyCount = 1;
-       Debug.Log("our next waypoint Y pos is: " + next.y);
+       //Debug.Log("our next waypoint Y pos is: " + next.y);
        while(next.y > screenTop || next.y < screenBottom)
        {
            if(next.y > screenTop){
-               Debug.Log("Bottom limit reached at "+ angle);
+               //Debug.Log("Bottom limit reached at "+ angle);
                switch (currentDirection.x)
                {
                    case >0: angle = ReadjustAngle(angle, -maxTurnAngleDeg*safetyCount/2);
@@ -161,11 +161,11 @@ public class ZigZagMover : MonoBehaviour
                        angle = ReadjustAngle(angle, maxTurnAngleDeg*safetyCount/2);
                        break;
                }
-               Debug.Log("This is new angle "+ angle);
+               //Debug.Log("This is new angle "+ angle);
            }
           
            if(next.y < screenBottom){
-               Debug.Log("Bottom limit reached at "+ angle);
+               //Debug.Log("Bottom limit reached at "+ angle);
                switch (currentDirection.x)
                {
                    case >0: angle = ReadjustAngle(angle, maxTurnAngleDeg*safetyCount/2);
@@ -175,7 +175,7 @@ public class ZigZagMover : MonoBehaviour
                        break;
                }
               
-               Debug.Log("This is new angle "+ angle);
+               //Debug.Log("This is new angle "+ angle);
            }
           
            safetyCount++;

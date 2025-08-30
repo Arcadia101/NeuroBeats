@@ -136,6 +136,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DebugTrigger"",
+                    ""type"": ""Button"",
+                    ""id"": ""e2698b5b-5388-4251-a5fc-b2fcab2d4bca"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -345,6 +354,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""RightButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa847bfc-2fbd-4a44-bc43-7f8b6c8f74ca"",
+                    ""path"": ""<Keyboard>/m"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DebugTrigger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1759,6 +1779,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_LeftTrigger = m_Player.FindAction("LeftTrigger", throwIfNotFound: true);
         m_Player_RightButton = m_Player.FindAction("RightButton", throwIfNotFound: true);
         m_Player_RightTrigger = m_Player.FindAction("RightTrigger", throwIfNotFound: true);
+        m_Player_DebugTrigger = m_Player.FindAction("DebugTrigger", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -1889,6 +1910,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LeftTrigger;
     private readonly InputAction m_Player_RightButton;
     private readonly InputAction m_Player_RightTrigger;
+    private readonly InputAction m_Player_DebugTrigger;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1920,6 +1942,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/RightTrigger".
         /// </summary>
         public InputAction @RightTrigger => m_Wrapper.m_Player_RightTrigger;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/DebugTrigger".
+        /// </summary>
+        public InputAction @DebugTrigger => m_Wrapper.m_Player_DebugTrigger;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1961,6 +1987,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RightTrigger.started += instance.OnRightTrigger;
             @RightTrigger.performed += instance.OnRightTrigger;
             @RightTrigger.canceled += instance.OnRightTrigger;
+            @DebugTrigger.started += instance.OnDebugTrigger;
+            @DebugTrigger.performed += instance.OnDebugTrigger;
+            @DebugTrigger.canceled += instance.OnDebugTrigger;
         }
 
         /// <summary>
@@ -1987,6 +2016,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @RightTrigger.started -= instance.OnRightTrigger;
             @RightTrigger.performed -= instance.OnRightTrigger;
             @RightTrigger.canceled -= instance.OnRightTrigger;
+            @DebugTrigger.started -= instance.OnDebugTrigger;
+            @DebugTrigger.performed -= instance.OnDebugTrigger;
+            @DebugTrigger.canceled -= instance.OnDebugTrigger;
         }
 
         /// <summary>
@@ -2778,6 +2810,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRightTrigger(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DebugTrigger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDebugTrigger(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
