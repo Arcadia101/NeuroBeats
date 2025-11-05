@@ -71,7 +71,8 @@ public class NoteBehavior : MonoBehaviour
     }
 
     /// <summary>
-    /// Invocado por HitController o PlayerButton
+    /// Invocado por HitController o PlayerButton (Ahora mismo el player button no hace una mondaaaa)
+    /// PD: Comenta bien el codigo camilo conchetumadre
     /// </summary>
     public void ReceiveInput(NoteInputType input)
     {

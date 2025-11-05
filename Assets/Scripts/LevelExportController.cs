@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class LevelExportController : MonoBehaviour
 {
     public static LevelExportController Instance { get; private set; }
-
+    
     [Tooltip("Ruta de carpeta donde se guardará el JSON. Si está vacío, usa persistentDataPath.")]
     [SerializeField] private string outputDirectory = "";
 
@@ -44,7 +45,7 @@ public class LevelExportController : MonoBehaviour
     {
         TryExport();
     }
-    
+
     /// <summary>Resetea el estado para permitir nueva exportación.</summary>
     public void Reset()
     {
@@ -57,6 +58,7 @@ public class LevelExportController : MonoBehaviour
     private void TryExport()
     {
         if (hasExported) return;
+
         if (NoteHistoryRecorder.Instance == null)
         {
             Debug.LogWarning("LevelExportController: NoteHistoryRecorder no encontrado.");
@@ -65,16 +67,34 @@ public class LevelExportController : MonoBehaviour
 
         string levelName = SceneManager.GetActiveScene().name;
         if (levelName == "Menu" || levelName == "LevelMenu") return;
+
         string timestamp = DateTime.Now.ToString("yyMMdd_HHmm");
         string fileName = $"Evaluacion_{levelName}_{timestamp}.json";
 
-        string directory = string.IsNullOrEmpty(outputDirectory)
+        // Determinar la ruta según el entorno
+        string directory;
+
+#if UNITY_EDITOR
+        // En el editor, guardar dentro del proyecto (por ejemplo, en Assets/Exports)
+        directory = string.IsNullOrEmpty(outputDirectory)
+            ? Path.Combine(Application.dataPath, "Exports")
+            : outputDirectory;
+#else
+        // En la build, usar el directorio ejecutable o la ruta configurada
+        directory = string.IsNullOrEmpty(outputDirectory)
             ? Application.persistentDataPath
             : outputDirectory;
+#endif
 
-        string fullPath = System.IO.Path.Combine(directory, fileName);
+        // Crear carpeta si no existe
+        if (!Directory.Exists(directory))
+            Directory.CreateDirectory(directory);
 
+        string fullPath = Path.Combine(directory, fileName);
+
+        // Exportar
         NoteHistoryRecorder.Instance.ExportToJson(fullPath);
+
         Debug.Log($"LevelExportController: Resultados exportados a {fullPath}");
         hasExported = true;
     }

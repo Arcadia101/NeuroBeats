@@ -64,14 +64,23 @@ public class NoteEvaluator : MonoBehaviour
         float delta = now - TargetTime;
         float absDelta = Mathf.Abs(delta);
 
+        NoteInputType expectedInput = TargetType; //This is redundant/memory inneficient because TargetType is already defined, but is for code legibility. We will refactor soon anyways so fuck it.
+        
         string result;
-        if (absDelta <= 0.18f) result = "Perfect";
-        else if (absDelta <= 0.3f) result = "Good";
-        else result = "Miss";
 
-        //bool correctInput = input == TargetType;
-        //if (!correctInput && result != "Miss") result = "Good";
-
+        if (expectedInput != input)
+        {
+            result = "Miss";
+        }
+        else
+        {           // Bro do you know the meaning of "Legible code"???????
+            if (absDelta <= 0.18f) 
+                result = "Perfect";
+            else if (absDelta <= 0.3f)
+                result = "Good";
+            else 
+                result = "Miss";
+        }
         // Feedback visual/sonoro
         if (result == "Perfect") assignedButton.ShowPerfectState();
         else if (result == "Good") assignedButton.ShowGoodState();

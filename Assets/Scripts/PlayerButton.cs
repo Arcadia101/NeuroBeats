@@ -221,7 +221,7 @@ public class PlayerButton : MonoBehaviour
     public void OnPlayerInput(NoteInputType input)
     {
         if (currentNote == null) return;
-        currentNote.ReceiveInput(input);
+        //currentNote.ReceiveInput(input); //I'm comenting this crap because none is calling this method so far.
     }
 
     #region Gizmos

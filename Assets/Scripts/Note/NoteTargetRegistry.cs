@@ -35,7 +35,22 @@ public class NoteTargetRegistry : MonoBehaviour
         TryNext();
     }
     
+    /// <summary>
+    /// This returns whatever we input 
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+
     public NoteBehavior CurrentlyEvaluating(NoteInputType type)
+    {
+        //So we need to save the input. 
+        return current;
+    }
+
+    //So the problem we have right now is this always returns the currenty InputType. 
+    //We need to always evaluate (compare) no matter what the playr input is. 
+    //
+    public NoteBehavior CurrentlyEvaluating_Deprecated(NoteInputType type)
     {
         // Si usas la cola única, compara type con current.InputType
         return current != null && current.InputType == type

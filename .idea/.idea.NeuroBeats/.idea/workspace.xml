@@ -6,21 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="54580ed0-7c70-4cc8-a8e6-f9d8e066e590" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Tutorial UI/TutorialVideo.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Tutorial UI/TutorialVideo.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HitController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelExportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelExportController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteTargetRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteTargetRegistry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,22 +43,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "IntegrationSpace",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IntegrationSpace&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Aruma Studio/NeurobeatsAlpha0.01\NeuroBeats.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Aruma Studio/NeurobeatsAlpha0.05\NeuroBeats.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="E:\Game Projects\Aruma Studio\NeurobeatsAlpha0.01" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -143,7 +135,10 @@
       <workItem from="1755699125355" duration="398000" />
       <workItem from="1756094580459" duration="7677000" />
       <workItem from="1756148998188" duration="20434000" />
-      <workItem from="1756578827302" duration="5331000" />
+      <workItem from="1756578827302" duration="5931000" />
+      <workItem from="1757794262976" duration="1787000" />
+      <workItem from="1759767269419" duration="1478000" />
+      <workItem from="1761870242401" duration="18698000" />
     </task>
     <servers />
   </component>

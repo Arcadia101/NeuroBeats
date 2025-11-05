@@ -202,7 +202,7 @@ public class InputReader : ScriptableObject, InputSystem_Actions.IPlayerActions,
 
     public void OnNavigate(InputAction.CallbackContext context)
     {
-        Debug.Log("You may wanna have a look here");
+        //Debug.Log("You may wanna have a look here");
         if (context.phase == InputActionPhase.Performed)
             UI_Navigate.Invoke(context.ReadValue<Vector2>());
     }
