@@ -53,6 +53,8 @@ public class NoteEvaluator : MonoBehaviour
         evaluationStartTime = MusicTimeTracker.Instance.CurrentSongTime;
     }
 
+    [SerializeField] private float perfectResultDelta = 0.18f;
+    [SerializeField] private float goodResultDelta = 0.21f;
     /// <summary>
     /// Recibe un intento de input del jugador y decide resultado.
     /// </summary>
@@ -74,9 +76,9 @@ public class NoteEvaluator : MonoBehaviour
         }
         else
         {           // Bro do you know the meaning of "Legible code"???????
-            if (absDelta <= 0.18f) 
+            if (absDelta <= perfectResultDelta) 
                 result = "Perfect";
-            else if (absDelta <= 0.3f)
+            else if (absDelta <= goodResultDelta)
                 result = "Good";
             else 
                 result = "Miss";

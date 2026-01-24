@@ -1,0 +1,49 @@
+{
+    "list": [
+        {
+            "markerName": "Combo1",
+            "targetTime": 3.009000062942505,
+            "hitTime": 2.6659998893737795,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 1.6419998407363892,
+            "inputSpected": "LB"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 6.494999885559082,
+            "hitTime": 6.421000003814697,
+            "inputReceived": "LB",
+            "result": "Miss",
+            "evaluationDuration": 1.8990001678466797,
+            "inputSpected": "LB"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 10.26200008392334,
+            "hitTime": 10.388999938964844,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.0909996032714845,
+            "inputSpected": "RT"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 14.005999565124512,
+            "hitTime": 14.036999702453614,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 2.005000114440918,
+            "inputSpected": "RB"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 16.993000030517579,
+            "hitTime": 15.423999786376954,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 0.4270000457763672,
+            "inputSpected": "LB"
+        }
+    ]
+}
