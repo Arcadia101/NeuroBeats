@@ -1219,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_fontStyle
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 2278302363268269335, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2290546803374092950, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_fontStyle
       value: 16
@@ -1234,6 +1238,10 @@ PrefabInstance:
     - target: {fileID: 3851270408229731103, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851270408229731103, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569402189462226058, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_AnchorMax.y

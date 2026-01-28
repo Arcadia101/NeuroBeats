@@ -82,7 +82,7 @@ public class LevelExportController : MonoBehaviour
 #else
         // En la build, usar el directorio ejecutable o la ruta configurada
         directory = string.IsNullOrEmpty(outputDirectory)
-            ? Application.persistentDataPath
+            ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExportedTests")
             : outputDirectory;
 #endif
 
