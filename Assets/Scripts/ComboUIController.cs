@@ -27,12 +27,14 @@ public class ComboUIController : MonoBehaviour
         ComboManager.Instance.OnComboReset.AddListener(HandleComboReset);
         LevelEndController.Instance.OnLevelEnd.AddListener(EndLevel);
 
-        comboText.gameObject.SetActive(false);
+        if (comboText != null)
+            comboText.gameObject.SetActive(false);
     }
 
     void EndLevel()
     {
-        comboText.gameObject.SetActive(false);
+        if (comboText != null)
+            comboText.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -40,12 +42,17 @@ public class ComboUIController : MonoBehaviour
     /// </summary>
     private void HandleComboIncrease(int newScore, int comboLevel)
     {
+        /* DESACTIVADO TEMPORALMENTE: UI de Combo
         // Si era una rutina de ocultar en curso, la detenemos
         if (hideRoutine != null) StopCoroutine(hideRoutine);
 
-        comboText.text = $"COMBO x{comboLevel + 1}\nScore:  {newScore}";
-        comboText.color = Color.white;
-        comboText.gameObject.SetActive(true);
+        if (comboText != null)
+        {
+            comboText.text = $"COMBO x{comboLevel + 1}\nScore:  {newScore}";
+            comboText.color = Color.white;
+            comboText.gameObject.SetActive(true);
+        }
+        */
     }
 
     /// <summary>
@@ -53,9 +60,14 @@ public class ComboUIController : MonoBehaviour
     /// </summary>
     private void HandleComboReset()
     {
+        /* DESACTIVADO TEMPORALMENTE: UI de Combo
         if (hideRoutine != null) StopCoroutine(hideRoutine);
-        comboText.text = $"COMBO x0";
-        hideRoutine = StartCoroutine(FadeAndHide());
+        if (comboText != null)
+        {
+            comboText.text = $"COMBO x0";
+            hideRoutine = StartCoroutine(FadeAndHide());
+        }
+        */
     }
 
     /// <summary>

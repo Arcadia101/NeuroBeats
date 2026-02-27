@@ -52,6 +52,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -73,6 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
@@ -142,16 +145,16 @@ MonoBehaviour:
   circlePerfectSprite: {fileID: 21300000, guid: f6cadb4b4b68d674b9a3415e9701cd32, type: 3}
   circleMissSprite: {fileID: 21300000, guid: 497e0714b0e9a8c4091fe0765b63b1d5, type: 3}
   letterRenderer: {fileID: 7818643886449746017}
-  spriteBLeft: {fileID: 21300000, guid: 554f8d5c122b15046b7d26e68fb6b775, type: 3}
-  spriteTLeft: {fileID: 21300000, guid: 909f4f1af4256b547bf91b8926656fa3, type: 3}
-  spriteBRight: {fileID: 21300000, guid: 9abd1b2b5f91a4b4a8fd79d02f4277b3, type: 3}
-  spriteTRight: {fileID: 21300000, guid: 250097d90b44c2c4285bf33234f9b3fe, type: 3}
-  spriteBGood: {fileID: 21300000, guid: 6023767776105ee4ba9e2c4054e7d128, type: 3}
-  spriteTGood: {fileID: 21300000, guid: 0ac1c9d51d4116b4185411bfe7ae2e28, type: 3}
-  spriteBPerfect: {fileID: 21300000, guid: 6023767776105ee4ba9e2c4054e7d128, type: 3}
-  spriteTPerfect: {fileID: 21300000, guid: 0ac1c9d51d4116b4185411bfe7ae2e28, type: 3}
-  spriteBMiss: {fileID: 21300000, guid: 53337a374d6eb094c9f4feebf74abdb7, type: 3}
-  spriteTMiss: {fileID: 21300000, guid: 983c65cbaa232f346aaad3eb479e2116, type: 3}
+  spriteBLeft: {fileID: 21300000, guid: 05ffce80487cf914ab7febc744564e99, type: 3}
+  spriteTLeft: {fileID: 21300000, guid: 6f8091727628c7442bcba851e2179c5d, type: 3}
+  spriteBRight: {fileID: 21300000, guid: 6f8269d61e32f5849bb7a806cf289db7, type: 3}
+  spriteTRight: {fileID: 21300000, guid: 52caf89e4ef4bfc43818defb9f132fcc, type: 3}
+  spriteBGood: {fileID: 21300000, guid: f7440b8eb535d3e46a3768e1fd268823, type: 3}
+  spriteTGood: {fileID: 21300000, guid: cc2b648e1f7f16048b87b19c60e30dc8, type: 3}
+  spriteBPerfect: {fileID: 21300000, guid: 006dd9160ea7b6841ab86445e2bdae4a, type: 3}
+  spriteTPerfect: {fileID: 21300000, guid: 6ee4ee023a918e0419ef193b913a15b6, type: 3}
+  spriteBMiss: {fileID: 21300000, guid: 0fea490bba7838e4b84d10dee309e613, type: 3}
+  spriteTMiss: {fileID: 21300000, guid: af7f6f56ce7cbbf4898bce2d09856990, type: 3}
   rotationSpeed: 180
   minRotationSpeed: 180
   maxRotationSpeed: 1800
@@ -211,6 +214,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -232,6 +237,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1

@@ -12,4 +12,5 @@ public class NoteResult
     public string result;            // "Perfect", "Good" o "Miss"
     public float evaluationDuration; // Duración desde que comenzó la evaluación hasta el resultado (s)
     public string inputSpected;      // Tipo de input con el que spawneo la nota
+    public string congruency;        // "Congruent", "Incongruent" o "Neutral"
 }

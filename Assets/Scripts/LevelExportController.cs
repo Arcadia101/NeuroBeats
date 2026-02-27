@@ -75,15 +75,12 @@ public class LevelExportController : MonoBehaviour
         string directory;
 
 #if UNITY_EDITOR
-        // En el editor, guardar dentro del proyecto (por ejemplo, en Assets/Exports)
-        directory = string.IsNullOrEmpty(outputDirectory)
-            ? Path.Combine(Application.dataPath, "Exports")
-            : outputDirectory;
+        // En el editor: Assets/Exports
+        directory = Path.Combine(Application.dataPath, "Exports");
 #else
-        // En la build, usar el directorio ejecutable o la ruta configurada
-        directory = string.IsNullOrEmpty(outputDirectory)
-            ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExportedTests")
-            : outputDirectory;
+        // En la build: Carpeta del ejecutable/Exports
+        // AppDomain.CurrentDomain.BaseDirectory apunta a la carpeta donde está el .exe
+        directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Exports");
 #endif
 
         // Crear carpeta si no existe
@@ -92,7 +89,7 @@ public class LevelExportController : MonoBehaviour
 
         string fullPath = Path.Combine(directory, fileName);
 
-        // Exportar
+        // Exportar usando la ruta completa
         NoteHistoryRecorder.Instance.ExportToJson(fullPath);
 
         Debug.Log($"LevelExportController: Resultados exportados a {fullPath}");

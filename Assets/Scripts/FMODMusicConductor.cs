@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
@@ -11,13 +10,11 @@ public class FMODMusicConductor : MonoBehaviour
 
     [EventRef] [SerializeField] private string musicEventPath;
     public EventInstance musicInstance;
-    //public NoteInputType laPerraNota;
 
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        Debug.Log("[FMODMusicConductor] Awake called on " + gameObject.name);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -62,30 +59,23 @@ public class FMODMusicConductor : MonoBehaviour
     {
         if (string.IsNullOrEmpty(newEventPath))
         {
-            Debug.LogWarning("FMODMusicConductor.RestartWith: newEventPath vacío.");
+            Debug.LogWarning("[FMODMusicConductor] RestartWith: newEventPath vacío.");
             return;
         }
+        
         // Detener / liberar anterior
         if (musicInstance.isValid())
             musicInstance.stop(STOP_MODE.IMMEDIATE);
         musicInstance.release();
 
-        // Nuevo
-        if (musicEventPath == newEventPath && musicEventPath != "event:/Music/MainMenu")
-        {
-            return;
-            
-        }
-        else
-        {
-            musicEventPath = newEventPath;
-        }
+        // Actualizamos el path
+        musicEventPath = newEventPath;
         
         Debug.Log("[FMODMusicConductor] RestartWith: " + musicEventPath);
         musicInstance = RuntimeManager.CreateInstance(musicEventPath);
         var res = musicInstance.start();
         if (res != FMOD.RESULT.OK)
-            Debug.LogWarning($"FMODMusicConductor: fallo al iniciar {musicEventPath}: {res}");
+            Debug.LogWarning($"[FMODMusicConductor] Fallo al iniciar {musicEventPath}: {res}");
 
         // Forzar update apenas arranca para evitar starvation
         RuntimeManager.StudioSystem.update();
@@ -107,6 +97,3 @@ public class FMODMusicConductor : MonoBehaviour
             musicInstance.stop(STOP_MODE.IMMEDIATE);
     }
 }
-
-
-	

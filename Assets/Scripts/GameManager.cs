@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
+
 /// <summary>
 /// Singleton que gestiona el flujo multi-nivel y mantiene los managers persistentes.
 /// </summary>
@@ -32,9 +33,18 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Si volvemos al menú principal, asegurarnos de poner la música del menú
+        if (scene.name == "MainMenu" || scene.name == "MenuLevel")
+        {
+             if (FMODMusicConductor.Instance != null)
+                FMODMusicConductor.Instance.RestartWith("event:/Music/MainMenu");
+             return;
+        }
+
         // Solo procesar si configuraste currentConfig y la escena coincide
         if (currentConfig == null || scene.name != currentConfig.sceneName)
             return;
+
         // 1) Reiniciar música
         if (FMODMusicConductor.Instance != null)
             FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
@@ -47,7 +57,6 @@ public class GameManager : MonoBehaviour
             if (!markerFile.EndsWith(".json"))
                 markerFile += ".json";
             spawner.SetMusicEvent(currentConfig.musicEvent);
-            spawner.SetMarkerFile(currentConfig.markerJsonFileName);
             spawner.SetMarkerFile(markerFile);
         }
     
@@ -79,19 +88,15 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(LevelConfig config)
     {
         currentConfig = config;
-        //FMODMusicConductor.Instance.musicInstance.stop(STOP_MODE.IMMEDIATE);
-        Debug.Log("Vamo a cargar "+ config.sceneName);
+        Debug.Log($"[GameManager] Loading level: {config.sceneName}");
         try
         {
             SceneManager.LoadScene(config.sceneName);
-            Debug.Log("Si se pudo perros");
-            //FMODMusicConductor.Instance.RestartWith(currentConfig.musicEvent);
         }
-        catch
+        catch (System.Exception e)
         {
-            Debug.Log("No se pudo perros");
+            Debug.LogError($"[GameManager] Failed to load scene {config.sceneName}: {e.Message}");
         }
-        
     }
     
     public void QuitGame()

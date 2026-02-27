@@ -40,6 +40,7 @@ public class GameScenesManager : MonoBehaviour
                 SceneManager.LoadScene(sceneName);
             }
             
+            
         }
     }
 }

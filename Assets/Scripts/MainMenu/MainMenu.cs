@@ -2,22 +2,9 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    //----------------------------------------//
-    //    Reference to the Singletone         //------------------------------ //
-    //----------------------------------------//
     public static MainMenu Instance;
 
-    
-    //----------------------------------------//
-    /*
-     
-     
-     */
-    //----------------------------------------//
-    
-    //----------------------------------------//
-    //    Reference to the Buttons and interfaces // ------------------------------ //
-    //----------------------------------------//
+    [Header("UI References")]
     [SerializeField] private GameObject MM_Buttons;
     [SerializeField] private GameObject OptionsInterface;
     [SerializeField] private GameObject TitleScreen;
@@ -25,9 +12,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject LoadMenu;
     [SerializeField] private GameObject NewGame_panel; 
 
-    //----------------------------------------//
-    //               Methods                  // ------------------------------ //
-    //----------------------------------------//
     private void Awake()
     {
         if (Instance == null)
@@ -40,114 +24,96 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    //----------------------------------------//
-    //      To display the new game interface    // ------------------------------ //
-    //----------------------------------------//
-    public void NewGame() //this is called from hierarchy MM_Buttons > New Game (the button)
+    /// <summary>
+    /// Muestra la interfaz de nuevo juego.
+    /// </summary>
+    public void NewGame() 
     {
-        //Debug.Log("New Game button");
         NewGame_panel.SetActive(true); 
     }
 
-    //----------------------------------------//
-    //      To start a new game - PART OF NewGame Interface     // ------------------------------ //
-    //----------------------------------------//
-    
+    /// <summary>
+    /// Inicia un nuevo juego cargando el nivel especificado.
+    /// </summary>
     public void StartNewGame(LevelConfig config)
     {
-        //Debug.Log("Start New Game");
-       // GameScenesManager.Instance.ChangeScene(SceneName.GameEnvironment);
-       
        if (GameManager.Instance != null)
        {
-           GameManager.Instance.LoadLevel(config); //este es el de camilo
-
+           GameManager.Instance.LoadLevel(config);
        }
        else
        {
-           GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu); //Este es el mio
+           GameScenesManager.Instance.ChangeScene(SceneName.LevelMenu);
        }
     }
 
-    //----------------------------------------//
-    //   To start the tutorial- PART OF NewGame Interface    // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Inicia el tutorial.
+    /// </summary>
     public void StartTutorial(LevelConfig config)
     {
-        if (GameManager.Instance != null) //este es el de camilo
+        if (GameManager.Instance != null)
         {
             GameManager.Instance.LoadLevel(config);
         }
         else
         {
-            GameScenesManager.Instance.ChangeScene(SceneName.Tutorial); //Este es el mio
+            GameScenesManager.Instance.ChangeScene(SceneName.Tutorial);
         }
     }
 
-    //----------------------------------------//
-    //   To load a saved game.     // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Muestra el menú de cargar partida.
+    /// </summary>
     public void LoadGame()
     {
-        //Debug.Log("Load Game");
         MM_Buttons.gameObject.SetActive(false);
         LoadMenu.gameObject.SetActive(true);
     }
 
-    //----------------------------------------//
-    //  To display the options menu    // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Muestra el menú de opciones.
+    /// </summary>
     public void OptionsMenu()
     {
-        //Debug.Log("Options Menu");
         MM_Buttons.gameObject.SetActive(false);
         OptionsInterface.SetActive(true);
-        
     }
 
-    //----------------------------------------//
-    //  To load the credits scene   // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Carga la escena de créditos.
+    /// </summary>
     public void CreditsMenu()
     {
-        //Debug.Log("Credits Menu");
         GameScenesManager.Instance.ChangeScene(SceneName.Credits);
     }
 
-    //----------------------------------------//
-    //  to load the What's new scene           // ------------------------------ //
-    //it is likely that this scene doesn't exist yet //
-    //----------------------------------------//
+    /// <summary>
+    /// Muestra el menú de novedades (aún no implementado).
+    /// </summary>
     public void WhatsNewMenu()
     {
-        //Debug.Log("Whats New Menu");
+        // TODO: Implementar menú de novedades
     }
 
-    //----------------------------------------//
-    //  To quit the game                        // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Cierra la aplicación.
+    /// </summary>
     public void QuitGame()
     {
-        //Debug.Log("Quit Game");
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-        #elif UNITY_WEBPLAYER
-            Application.OpenURL(webplayerQuitURL);
         #else
             Application.Quit();
         #endif
-        
     }
 
-    //----------------------------------------//
-    //  To display the main menu interface . Also acts as a reset of the main menu interface             // ------------------------------ //
-    //----------------------------------------//
+    /// <summary>
+    /// Resetea y muestra la interfaz principal del menú.
+    /// </summary>
     public void MainMenu_Interface()
     {
-        //Debug.Log("Main Menu");
-        MM_Buttons.gameObject.SetActive(false); //This is like a reset of the menu
+        MM_Buttons.gameObject.SetActive(false); // Reset visual
         MM_Buttons.gameObject.SetActive(true);
     }
-    
-
 }

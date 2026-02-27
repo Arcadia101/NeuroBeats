@@ -17,8 +17,13 @@ public class HitController : MonoBehaviour
     private void OnHit(NoteInputType type)
     {
         // Pregunta al NoteTargetRegistry si hay una nota en evaluación de este tipo
+        if (NoteTargetRegistry.Instance == null) return;
+
         NoteBehavior note = NoteTargetRegistry.Instance.CurrentlyEvaluating(type);
-        note.ReceiveInput(type);
-        //Here we need to compare NoteTargetRegistry.Instance.current.NoteInputType. (note) with the type no matter what the input is. 
+        
+        if (note != null)
+        {
+            note.ReceiveInput(type);
+        }
     }
 }

@@ -16,6 +16,7 @@ public class NoteBehavior : MonoBehaviour
     [SerializeField] private float perfectZoneRadius = 0.5f;
     [Tooltip("Radio de zona Good.")]
     [SerializeField] private float goodZoneRadius = 1.0f;
+    
     public float SpawnTime { get; private set; }
     public float TargetTime { get; private set; }
     public string MarkerName { get; private set; }
@@ -28,8 +29,6 @@ public class NoteBehavior : MonoBehaviour
     [Header("Evaluation timings")]
     [SerializeField] private float fixedEvalTime   = 0.5f; // segundos de evaluación (Good/Perfect)
     [SerializeField] private float fixedExitTime   = 0.3f; // segundos de salida tras evaluación
-    
-    
 
     private void Awake()
     {
@@ -62,8 +61,10 @@ public class NoteBehavior : MonoBehaviour
         }
 
         // 2) Iniciar evaluación
-        evaluator.Initialize(button, zoneManager, markerTime, spawnTime, type, markerName);
+        // Pasamos transform.position como la posición de spawn
+        evaluator.Initialize(button, zoneManager, markerTime, spawnTime, type, markerName, transform.position);
     }
+
     //--- FACHADA hacia NoteEvaluator ---//
     public NoteInputType InputType 
     { 
@@ -71,8 +72,7 @@ public class NoteBehavior : MonoBehaviour
     }
 
     /// <summary>
-    /// Invocado por HitController o PlayerButton (Ahora mismo el player button no hace una mondaaaa)
-    /// PD: Comenta bien el codigo camilo conchetumadre
+    /// Invocado por HitController o PlayerButton.
     /// </summary>
     public void ReceiveInput(NoteInputType input)
     {
@@ -93,7 +93,7 @@ public class NoteBehavior : MonoBehaviour
     private void OnDrawGizmos()
     {
         // Nos aseguramos de que evaluator y su transform del pulsador existen
-        if (evaluator == null || evaluator.assignedButton.transform == null) 
+        if (evaluator == null || evaluator.assignedButton == null) 
             return;
 
         Vector3 pos = evaluator.assignedButton.transform.position;
@@ -106,10 +106,7 @@ public class NoteBehavior : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(pos, goodZoneRadius);
     }
-
 }
-
-
 
 /// <summary>
 /// Datos de spawn de una nota, usados si necesitas representar o guardar información.

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -63,88 +62,50 @@ public class PlayerButton : MonoBehaviour
     public bool CanAcceptInput(NoteInputType type)
         => acceptedInputTypes.Contains(type);
     
-    
     [Header("Rotación Dinámica")]
-        [Tooltip("Velocidad mínima de rotación (grados/s).")]
-        [SerializeField] private float minRotationSpeed = 30f;
-        [Tooltip("Velocidad máxima de rotación (grados/s).")]
-        [SerializeField] private float maxRotationSpeed = 180f;
-        [Tooltip("Tiempo (s) antes de TargetTime para empezar a acelerar.")]
-        [SerializeField] private float accelDuration = 1.0f;
-        [Tooltip("Tiempo (s) tras TargetTime para desacelerar.")]
-        [SerializeField] private float decelDuration = 1.0f;
+    [Tooltip("Velocidad mínima de rotación (grados/s).")]
+    [SerializeField] private float minRotationSpeed = 30f;
+    [Tooltip("Velocidad máxima de rotación (grados/s).")]
+    [SerializeField] private float maxRotationSpeed = 180f;
+    [Tooltip("Tiempo (s) antes de TargetTime para empezar a acelerar.")]
+    [SerializeField] private float accelDuration = 1.0f;
+    [Tooltip("Tiempo (s) tras TargetTime para desacelerar.")]
+    [SerializeField] private float decelDuration = 1.0f;
         
-        
-        private void Update()
+    private void Update()
+    {
+        if (currentNote == null) return;
+
+        // 1) Obtén tiempos
+        float now    = MusicTimeTracker.Instance.CurrentSongTime;
+        float spawn  = currentNote.SpawnTime;
+        float target = currentNote.TargetTime;
+
+        // 2) Cálculo de aceleración lineal desde spawn→target
+        float travelDur = Mathf.Max(target - spawn, 0.01f);
+        float elapsed   = Mathf.Clamp(now - spawn, 0f, travelDur);
+        float accelT    = elapsed / travelDur;
+        float speedAccel= Mathf.Lerp(minRotationSpeed, maxRotationSpeed, accelT);
+
+        float speed = speedAccel;
+
+        // 3) Si ya pasamos el perfect, aplicamos desaceleración
+        if (now > target)
         {
-            if (currentNote == null) return;
-
-            // 1) Obtén tiempos
-            float now    = MusicTimeTracker.Instance.CurrentSongTime;
-            float spawn  = currentNote.SpawnTime;
-            float target = currentNote.TargetTime;
-
-            // 2) Cálculo de aceleración lineal desde spawn→target
-            float travelDur = Mathf.Max(target - spawn, 0.01f);
-            float elapsed   = Mathf.Clamp(now - spawn, 0f, travelDur);
-            float accelT    = elapsed / travelDur;
-            float speedAccel= Mathf.Lerp(minRotationSpeed, maxRotationSpeed, accelT);
-
-            float speed = speedAccel;
-
-            // 3) Si ya pasamos el perfect, aplicamos desaceleración
-            if (now > target)
-            {
-                float post    = now - target;
-                float decelT  = Mathf.Clamp01(post / decelDuration);
-                speed         = Mathf.Lerp(maxRotationSpeed, minRotationSpeed, decelT);
-            }
-
-            // 4) Rota el círculo
-            circleTransform.Rotate(0f, 0f, speed * Time.deltaTime);
-
-            // 5) Fija la letra sin rotación
-            letterRenderer.transform.rotation = Quaternion.identity;
+            float post    = now - target;
+            float decelT  = Mathf.Clamp01(post / decelDuration);
+            speed         = Mathf.Lerp(maxRotationSpeed, minRotationSpeed, decelT);
         }
 
+        // 4) Rota el círculo (NEGATIVO para sentido horario)
+        circleTransform.Rotate(0f, 0f, -speed * Time.deltaTime);
 
-
-    /// <summary>
-    /// Asignado por la nota al instanciarse: muestra Left/Right variante normal.
-    /// </summary>
-    ///
-    Level1Behavior level1Behavior;
-
-    private void Awake()
-    {
-        //level1Behavior = transform.parent.GetComponent<Level1Behavior>();
+        // 5) Fija la letra sin rotación
+        letterRenderer.transform.rotation = Quaternion.identity;
     }
-
-    
-    private void OnEnable()
-    {
-        //level1Behavior.controlsChanged += UpdateIcon;
-    }
-
-    /*
-     * 
-    void UpdateIcon()
-    {
-        NoteInputType type = FMODMusicConductor.Instance.laPerraNota;
-        switch (type)
-        {
-            case NoteInputType.LB: letterRenderer.sprite = level1Behavior.currentScheme.Left1; break;
-            case NoteInputType.LT: letterRenderer.sprite = level1Behavior.currentScheme.Left2; break;
-            case NoteInputType.RB: letterRenderer.sprite = level1Behavior.currentScheme.Right1; break;
-            case NoteInputType.RT:
-                letterRenderer.sprite = level1Behavior.currentScheme.Right2; break; 
-        }
-    }
-     */
 
     public void AssignNote(NoteBehavior note, NoteInputType type, float spawnTime)
     {
-        
         currentNote = note;
         currentType = type;
 
@@ -221,7 +182,6 @@ public class PlayerButton : MonoBehaviour
     public void OnPlayerInput(NoteInputType input)
     {
         if (currentNote == null) return;
-        //currentNote.ReceiveInput(input); //I'm comenting this crap because none is calling this method so far.
     }
 
     #region Gizmos
