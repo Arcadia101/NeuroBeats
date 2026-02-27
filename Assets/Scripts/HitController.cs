@@ -6,7 +6,7 @@ public class HitController : MonoBehaviour
 
     private void Awake()
     {
-        inputReader.EnableGameplayInput();
+        inputReader.ChangeActionMap(InputReader.ActionMapType.Player);
 
         inputReader.LeftButton  += () => OnHit(NoteInputType.LB);
         inputReader.LeftTrigger += () => OnHit(NoteInputType.LT);
@@ -17,7 +17,10 @@ public class HitController : MonoBehaviour
     private void OnHit(NoteInputType type)
     {
         // Pregunta al NoteTargetRegistry si hay una nota en evaluación de este tipo
+        if (NoteTargetRegistry.Instance == null) return;
+
         NoteBehavior note = NoteTargetRegistry.Instance.CurrentlyEvaluating(type);
+        
         if (note != null)
         {
             note.ReceiveInput(type);

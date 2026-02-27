@@ -9,16 +9,20 @@ public class FMODMusicConductor : MonoBehaviour
     public static FMODMusicConductor Instance { get; private set; }
 
     [EventRef] [SerializeField] private string musicEventPath;
-    private EventInstance musicInstance;
+    public EventInstance musicInstance;
 
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        Debug.Log("[FMODMusicConductor] Awake called on " + gameObject.name);
         DontDestroyOnLoad(gameObject);
     }
-    
+
+    private void Start()
+    {
+        RestartWith(musicEventPath);
+    }
+
     /// <summary>
     /// Interpola suavemente el parámetro dado al valor target en duration segundos.
     /// </summary>
@@ -55,20 +59,23 @@ public class FMODMusicConductor : MonoBehaviour
     {
         if (string.IsNullOrEmpty(newEventPath))
         {
-            Debug.LogWarning("FMODMusicConductor.RestartWith: newEventPath vacío.");
+            Debug.LogWarning("[FMODMusicConductor] RestartWith: newEventPath vacío.");
             return;
         }
+        
         // Detener / liberar anterior
         if (musicInstance.isValid())
             musicInstance.stop(STOP_MODE.IMMEDIATE);
         musicInstance.release();
 
-        // Nuevo
+        // Actualizamos el path
         musicEventPath = newEventPath;
+        
+        Debug.Log("[FMODMusicConductor] RestartWith: " + musicEventPath);
         musicInstance = RuntimeManager.CreateInstance(musicEventPath);
         var res = musicInstance.start();
         if (res != FMOD.RESULT.OK)
-            Debug.LogWarning($"FMODMusicConductor: fallo al iniciar {musicEventPath}: {res}");
+            Debug.LogWarning($"[FMODMusicConductor] Fallo al iniciar {musicEventPath}: {res}");
 
         // Forzar update apenas arranca para evitar starvation
         RuntimeManager.StudioSystem.update();
@@ -90,6 +97,3 @@ public class FMODMusicConductor : MonoBehaviour
             musicInstance.stop(STOP_MODE.IMMEDIATE);
     }
 }
-
-
-	

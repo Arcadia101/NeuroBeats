@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using FMODUnity;
-using FMOD.Studio;
 using Random = UnityEngine.Random;
 
 /// <summary>
 /// Instancia notas basadas en marcadores de FMOD, adaptando spawn dinámico,
-/// filtrado por nivel y modo de juego, y evita duplicar corutinas.
+/// filtrado por nivel y modo de juego.
 /// </summary>
 public class MarkerDrivenSpawner : MonoBehaviour
 {
@@ -21,11 +20,13 @@ public class MarkerDrivenSpawner : MonoBehaviour
     [Header("Spawn Config")]
     [Tooltip("Prefab de nota a instanciar.")]
     [SerializeField] private GameObject notePrefab;
+    [Tooltip("Prefab de nota de tutorial.")]
+    [SerializeField] private GameObject tutorialNotePrefab;
     [Tooltip("Segundos de anticipación antes del marker.")]
     [SerializeField] private float anticipationSeconds = 4f;
-    [Tooltip("espacio entre el cual una nota se puede spawnear verticalmente.")]
+    [Tooltip("Espacio entre el cual una nota se puede spawnear verticalmente.")]
     [SerializeField] private float verticalOffset = 3f;
-    [Tooltip("distancia desde la cual una nota spawnea horizontalmente.")]
+    [Tooltip("Distancia desde la cual una nota spawnea horizontalmente.")]
     [SerializeField] private float horizontalOffset = 10f;
 
     [Header("Markers JSON")]
@@ -68,7 +69,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
         string path = Path.Combine(Application.streamingAssetsPath, markerJsonFileName);
         if (!File.Exists(path))
         {
-            Debug.LogError("MarkerDrivenSpawner: archivo de marcadores no encontrado: " + path);
+            Debug.LogError("[MarkerDrivenSpawner] Archivo de marcadores no encontrado: " + path);
             return;
         }
 
@@ -196,11 +197,12 @@ public class MarkerDrivenSpawner : MonoBehaviour
     {
         // Elegir tipo aleatorio
         NoteInputType type = GetRandomNoteType();
+        
         // Pedir pulsador libre
         Transform zone = targetManager.RequestRandomTarget(type);
         if (zone == null)
         {
-            Debug.LogWarning($"No available targets for {note.markerName}");
+            Debug.LogWarning($"[MarkerDrivenSpawner] No available targets for {note.markerName}");
             return;
         }
         // Determinar posición de aparición lateral
@@ -254,7 +256,4 @@ public class MarkerDrivenSpawner : MonoBehaviour
 
         return new Vector3(x, y, 0f);
     }
-
-    
 }
-

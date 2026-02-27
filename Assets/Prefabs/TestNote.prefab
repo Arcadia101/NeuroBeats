@@ -74,6 +74,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -95,6 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
@@ -121,11 +124,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f171a49223c1814b8e8dd1af7f57bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDeviation: 1
-  maxDeviation: 2
   minSegments: 3
   maxSegments: 5
+  maxTurnAngleDeg: 60
+  planeNormal: {x: 0, y: 0, z: 1}
   exitDistance: 2
+  speed: 6
+  biasFactor: 0.5
+  topConstrainer: {fileID: 0}
+  bottomConstrainer: {fileID: 0}
 --- !u!114 &275714695640247831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +147,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedButton: {fileID: 0}
   markerCombo: 
+  perfectResultDelta: 0.05
+  goodResultDelta: 0.1

@@ -39,14 +39,24 @@ public class NoteHistoryRecorder : MonoBehaviour
     }
 
     /// <summary>
-    /// Exporta todos los resultados a un JSON en persistentDataPath.
+    /// Exporta todos los resultados a un JSON en la ruta especificada.
+    /// Si pathOrFileName es solo un nombre, usa persistentDataPath (comportamiento legacy).
+    /// Si es una ruta absoluta, usa esa ruta.
     /// </summary>
-    public void ExportToJson(string fileName = "NoteResults.json")
+    public void ExportToJson(string pathOrFileName = "NoteResults.json")
     {
         string json = JsonUtility.ToJson(new SerializationWrapper<NoteResult>(results), true);
-        string path = Path.Combine(Application.persistentDataPath, fileName);
-        File.WriteAllText(path, json);
-        Debug.Log($"Note results exported to: {path}");
+        
+        string finalPath = pathOrFileName;
+        
+        // Si no es una ruta absoluta, asumimos que es solo un nombre de archivo y usamos persistentDataPath
+        if (!Path.IsPathRooted(pathOrFileName))
+        {
+            finalPath = Path.Combine(Application.persistentDataPath, pathOrFileName);
+        }
+
+        File.WriteAllText(finalPath, json);
+        Debug.Log($"Note results exported to: {finalPath}");
     }
 
     // Helper para serializar listas con JsonUtility

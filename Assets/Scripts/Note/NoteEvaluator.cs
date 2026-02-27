@@ -14,11 +14,16 @@ public class NoteEvaluator : MonoBehaviour
     private bool isEvaluable = false;
     private bool hasEvaluated = false;
     private float evaluationStartTime;
+    private Vector3 spawnPosition; // Para calcular congruencia
 
     // Referencias externas
     public PlayerButton assignedButton;
     private TargetZoneManager zoneManager;
     public string markerCombo;
+
+    [Header("Evaluation Settings")]
+    [SerializeField] private float perfectResultDelta = 0.18f;
+    [SerializeField] private float goodResultDelta = 0.21f;
 
     /// <summary>
     /// Inicializa el evaluator con todos los datos necesarios.
@@ -28,18 +33,21 @@ public class NoteEvaluator : MonoBehaviour
         TargetZoneManager zoneManager,
         float markerTime,
         float spawnTime,
-        NoteInputType type, string markerName)
+        NoteInputType type, string markerName,
+        Vector3 spawnPos)
     {
         this.assignedButton = button;
         this.zoneManager = zoneManager;
         this.TargetTime = markerTime;
         this.TargetType = type;
-        // Asignar al botón (pasa NoteBehavior, no NoteEvaluator)
+        this.spawnPosition = spawnPos;
+        
+        // Asignar al botón
         var behavior = GetComponent<NoteBehavior>();
         markerCombo = markerName;
         assignedButton.AssignNote(behavior, type , spawnTime);
 
-        // Encolar la NoteBehavior para evaluación (no 'this')
+        // Encolar la NoteBehavior para evaluación
         NoteTargetRegistry.Instance.EnqueueForEvaluation(behavior);
 
         isEvaluable = true;
@@ -63,14 +71,22 @@ public class NoteEvaluator : MonoBehaviour
         float now = MusicTimeTracker.Instance.CurrentSongTime;
         float delta = now - TargetTime;
         float absDelta = Mathf.Abs(delta);
-
+        
         string result;
-        if (absDelta <= 0.1f) result = "Perfect";
-        else if (absDelta <= 0.25f) result = "Good";
-        else result = "Miss";
 
-        bool correctInput = input == TargetType;
-        if (!correctInput && result != "Miss") result = "Good";
+        if (TargetType != input)
+        {
+            result = "Miss";
+        }
+        else
+        {
+            if (absDelta <= perfectResultDelta) 
+                result = "Perfect";
+            else if (absDelta <= goodResultDelta)
+                result = "Good";
+            else 
+                result = "Miss";
+        }
 
         // Feedback visual/sonoro
         if (result == "Perfect") assignedButton.ShowPerfectState();
@@ -85,12 +101,14 @@ public class NoteEvaluator : MonoBehaviour
                 : FeedbackType.Miss;
         FeedbackManager.Instance.ShowFeedback(assignedButton.transform, feedbackType);
 
-
         // Combo
         if (result == "Perfect" || result == "Good")
             ComboManager.Instance.RegisterHit();
         else
             ComboManager.Instance.RegisterMiss();
+
+        // Calcular congruencia
+        string congruencyVal = CalculateCongruency();
 
         // Registrar historial
         NoteHistoryRecorder.Instance.Record(new NoteResult
@@ -101,10 +119,33 @@ public class NoteEvaluator : MonoBehaviour
             inputReceived = input.ToString(),
             result = result,
             evaluationDuration = now - evaluationStartTime,
-            inputSpected = TargetType.ToString()
+            inputSpected = TargetType.ToString(),
+            congruency = congruencyVal
         });
 
         FinishEvaluation();
+    }
+
+    private string CalculateCongruency()
+    {
+        if (assignedButton == null) return "Unknown";
+
+        float targetX = assignedButton.transform.position.x;
+        float spawnX = spawnPosition.x;
+
+        // Definir un umbral pequeño para considerar "centro"
+        float centerThreshold = 0.5f;
+
+        // 1. Neutro: si termina en el centro
+        if (Mathf.Abs(targetX) < centerThreshold)
+        {
+            return "Neutral";
+        }
+
+        // 2. Congruente: mismo signo (Ambos positivos o ambos negativos)
+        bool sameSide = (spawnX > 0 && targetX > 0) || (spawnX < 0 && targetX < 0);
+        
+        return sameSide ? "Congruent" : "Incongruent";
     }
 
     /// <summary>
@@ -127,4 +168,3 @@ public class NoteEvaluator : MonoBehaviour
         Destroy(gameObject);
     }
 }
-

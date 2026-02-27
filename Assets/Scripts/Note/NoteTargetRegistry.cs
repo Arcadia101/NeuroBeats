@@ -35,14 +35,13 @@ public class NoteTargetRegistry : MonoBehaviour
         TryNext();
     }
     
+    /// <summary>
+    /// Retorna la nota que se está evaluando actualmente.
+    /// </summary>
     public NoteBehavior CurrentlyEvaluating(NoteInputType type)
     {
-        // Si usas la cola única, compara type con current.InputType
-        return current != null && current.InputType == type
-            ? current
-            : null;
+        return current;
     }
-
 
     private void TryNext()
     {
