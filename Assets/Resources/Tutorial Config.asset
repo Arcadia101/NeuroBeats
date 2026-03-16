@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cb0cd88becb6f4b9d9d87500a2c7bb, type: 3}
   m_Name: Tutorial Config
   m_EditorClassIdentifier: 
-  sceneName: Tutorial
+  sceneName: TutorialLevel test
   musicEvent: event:/Music/MainMenu
   markerJsonFileName: 
   background: {fileID: 0}

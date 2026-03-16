@@ -22,10 +22,17 @@ public class ComboUIController : MonoBehaviour
 
     private void Awake()
     {
-        // Suscribirse a eventos de ComboManager
-        ComboManager.Instance.OnComboLevelChanged.AddListener(HandleComboIncrease);
-        ComboManager.Instance.OnComboReset.AddListener(HandleComboReset);
-        LevelEndController.Instance.OnLevelEnd.AddListener(EndLevel);
+        // Verificar si los managers existen antes de suscribirse
+        if (ComboManager.Instance != null)
+        {
+            ComboManager.Instance.OnComboLevelChanged.AddListener(HandleComboIncrease);
+            ComboManager.Instance.OnComboReset.AddListener(HandleComboReset);
+        }
+
+        if (LevelEndController.Instance != null)
+        {
+            LevelEndController.Instance.OnLevelEnd.AddListener(EndLevel);
+        }
 
         if (comboText != null)
             comboText.gameObject.SetActive(false);

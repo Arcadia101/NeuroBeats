@@ -74,39 +74,55 @@ public class PlayerButton : MonoBehaviour
         
     private void Update()
     {
-        if (currentNote == null) return;
-
-        // 1) Obtén tiempos
-        float now    = MusicTimeTracker.Instance.CurrentSongTime;
-        float spawn  = currentNote.SpawnTime;
-        float target = currentNote.TargetTime;
-
-        // 2) Cálculo de aceleración lineal desde spawn→target
-        float travelDur = Mathf.Max(target - spawn, 0.01f);
-        float elapsed   = Mathf.Clamp(now - spawn, 0f, travelDur);
-        float accelT    = elapsed / travelDur;
-        float speedAccel= Mathf.Lerp(minRotationSpeed, maxRotationSpeed, accelT);
-
-        float speed = speedAccel;
-
-        // 3) Si ya pasamos el perfect, aplicamos desaceleración
-        if (now > target)
+        // Si hay nota normal, lógica normal
+        if (currentNote != null)
         {
-            float post    = now - target;
-            float decelT  = Mathf.Clamp01(post / decelDuration);
-            speed         = Mathf.Lerp(maxRotationSpeed, minRotationSpeed, decelT);
+            float now    = MusicTimeTracker.Instance.CurrentSongTime;
+            float spawn  = currentNote.SpawnTime;
+            float target = currentNote.TargetTime;
+
+            float travelDur = Mathf.Max(target - spawn, 0.01f);
+            float elapsed   = Mathf.Clamp(now - spawn, 0f, travelDur);
+            float accelT    = elapsed / travelDur;
+            float speedAccel= Mathf.Lerp(minRotationSpeed, maxRotationSpeed, accelT);
+
+            float speed = speedAccel;
+
+            if (now > target)
+            {
+                float post    = now - target;
+                float decelT  = Mathf.Clamp01(post / decelDuration);
+                speed         = Mathf.Lerp(maxRotationSpeed, minRotationSpeed, decelT);
+            }
+
+            circleTransform.Rotate(0f, 0f, -speed * Time.deltaTime);
+            letterRenderer.transform.rotation = Quaternion.identity;
         }
-
-        // 4) Rota el círculo (NEGATIVO para sentido horario)
-        circleTransform.Rotate(0f, 0f, -speed * Time.deltaTime);
-
-        // 5) Fija la letra sin rotación
-        letterRenderer.transform.rotation = Quaternion.identity;
+        else
+        {
+            // Rotación idle para tutorial o espera
+            circleTransform.Rotate(0f, 0f, -minRotationSpeed * Time.deltaTime);
+            letterRenderer.transform.rotation = Quaternion.identity;
+        }
     }
 
     public void AssignNote(NoteBehavior note, NoteInputType type, float spawnTime)
     {
         currentNote = note;
+        ShowVisualsForType(type);
+    }
+
+    /// <summary>
+    /// Configura visualmente el botón para el tutorial (sin lógica de NoteBehavior).
+    /// </summary>
+    public void ShowTutorialState(NoteInputType type)
+    {
+        currentNote = null; // Aseguramos que no busque referencias nulas
+        ShowVisualsForType(type);
+    }
+
+    private void ShowVisualsForType(NoteInputType type)
+    {
         currentType = type;
 
         // Círculo Left/Right

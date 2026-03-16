@@ -16,8 +16,19 @@ public class ResultUIController : MonoBehaviour
 
     private void Awake()
     {
-        LevelEndController.Instance.OnLevelEnd.AddListener(ShowResults);
-        if (debugging)
+        // Verificar si LevelEndController existe antes de suscribirse
+        if (LevelEndController.Instance != null)
+        {
+            LevelEndController.Instance.OnLevelEnd.AddListener(ShowResults);
+        }
+        else
+        {
+            // En escenas como el Tutorial, puede que no haya LevelEndController.
+            // No es un error crítico, simplemente no nos suscribimos.
+            // Debug.LogWarning("ResultUIController: LevelEndController not found.");
+        }
+
+        if (debugging && inputReader != null)
         {
             inputReader.DebugButton  += ShowResults;    
         }
@@ -30,18 +41,19 @@ public class ResultUIController : MonoBehaviour
 
     private void ShowResults()
     {
+        if (resultMenu == null) return;
+
         resultMenu.alpha = 1;
         resultMenu.interactable = true;
         resultMenu.blocksRaycasts = true;
 
-        // 1. Cambiar Action Map
-        inputReader.ChangeActionMap(InputReader.ActionMapType.UI);
+        if (inputReader != null)
+        {
+            inputReader.ChangeActionMap(InputReader.ActionMapType.UI);
+            inputReader.UI_Navigate += HandleNavigate;
+            inputReader.UI_Submit += HandleSubmit;
+        }
 
-        // 2. Suscribirse a eventos de navegación manual
-        inputReader.UI_Navigate += HandleNavigate;
-        inputReader.UI_Submit += HandleSubmit;
-
-        // 3. Forzar selección inicial
         if (firstSelectedButton != null)
         {
             EventSystem.current.SetSelectedGameObject(null);
@@ -51,22 +63,24 @@ public class ResultUIController : MonoBehaviour
     
     private void HideResults()
     {
+        if (resultMenu == null) return;
+
         resultMenu.alpha = 0;
         resultMenu.interactable = false;
         resultMenu.blocksRaycasts = false;
 
-        inputReader.UI_Navigate -= HandleNavigate;
-        inputReader.UI_Submit -= HandleSubmit;
+        if (inputReader != null)
+        {
+            inputReader.UI_Navigate -= HandleNavigate;
+            inputReader.UI_Submit -= HandleSubmit;
+        }
     }
 
     // --- Navegación Manual --- //
     
     private void HandleNavigate(Vector2 direction)
     {
-        // Verificar cooldown (usamos unscaledTime por si el juego está pausado)
         if (Time.unscaledTime < nextNavigationTime) return;
-
-        // Filtrar ruido de inputs muy pequeños (deadzone manual)
         if (direction.magnitude < 0.5f) return;
 
         if (EventSystem.current == null || EventSystem.current.currentSelectedGameObject == null)
@@ -87,14 +101,12 @@ public class ResultUIController : MonoBehaviour
         if (data.moveDir != MoveDirection.None)
         {
             ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, data, ExecuteEvents.moveHandler);
-            // Aplicar cooldown tras un movimiento exitoso
             nextNavigationTime = Time.unscaledTime + navigationCooldown;
         }
     }
 
     private void HandleSubmit()
     {
-        // También podemos poner cooldown al submit si fuera necesario, pero usualmente no hace falta
         var current = EventSystem.current.currentSelectedGameObject;
         if (current != null)
         {
@@ -106,17 +118,26 @@ public class ResultUIController : MonoBehaviour
 
     public void RetryLevel(LevelConfig levelConfig)
     {
-        inputReader.UI_Navigate -= HandleNavigate;
-        inputReader.UI_Submit -= HandleSubmit;
+        if (inputReader != null)
+        {
+            inputReader.UI_Navigate -= HandleNavigate;
+            inputReader.UI_Submit -= HandleSubmit;
+        }
         
-        GameManager.Instance.currentConfig = levelConfig;
-        GameManager.Instance.LoadLevel(levelConfig);
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.currentConfig = levelConfig;
+            GameManager.Instance.LoadLevel(levelConfig);
+        }
     }
 
     public void MainMenu()
     {
-        inputReader.UI_Navigate -= HandleNavigate;
-        inputReader.UI_Submit -= HandleSubmit;
+        if (inputReader != null)
+        {
+            inputReader.UI_Navigate -= HandleNavigate;
+            inputReader.UI_Submit -= HandleSubmit;
+        }
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }

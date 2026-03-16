@@ -6,56 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="54580ed0-7c70-4cc8-a8e6-f9d8e066e590" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_251102_2122.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_251102_2122.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1850.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1850.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1856.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1856.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1900.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1900.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1901.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1901.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1903.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260123_1903.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_Tutorial_260123_1921.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_Tutorial_260123_1921.json.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudio.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/fmodstudioL.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/mac/lib/resonanceaudio.bundle/Contents/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tutorial Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tutorial Config.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HitController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputSystem_Actions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelExportController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelExportController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteHistoryRecorder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteHistoryRecorder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteTargetRegistry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteTargetRegistry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/ZigZagMover.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScenesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/GameScenesManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +32,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="720" />
+    <option name="cachedIndexableFilesCount" value="796" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -83,12 +47,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/NoteBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note/NoteResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scenes/GameScenesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/IconManagerTutorial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/IconSwitcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialLevel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tutorials/TutorialManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -110,7 +76,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;IntegrationSpace&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -125,7 +91,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Aruma Studio/NeurobeatsAlpha0.05\NeuroBeats.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/NeuroBeats 0.9\NeuroBeats.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="E:\Game Projects\Aruma Studio\NeurobeatsAlpha0.01" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -227,6 +193,12 @@
       <workItem from="1770346226748" duration="5852000" />
       <workItem from="1770393406103" duration="2423000" />
       <workItem from="1771865720462" duration="722000" />
+      <workItem from="1772815113432" duration="800000" />
+      <workItem from="1772818668501" duration="4707000" />
+      <workItem from="1772839618960" duration="2314000" />
+      <workItem from="1772906710111" duration="1983000" />
+      <workItem from="1773094826888" duration="2729000" />
+      <workItem from="1773106295307" duration="3992000" />
     </task>
     <servers />
   </component>
