@@ -1,0 +1,34 @@
+{
+    "list": [
+        {
+            "markerName": "Combo1",
+            "targetTime": 3.009000062942505,
+            "hitTime": 3.369999885559082,
+            "inputReceived": "LB",
+            "result": "Miss",
+            "evaluationDuration": 2.303999900817871,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 6.494999885559082,
+            "hitTime": 6.826000213623047,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.325000286102295,
+            "inputSpected": "LT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 10.26200008392334,
+            "hitTime": 10.60200023651123,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.303999900817871,
+            "inputSpected": "LT",
+            "congruency": "Incongruent"
+        }
+    ]
+}

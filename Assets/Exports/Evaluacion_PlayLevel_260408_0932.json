@@ -1,0 +1,64 @@
+{
+    "list": [
+        {
+            "markerName": "Combo1",
+            "targetTime": 3.009000062942505,
+            "hitTime": 3.072000026702881,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 2.0269999504089357,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 6.494999885559082,
+            "hitTime": 6.485000133514404,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 1.9840002059936524,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 10.26200008392334,
+            "hitTime": 10.281999588012696,
+            "inputReceived": "RT",
+            "result": "Miss",
+            "evaluationDuration": 1.983999252319336,
+            "inputSpected": "LT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 14.005999565124512,
+            "hitTime": 13.994000434875489,
+            "inputReceived": "LB",
+            "result": "Perfect",
+            "evaluationDuration": 1.940999984741211,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 16.993000030517579,
+            "hitTime": 16.981000900268556,
+            "inputReceived": "RB",
+            "result": "Perfect",
+            "evaluationDuration": 1.9410009384155274,
+            "inputSpected": "RB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 20.496000289916993,
+            "hitTime": 20.500999450683595,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 1.983999252319336,
+            "inputSpected": "RT",
+            "congruency": "Congruent"
+        }
+    ]
+}

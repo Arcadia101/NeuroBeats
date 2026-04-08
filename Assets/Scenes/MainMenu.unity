@@ -6356,7 +6356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2090172664536807736, guid: 3492c41572165764b99e326e59051a1b, type: 3}
       propertyPath: maxMisses
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2090172664536807736, guid: 3492c41572165764b99e326e59051a1b, type: 3}
       propertyPath: m_EditorClassIdentifier

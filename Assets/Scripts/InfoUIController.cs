@@ -28,8 +28,10 @@ public class InfoUIController : MonoBehaviour
 
     [SerializeField] private float fadeTime = 0.5f;
     [SerializeField] private float comboFadeTime = 1f;
+    [SerializeField] private float comboFillLerpTime = 0.2f;
 
     private Image comboBarFill;
+    private Coroutine comboFillCoroutine;
 
     private void Awake()
     {
@@ -87,6 +89,11 @@ public class InfoUIController : MonoBehaviour
         {
             LevelEndController.Instance.OnLevelEnd.RemoveListener(HideInfoUI);
         }
+
+        if (comboFillCoroutine != null)
+        {
+            StopCoroutine(comboFillCoroutine);
+        }
     }
 
     public void HideInfoUI()
@@ -113,9 +120,31 @@ public class InfoUIController : MonoBehaviour
 
     private void UpdateComboBar(float multiplier)
     {
-        
         float fillAmount = Mathf.InverseLerp(1f, 5f, multiplier);
-        comboBarFill.fillAmount = fillAmount;
+
+        if (comboFillCoroutine != null)
+        {
+            StopCoroutine(comboFillCoroutine);
+        }
+
+        comboFillCoroutine = StartCoroutine(LerpComboFill(fillAmount));
+    }
+
+    private System.Collections.IEnumerator LerpComboFill(float targetFill)
+    {
+        float startFill = comboBarFill.fillAmount;
+        float elapsed = 0f;
+
+        while (elapsed < comboFillLerpTime)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / comboFillLerpTime);
+            comboBarFill.fillAmount = Mathf.Lerp(startFill, targetFill, t);
+            yield return null;
+        }
+
+        comboBarFill.fillAmount = targetFill;
+        comboFillCoroutine = null;
     }
 
     private void UpdateProgress(float progress)

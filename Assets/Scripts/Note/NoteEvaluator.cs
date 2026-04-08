@@ -25,6 +25,8 @@ public class NoteEvaluator : MonoBehaviour
     [SerializeField] private float perfectResultDelta = 0.18f;
     [SerializeField] private float goodResultDelta = 0.21f;
 
+    //private Transform trail;
+
     /// <summary>
     /// Inicializa el evaluator con todos los datos necesarios.
     /// </summary>
@@ -173,6 +175,9 @@ public class NoteEvaluator : MonoBehaviour
         assignedButton.ClearNote();
         zoneManager.ReleaseTarget(assignedButton.transform);
         NoteTargetRegistry.Instance.FinishCurrentEvaluation();
+        
+        //trail = transform.Find("Trail");
+        //trail.SetParent(null, true);
         Destroy(gameObject);
     }
 }

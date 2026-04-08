@@ -27,7 +27,7 @@ public class InfoController : MonoBehaviour
     [SerializeField] private int defaultPerfectScore = 200;
 
     [Header("Combo")]
-    [SerializeField] private int maxMisses = 2;
+    [SerializeField] private int maxMisses = 1;
 
     [Header("Music Level")]
     [Tooltip("Cantidad de aciertos consecutivos necesarios para subir 1 nivel.")]
@@ -65,14 +65,17 @@ public class InfoController : MonoBehaviour
         ResetState();
     }
 
-    public void RegisterPerfectHit()
+    public void RegisterHit(int baseScorePerHit)
     {
         CurrentMisses = 0;
 
-        CurrentCombo++;
-        UpdateLevelFromCombo();
+        if (baseScorePerHit == defaultPerfectScore)
+        {
+            CurrentCombo++;
+            UpdateLevelFromCombo();
+        }
 
-        LastAddScore = CalculateAddScore(defaultPerfectScore);
+        LastAddScore = CalculateAddScore(baseScorePerHit);
         CurrentScore += LastAddScore;
 
         ApplyMusicLevel(CurrentMusicLevel);
@@ -87,34 +90,21 @@ public class InfoController : MonoBehaviour
 
     public void RegisterGoodHit()
     {
-        LastAddScore = CalculateAddScore(defaultGoodScore);
-        CurrentScore += LastAddScore;
+        RegisterHit(defaultGoodScore);
+    }
 
-        OnAddScoreChanged?.Invoke(LastAddScore);
-        OnScoreChanged?.Invoke(CurrentScore);
+    public void RegisterPerfectHit()
+    {
+        RegisterHit(defaultPerfectScore);
     }
 
     public void RegisterMiss()
     {
         CurrentMisses++;
 
-        if (CurrentCombo > 0)
-        {
-            CurrentCombo = 0;
-            CurrentMusicLevel = 0;
-            CurrentMultiplier = 1f;
-
-            ApplyMusicLevel(CurrentMusicLevel);
-            OnComboChanged?.Invoke(CurrentCombo);
-            OnComboVisibilityChanged?.Invoke(false);
-            OnMultiplierChanged?.Invoke(CurrentMultiplier);
-            OnMusicLevelChanged?.Invoke(CurrentMusicLevel);
-            OnComboReset?.Invoke();
-        }
-
         if (CurrentMisses >= maxMisses)
         {
-            CurrentMisses = 0;
+            ReduceComboLevel();
         }
 
         OnMissHit?.Invoke();
@@ -161,6 +151,23 @@ public class InfoController : MonoBehaviour
         {
             FMODMusicConductor.Instance.RampParameter("ComboLevel", level, fader);
         }
+    }
+
+    private void ReduceComboLevel()
+    {
+        CurrentCombo = 0;
+
+        if (CurrentMusicLevel > 0)
+            CurrentMusicLevel--;
+
+        CurrentMultiplier = Mathf.Max(1f, 1f + CurrentMusicLevel);
+
+        ApplyMusicLevel(CurrentMusicLevel);
+
+        OnComboChanged?.Invoke(CurrentCombo);
+        OnComboVisibilityChanged?.Invoke(false);
+        OnMultiplierChanged?.Invoke(CurrentMultiplier);
+        OnMusicLevelChanged?.Invoke(CurrentMusicLevel);
     }
 
     private int CalculateAddScore(int baseScorePerHit)
