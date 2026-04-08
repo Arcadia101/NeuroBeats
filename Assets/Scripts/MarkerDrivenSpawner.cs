@@ -168,7 +168,7 @@ public class MarkerDrivenSpawner : MonoBehaviour
                 {
                     int req = x - 1;
                     if (GameState.Instance.CurrentMode == GameMode.Normal &&
-                        ComboManager.Instance.CurrentCombo >= req)
+                        InfoController.Instance.CurrentCombo >= req)
                         shouldSpawn = true;
                 }
             }

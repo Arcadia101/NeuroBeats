@@ -5,21 +5,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54580ed0-7c70-4cc8-a8e6-f9d8e066e590" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InfoController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InfoUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NeuroBeats/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/MainMenu/LoopMainMenu.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260307_1330.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260307_1330.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260307_1332.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260307_1332.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260309_2044.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260309_2044.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260309_2123.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_MainMenu_260309_2123.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2309.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2309.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2320.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2320.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2326.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260205_2326.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1105.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1105.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1108.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1108.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1116.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1116.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1123.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1123.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1128.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260206_1128.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260307_1325.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260307_1325.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260309_2100.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_PlayLevel_260309_2100.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2051.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2051.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2057.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2057.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2101.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2101.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2106.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2106.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2117.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel test_260309_2117.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1312.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1312.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1353.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1353.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1355.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1355.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1358.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1358.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1422.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1422.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1826.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1826.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1835.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1835.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1855.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1855.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1900.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260306_1900.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260307_1304.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260307_1304.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260307_1315.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exports/Evaluacion_TutorialLevel_260307_1315.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FeedbackPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FeedbackPopup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Puslador.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TestNote.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Tutorial Config.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Tutorial Config.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ResultUIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_RPAsset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PlayLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TutorialLevel test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InfoController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ComboUIController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InfoUIController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FMODMusicConductor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MarkerDrivenSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MusicTimeTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MusicTimeTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note/NoteEvaluator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Mobile_RPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Mobile_RPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +101,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="796" />
+    <option name="cachedIndexableFilesCount" value="231" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -91,7 +160,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/NeuroBeats 0.9\NeuroBeats.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/NeuroBeats 0.97\NeuroBeats.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="E:\Game Projects\Aruma Studio\NeurobeatsAlpha0.01" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -199,6 +268,10 @@
       <workItem from="1772906710111" duration="1983000" />
       <workItem from="1773094826888" duration="2729000" />
       <workItem from="1773106295307" duration="3992000" />
+      <workItem from="1775592627339" duration="30000" />
+      <workItem from="1775592667644" duration="9419000" />
+      <workItem from="1775612614852" duration="4322000" />
+      <workItem from="1775617533159" duration="4761000" />
     </task>
     <servers />
   </component>

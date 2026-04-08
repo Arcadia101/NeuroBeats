@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
     
         // 4) Resetear managers de forma segura
-        ComboManager.Instance?.Reset();
+        InfoController.Instance?.ResetState();
         NoteHistoryRecorder.Instance?.Reset();
         LevelExportController.Instance?.Reset();
         LevelEndController.Instance?.Reset();

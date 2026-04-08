@@ -1,0 +1,314 @@
+{
+    "list": [
+        {
+            "markerName": "Combo1",
+            "targetTime": 3.009000062942505,
+            "hitTime": 3.434000015258789,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 2.4099998474121095,
+            "inputSpected": "RB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 6.494999885559082,
+            "hitTime": 6.76200008392334,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.197000026702881,
+            "inputSpected": "LT",
+            "congruency": "Neutral"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 10.26200008392334,
+            "hitTime": 10.473999977111817,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.175999641418457,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 14.005999565124512,
+            "hitTime": 14.10099983215332,
+            "inputReceived": "LB",
+            "result": "Good",
+            "evaluationDuration": 2.047999382019043,
+            "inputSpected": "LB",
+            "congruency": "Neutral"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 16.993000030517579,
+            "hitTime": 17.06599998474121,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 2.005000114440918,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 20.496000289916993,
+            "hitTime": 20.649999618530275,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 2.0900001525878908,
+            "inputSpected": "RB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 24.256999969482423,
+            "hitTime": 24.36199951171875,
+            "inputReceived": "LB",
+            "result": "Miss",
+            "evaluationDuration": 2.025999069213867,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 28.009000778198243,
+            "hitTime": 28.05299949645996,
+            "inputReceived": "RB",
+            "result": "Perfect",
+            "evaluationDuration": 2.0049991607666017,
+            "inputSpected": "RB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 30.48900032043457,
+            "hitTime": 30.527999877929689,
+            "inputReceived": "LB",
+            "result": "Perfect",
+            "evaluationDuration": 2.0270004272460939,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 33.507999420166019,
+            "hitTime": 33.641998291015628,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.089998245239258,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 37.005001068115237,
+            "hitTime": 37.07699966430664,
+            "inputReceived": "RT",
+            "result": "Miss",
+            "evaluationDuration": 2.069000244140625,
+            "inputSpected": "LT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 40.994998931884769,
+            "hitTime": 41.00199890136719,
+            "inputReceived": "LT",
+            "result": "Perfect",
+            "evaluationDuration": 1.9199981689453126,
+            "inputSpected": "LT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 44.49800109863281,
+            "hitTime": 44.62900161743164,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.0270004272460939,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 48.25899887084961,
+            "hitTime": 47.231998443603519,
+            "inputReceived": "RT",
+            "result": "Miss",
+            "evaluationDuration": 0.9389991760253906,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 50.999000549316409,
+            "hitTime": 51.11399841308594,
+            "inputReceived": "LT",
+            "result": "Miss",
+            "evaluationDuration": 2.0259971618652345,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 54.48500061035156,
+            "hitTime": 54.56999969482422,
+            "inputReceived": "LB",
+            "result": "Good",
+            "evaluationDuration": 2.0480003356933595,
+            "inputSpected": "LB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 57.50400161743164,
+            "hitTime": 57.599998474121097,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 2.0480003356933595,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 61.000999450683597,
+            "hitTime": 60.992000579833987,
+            "inputReceived": "RB",
+            "result": "Perfect",
+            "evaluationDuration": 1.9840011596679688,
+            "inputSpected": "RB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 64.00700378417969,
+            "hitTime": 64.0,
+            "inputReceived": "LB",
+            "result": "Perfect",
+            "evaluationDuration": 1.9840011596679688,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 66.48699951171875,
+            "hitTime": 66.49600219726563,
+            "inputReceived": "RT",
+            "result": "Perfect",
+            "evaluationDuration": 2.0060043334960939,
+            "inputSpected": "RT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 69.50599670410156,
+            "hitTime": 69.58899688720703,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 2.0270004272460939,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 73.00299835205078,
+            "hitTime": 72.91699981689453,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 1.8349990844726563,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 76.98799896240235,
+            "hitTime": 76.84200286865235,
+            "inputReceived": "LB",
+            "result": "Miss",
+            "evaluationDuration": 1.7919998168945313,
+            "inputSpected": "LB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 80.49099731445313,
+            "hitTime": 80.61799621582031,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 2.089996337890625,
+            "inputSpected": "RB",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 83.00399780273438,
+            "hitTime": 83.05000305175781,
+            "inputReceived": "RT",
+            "result": "Perfect",
+            "evaluationDuration": 2.0050048828125,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 85.99500274658203,
+            "hitTime": 86.10099792480469,
+            "inputReceived": "LB",
+            "result": "Miss",
+            "evaluationDuration": 2.069000244140625,
+            "inputSpected": "LB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 88.99500274658203,
+            "hitTime": 89.04499816894531,
+            "inputReceived": "RB",
+            "result": "Miss",
+            "evaluationDuration": 2.0479965209960939,
+            "inputSpected": "LB",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 92.49800109863281,
+            "hitTime": 92.54399871826172,
+            "inputReceived": "LT",
+            "result": "Perfect",
+            "evaluationDuration": 2.0059967041015627,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 96.26000213623047,
+            "hitTime": 96.2770004272461,
+            "inputReceived": "RT",
+            "result": "Perfect",
+            "evaluationDuration": 1.9629974365234376,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 100.00299835205078,
+            "hitTime": 100.09600067138672,
+            "inputReceived": "RT",
+            "result": "Good",
+            "evaluationDuration": 2.09100341796875,
+            "inputSpected": "RT",
+            "congruency": "Incongruent"
+        },
+        {
+            "markerName": "Combo1",
+            "targetTime": 103.73600006103516,
+            "hitTime": 103.78600311279297,
+            "inputReceived": "LB",
+            "result": "Good",
+            "evaluationDuration": 2.0260009765625,
+            "inputSpected": "LB",
+            "congruency": "Congruent"
+        }
+    ]
+}

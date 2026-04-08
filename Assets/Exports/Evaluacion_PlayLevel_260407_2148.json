@@ -1,0 +1,14 @@
+{
+    "list": [
+        {
+            "markerName": "Combo1",
+            "targetTime": 3.009000062942505,
+            "hitTime": 3.1570000648498537,
+            "inputReceived": "RT",
+            "result": "Miss",
+            "evaluationDuration": 2.0480000972747804,
+            "inputSpected": "LT",
+            "congruency": "Congruent"
+        }
+    ]
+}

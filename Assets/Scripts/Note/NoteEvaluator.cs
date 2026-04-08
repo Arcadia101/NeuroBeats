@@ -102,10 +102,18 @@ public class NoteEvaluator : MonoBehaviour
         FeedbackManager.Instance.ShowFeedback(assignedButton.transform, feedbackType);
 
         // Combo
-        if (result == "Perfect" || result == "Good")
-            ComboManager.Instance.RegisterHit();
+        if (result == "Perfect")
+        {
+            InfoController.Instance.RegisterPerfectHit();
+        }
+        else if (result == "Good")
+        {
+            InfoController.Instance.RegisterGoodHit();
+        }
         else
-            ComboManager.Instance.RegisterMiss();
+        {
+            InfoController.Instance.RegisterMiss();
+        }
 
         // Calcular congruencia
         string congruencyVal = CalculateCongruency();

@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &20558247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9105991266763374259, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
-  m_PrefabInstance: {fileID: 1688790884749546997}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &214757400
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,10 +624,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Morado =  Izquierda
+  m_text: Fucsia  =  Izquierda
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
+  m_sharedMaterial: {fileID: -5390419645383223933, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -662,7 +657,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1753,6 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c67dacfcb0aaba4eae8741887db8c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songIsPlaying: 0
 --- !u!4 &1084023221
 Transform:
   m_ObjectHideFlags: 0
@@ -1800,10 +1796,10 @@ MonoBehaviour:
   tutorialNotePrefab: {fileID: 2608382777354058917, guid: f5ce121d7af616146a09defec10e9f4e, type: 3}
   targetZoneManager: {fileID: 1613236386}
   inputReader: {fileID: 11400000, guid: 8eaa1e176fda8bf4aa8abeb291d02b2d, type: 2}
-  feedbackText: {fileID: 1688790884749547002}
+  feedbackText: {fileID: 0}
   resultsPanel: {fileID: 1688790884749547001}
   pausePanel: {fileID: 1353713050}
-  textWelcome: {fileID: 20558247}
+  textWelcome: {fileID: 0}
   textRightInstruction: {fileID: 1874283434}
   textLeftInstruction: {fileID: 400760591}
   textPracticeIntro: {fileID: 1289289462}
@@ -2094,8 +2090,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Veamos si lo tienes!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
+  m_sharedMaterial: {fileID: -5390419645383223933, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2125,7 +2121,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3349,10 +3345,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Azul = Derecha
+  m_text: Azul  =  Derecha
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
+  m_sharedMaterial: {fileID: -5390419645383223933, guid: fe37d470ebc724d4f8f34c5a55d069f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3382,7 +3378,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3964,6 +3960,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7098411379423578009, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7620818730292805166, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4055,17 +4055,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 8968553854647166930, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
   m_PrefabInstance: {fileID: 1688790884749546997}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1688790884749547002 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2169049027089084830, guid: 88c982a8cd889e6448cde151be82911b, type: 3}
-  m_PrefabInstance: {fileID: 1688790884749546997}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20558247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7361032702473631497
 PrefabInstance:
   m_ObjectHideFlags: 0

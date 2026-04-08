@@ -79,6 +79,12 @@ public class FMODMusicConductor : MonoBehaviour
 
         // Forzar update apenas arranca para evitar starvation
         RuntimeManager.StudioSystem.update();
+
+        // Notificar a MusicTimeTracker que la canción está reproduciéndose
+        if (MusicTimeTracker.Instance != null)
+        {
+            MusicTimeTracker.Instance.SetSongPlaying(true);
+        }
     }
 
     public float CurrentSongTime
@@ -95,5 +101,25 @@ public class FMODMusicConductor : MonoBehaviour
     {
         if (musicInstance.isValid())
             musicInstance.stop(STOP_MODE.IMMEDIATE);
+
+        // Notificar a MusicTimeTracker que la canción paró
+        if (MusicTimeTracker.Instance != null)
+        {
+            MusicTimeTracker.Instance.SetSongPlaying(false);
+        }
+    }
+
+    // Nueva adición: Método para obtener la EventDescription y calcular duración
+    public FMOD.Studio.EventDescription GetEventDescription()
+    {
+        if (!musicInstance.isValid())
+        {
+            Debug.LogWarning("[FMODMusicConductor] GetEventDescription: musicInstance no es válido.");
+            return default; // Retorna inválido
+        }
+
+        FMOD.Studio.EventDescription desc;
+        musicInstance.getDescription(out desc);
+        return desc;
     }
 }
